@@ -1,0 +1,26 @@
+{
+  "cached_replay": "{\"source\": \"yahoo\", \"kind\": \"daily\", \"symbol\": \"AAPL\", \"status\": \"cached\", \"http_status\": 200, \"counts\": {\"actions\": 4, \"bars\": 252, \"directory\": 0, \"documents\": 0}}\n{\"source\": \"alpha_vantage\", \"kind\": \"daily\", \"symbol\": \"IBM\", \"status\": \"cached\", \"http_status\": 200, \"counts\": {\"actions\": 0, \"bars\": 100, \"directory\": 0, \"documents\": 0}}\n{\"source\": \"nasdaq_directory\", \"kind\": \"nasdaqlisted\", \"symbol\": null, \"status\": \"cached\", \"http_status\": 200, \"counts\": {\"actions\": 0, \"bars\": 0, \"directory\": 5633, \"documents\": 0}}\n",
+  "cached_replay_no_network": true,
+  "code_sha256": "ae5a82852733c9b6596fe987be165394430dd74c19d88c7621834e27543428d0",
+  "command": ".venv/bin/python scripts/audit_artifacts.py",
+  "dependencies": {
+    "exchange_calendars": "4.13.2",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "tzdata": "2026.4"
+  },
+  "environment": {
+    "machine": "aarch64",
+    "platform": "Linux-6.18.50+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]"
+  },
+  "failures": [],
+  "files_scanned_for_known_secrets": 191,
+  "generated_at_utc": "2026-10-02T09:45:00.742984+00:00",
+  "manifest_records": 74,
+  "partial_files": 0,
+  "raw_bytes": 4045223,
+  "raw_files": 31,
+  "secret_audit_scope": "named environment keys and synthetic canary; no real personal key supplied during collection",
+  "status": "PASS"
+}

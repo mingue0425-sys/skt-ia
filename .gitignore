@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.egg-info/
+.env
+data/
+reports/execution*.json
+reports/sample_quality.json
+reports/sample_cases.json
+reports/calendar_reference_review.json

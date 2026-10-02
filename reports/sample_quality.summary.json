@@ -1,0 +1,57 @@
+{
+  "generated_at_utc": "2026-10-02T09:39:58.060406+00:00",
+  "schema_version": "1.0.0",
+  "code_sha256": "ae5a82852733c9b6596fe987be165394430dd74c19d88c7621834e27543428d0",
+  "config_sha256": "4a893e83c60f25aae66f32b6c185ba3d83b5d544900a8236633d080b31745684",
+  "counts": {
+    "actions": 27,
+    "bars": 2251,
+    "directory_rows": 13294
+  },
+  "historical_pit_validation": "BLOCKED",
+  "structural_validation": "PASS",
+  "issue_counts": {
+    "current_symbol_labels_pre_rename_history": 1,
+    "large_price_move_review_action_or_error": 2
+  },
+  "network_status_counts": {
+    "access_challenge": 1,
+    "access_restricted": 1,
+    "http_error": 1,
+    "not_found": 2,
+    "success": 22
+  },
+  "note": "Structural PASS does not certify raw data, historical PIT or licensing.",
+  "skipped_checks": [
+    {
+      "check": "listing_and_delisting_boundaries",
+      "reason": "No verified full security lifecycle intervals"
+    },
+    {
+      "check": "raw_vs_adjusted_split_reconciliation",
+      "reason": "No independent raw OHLC split-window source"
+    },
+    {
+      "check": "historical_receipt_and_initial_versions",
+      "reason": "Current responses are not historical first-received vintages"
+    },
+    {
+      "check": "full_10_to_15_year_coverage",
+      "reason": "Small samples only"
+    }
+  ],
+  "cross_provider_comparison": {
+    "dates_compared": 358,
+    "definitions": {
+      "alpha_vantage": "raw_as_traded",
+      "yahoo": "vendor_split_adjusted_ohlc_not_raw"
+    },
+    "end": "2026-10-01",
+    "note": "No splits in observed overlap; volume/session/rounding definitions remain unverified. Neither source is designated truth.",
+    "start": "2024-01-02",
+    "status": "review",
+    "symbol": "IBM",
+    "differing_rows": 152
+  },
+  "distribution_note": "Aggregate evidence of the original local run. Market response bodies, normalized observations and per-row comparisons are excluded from Git; rerun collection locally to produce detailed files."
+}

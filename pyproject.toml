@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "market-research-stage1"
+version = "0.1.0"
+description = "Small, auditable market-data feasibility collector"
+requires-python = ">=3.11"
+dependencies = ["exchange_calendars>=4.11,<5"]
+
+[project.scripts]
+market-research = "market_research.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

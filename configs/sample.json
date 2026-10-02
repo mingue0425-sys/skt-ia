@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "collector_validation_only_not_investment_universe",
+  "requests": [
+    {
+      "source": "yahoo",
+      "kind": "daily",
+      "symbol": "AAPL",
+      "start": "2024-01-01",
+      "end": "2024-12-31",
+      "smoke": true
+    },
+    {
+      "source": "yahoo",
+      "kind": "daily",
+      "symbol": "MSFT",
+      "start": "2024-01-01",
+      "end": "2024-12-31"
+    },
+    {
+      "source": "yahoo",
+      "kind": "daily",
+      "symbol": "NVDA",
+      "start": "2024-01-01",
+      "end": "2024-12-31"
+    },
+    {
+      "source": "yahoo",
+      "kind": "daily",
+      "symbol": "IBM",
+      "start": "2024-01-01",
+      "end": "2024-12-31"
+    },
+    {
+      "source": "yahoo",
+      "kind": "daily",
+      "symbol": "TSLA",
+      "start": "2024-01-01",
+      "end": "2024-12-31"
+    },
+    {
+      "source": "yahoo",
+      "kind": "daily",
+      "symbol": "META",
+      "start": "2024-01-01",
+      "end": "2024-12-31"
+    },
+    {
+      "source": "yahoo",
+      "kind": "daily",
+      "symbol": "SPY",
+      "start": "2024-01-01",
+      "end": "2024-12-31"
+    },
+    {
+      "source": "yahoo",
+      "kind": "rename_window",
+      "symbol": "META",
+      "start": "2022-05-23",
+      "end": "2022-06-24"
+    },
+    {
+      "source": "yahoo",
+      "kind": "old_symbol_probe",
+      "symbol": "FB",
+      "start": "2022-05-23",
+      "end": "2022-06-24"
+    },
+    {
+      "source": "yahoo",
+      "kind": "merger_window",
+      "symbol": "ATVI",
+      "start": "2023-09-01",
+      "end": "2023-10-20"
+    },
+    {
+      "source": "alpha_vantage",
+      "kind": "daily",
+      "symbol": "IBM",
+      "outputsize": "compact",
+      "auth_mode": "demo",
+      "smoke": true
+    },
+    {
+      "source": "alpha_vantage",
+      "kind": "full_history_access_probe",
+      "symbol": "IBM",
+      "outputsize": "full",
+      "auth_mode": "demo"
+    },
+    {
+      "source": "yahoo",
+      "kind": "independent_comparison",
+      "symbol": "IBM",
+      "start": "2026-05-01",
+      "end": "2026-10-01"
+    },
+    {
+      "source": "stooq",
+      "kind": "independent_comparison",
+      "symbol": "IBM",
+      "start": "2024-01-01",
+      "end": "2024-12-31"
+    },
+    {
+      "source": "nasdaq_directory",
+      "kind": "nasdaqlisted",
+      "smoke": true
+    },
+    {
+      "source": "nasdaq_directory",
+      "kind": "otherlisted"
+    },
+    {
+      "source": "official_document",
+      "kind": "nvda_split_faq",
+      "document_url": "https://investor.nvidia.com/files/doc_downloads/2024/06/nvidia-2024-stock-split_faq_investors.pdf"
+    },
+    {
+      "source": "official_document",
+      "kind": "meta_rename_notice",
+      "document_url": "https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2022-125"
+    },
+    {
+      "source": "official_document",
+      "kind": "atvi_merger_release",
+      "document_url": "https://blogs.microsoft.com/blog/2023/10/13/welcoming-the-legendary-teams-at-activision-blizzard-king-to-team-xbox/"
+    },
+    {
+      "source": "official_document",
+      "kind": "msft_dividend_history",
+      "document_url": "https://www.microsoft.com/en-us/investor/dividends-and-stock-history"
+    },
+    {
+      "source": "official_document",
+      "kind": "nyse_2024_calendar",
+      "document_url": "https://www.nyse.com/publicdocs/nyse/ICE_NYSE_2024_Yearly_Trading_Calendar.pdf"
+    },
+    {
+      "source": "official_document",
+      "kind": "nyse_2026_calendar",
+      "document_url": "https://www.nyse.com/publicdocs/nyse/ICE_NYSE_2026_Yearly_Trading_Calendar.pdf"
+    },
+    {
+      "source": "official_document",
+      "kind": "nyse_2024_calendar_resolved",
+      "document_url": "https://www.nyse.com/publicdocs/ICE_NYSE_2024_Yearly_Trading_Calendar.pdf"
+    },
+    {
+      "source": "official_document",
+      "kind": "msft_2024_annual_report",
+      "document_url": "https://www.microsoft.com/investor/reports/ar24/index.html"
+    },
+    {
+      "source": "official_document",
+      "kind": "atvi_2023_merger_8k",
+      "document_url": "https://www.sec.gov/Archives/edgar/data/718877/000110465923108985/tm2328253d1_8k.htm"
+    },
+    {
+      "source": "official_document",
+      "kind": "nasdaq_calendar",
+      "document_url": "https://www.nasdaqtrader.com/Trader.aspx?id=Calendar"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "official_cash_dividend_evidence_only",
+  "requests": [
+    {
+      "source": "official_document",
+      "kind": "msft_2024_feb_dividend_release",
+      "document_url": "https://news.microsoft.com/source/2023/11/29/microsoft-announces-quarterly-dividend-21/"
+    }
+  ]
+}

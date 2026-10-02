@@ -1,0 +1,15 @@
+{
+  "_fixture_notice": "SYNTHETIC TEST ONLY; not market data; invented prices and split",
+  "chart": {
+    "error": null,
+    "result": [{
+      "meta": {"symbol":"TEST","currency":"USD","instrumentType":"EQUITY","exchangeTimezoneName":"America/New_York"},
+      "timestamp": [1704205800,1704292200],
+      "indicators": {
+        "quote": [{"open":[50,51],"high":[52,53],"low":[49,50],"close":[51,52],"volume":[1000,1200]}],
+        "adjclose": [{"adjclose":[50,51]}]
+      },
+      "events": {"splits":{"test":{"date":1704292200,"numerator":2,"denominator":1}}}
+    }]
+  }
+}
