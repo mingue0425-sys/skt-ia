@@ -11,8 +11,8 @@ Python3.13.5/Linux ARM64에서 실제 실행했다. Apple Silicon용 표준 Pyth
 서비스·GPU·분산 프레임워크·macOS/Linux 전용 수집 API는 없다. M2 8GB 실기기는 미시험이다.
 
 ```bash
-git clone https://github.com/tpcls/Stk-ia.git
-cd Stk-ia
+git clone https://github.com/mingue0425-sys/skt-ia.git
+cd skt-ia
 python3 -m venv .venv
 .venv/bin/python -m pip install -e .
 .venv/bin/python scripts/verify.py

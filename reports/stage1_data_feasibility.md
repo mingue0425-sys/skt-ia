@@ -126,7 +126,7 @@ README의 설치 명령 후 아래를 실행한다. 기존 성공 파일은 재�
 접근 실패를 기록한 종료2가 예상된다. 네트워크 성공을 다시 확인할 때만 --refresh를 쓴다.
 
 ```bash
-cd Stk-ia
+cd skt-ia
 .venv/bin/python scripts/verify.py
 .venv/bin/python -m market_research.cli collect
 .venv/bin/python -m market_research.cli collect --config configs/evidence_supplement.json --output reports/execution-dividend-evidence.json

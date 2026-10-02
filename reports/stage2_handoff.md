@@ -132,7 +132,7 @@ NVDA 분할 전후 독립 원가격 표본이 없고 배당액의 분할 기준�
 ## 재현 명령
 
 ```bash
-cd Stk-ia
+cd skt-ia
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-lock.txt
 .venv/bin/python -m pip install -e .
