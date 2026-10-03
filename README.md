@@ -407,3 +407,37 @@ gitignored `data/real_data_baseline/`에 보관하고 재배포하지 않는다.
 새 다운로드의 결과는 달라질 수 있으므로 원본과 저장소를 유지한다.
 `--root data/다른이름`은 기존 자료를 보존한 별도 수집 실행이다.
 공식 경매 체결가와 과거 거래 상태가 확인되지 않아 거래 시뮬레이션은 수행하지 않는다.
+
+## 최소 전향 평가: 두 고정 분류 모델
+
+[준비 보고서](reports/forward_evaluation_setup.md)와 [고정 설정](configs/forward_evaluation.json)을 따른다.
+기존 train 상승 빈도(0.530791788856305)와 저장 leaf=32 트리 후보만 비교한다.
+후보는 실험용이며 학습·튜닝·Champion 승격·주문·스케줄은 실행하지 않는다.
+모델·원본이 있는 현재 Linux ARM64 환경에서 기존 기능을 연결하고
+`data/forward_evaluation/`에 새 불변 예측/feature/label 버전을 저장한다.
+
+```bash
+cd /home/sechi/Stk-ia
+# 지금: 현재 lookback과 두 모델 연결만 확인; 전향 예측으로 저장하지 않음
+.venv/bin/python scripts/run_forward_evaluation.py --dry-run --cache-only
+# 유효 월요일 마감~close+60분 안에 수동 한 번 실행
+.venv/bin/python scripts/run_forward_evaluation.py
+# 종료 일별 자료 수신 후 성숙/정정 정답만 갱신하고 같은 표본으로 비교
+.venv/bin/python scripts/run_forward_evaluation.py --update-only --refresh
+```
+
+다음 후보는 뉴욕 2026-10-05이며 한국 **10월 6일 05:00~06:00**, 권장 시작은 **05:20**이다.
+실제 수신·처리 cutoff와 추론 완료는 decision_at 이하이어야 한다.
+target은 기존 **10월 6일 09:30 EDT 시가→10월 13일 09:30 EDT 시가**의 분할 반영 가격수익률>0이다.
+휴장 월요일은 주를 건너뛰고, 시점 미준수·누락·오래된 자료는 차단한다.
+동일 입력 재실행은 원 예측을 반환하며 상충 입력은 덮어쓰지 않는다.
+주말/휴장/마감 전에는 dry-run이다. 과거 날짜 인수는 missed 진단/원 저장 예측 재생만 허용한다.
+
+현재 **준비 완료, 실제 전향 예측은 미실행**이다. 캐시 dry-run 5종목 연결 성공은 전향 성과가 아니다.
+첫 예측에는 10월 5일 bar가 창 안에 수신돼야 하며, 성숙 평가에는 종료 자료와
+기업행동 complete coverage·종목 거래 상태의 실제 hash-bound 근거가 추가로 필요하다.
+근거 참조는 보고서의 `label_evidence.json` 형식을 따르고 원 학습의 연구 가정은 유지한다.
+종료코드는 0=완료/dry-run/정상 pending, 3=예측 blocked/missed/수집 실패,
+1=설정·모델·파일 무결성 오류다. 정답 blocked/pending은 JSON의 `label_updates`와
+`evaluation.label_status_counts`를 함께 확인한다.
+로컬 timestamp/hash는 독립 시각 인증이 아니다. 여러 의사결정 날짜가 쌓이기 전 성능을 일반화하지 않는다.

@@ -1,0 +1,151 @@
+{
+  "auth_mode": "demo",
+  "baseline_probability": 0.530791788856305,
+  "calendar_path": "data/real_data_baseline/calendar.json",
+  "calendar_sha256": "8889ebad2fefa4d355f7f38bb303e8388dc9e4be51ec005bc3828309f49a5df9",
+  "cutoff_policy": "actual_after_processing_at_or_before_decision",
+  "dataset_snapshot_id": "768f8e2ccda885674081e03b104919bc16bb1e466de105e29f4a530a5f3548d5",
+  "decision_policy": "regular_close_plus_60_minutes",
+  "earliest_decision_date": "2026-10-05",
+  "exchange": "XNYS",
+  "features": [
+    "close_price_change_5",
+    "close_to_ma_20",
+    "realized_log_price_change_volatility_20",
+    "intraday_high_low_ratio",
+    "volume_to_prior20_mean"
+  ],
+  "freshness_sessions": 0,
+  "horizon": 5,
+  "identities": {
+    "AAPL": {
+      "evidence": {
+        "method": "matched provider General Code/ISIN/Type/USD; no historical identifier archive",
+        "provider_identity": {
+          "kind": "identity",
+          "path": "/home/sechi/Stk-ia/data/real_data_baseline/collection/raw/eodhd/00c2db9cedac40c3242cffc3eb201ce4fda05b5cf86ee028fcc58ac35d0c5cb9/3f54c1e24637246bdb78fabc88140f0b00efcffd07f8eae13969df5c72b02517.bin",
+          "received_at": "2026-10-03T08:37:03.829034+00:00",
+          "sha256": "3f54c1e24637246bdb78fabc88140f0b00efcffd07f8eae13969df5c72b02517"
+        }
+      },
+      "external_security_id": "ISIN:US0378331005",
+      "share_class": "Common Stock",
+      "verification": "verified"
+    },
+    "AMZN": {
+      "evidence": {
+        "method": "matched provider General Code/ISIN/Type/USD; no historical identifier archive",
+        "provider_identity": {
+          "kind": "identity",
+          "path": "/home/sechi/Stk-ia/data/real_data_baseline/collection/raw/eodhd/4952186e473a3cebc737df75c6995f239cb170d726f5e0bc3e195d1cd1da3a79/561babd8a338a2d1a0f6effa85d250f75c5553d05715be7c24ca9ea2dde11c59.bin",
+          "received_at": "2026-10-03T08:37:19.833163+00:00",
+          "sha256": "561babd8a338a2d1a0f6effa85d250f75c5553d05715be7c24ca9ea2dde11c59"
+        }
+      },
+      "external_security_id": "ISIN:US0231351067",
+      "share_class": "Common Stock",
+      "verification": "verified"
+    },
+    "MCD": {
+      "evidence": {
+        "method": "matched provider General Code/ISIN/Type/USD; no historical identifier archive",
+        "provider_identity": {
+          "kind": "identity",
+          "path": "/home/sechi/Stk-ia/data/real_data_baseline/collection/raw/eodhd/ad928d33d4082e50250e3e9b61eb9a50ddc650425e90dedb16623ce78fdb680c/66eaee6bd397ec574e8c48affc1326892a15bfddf3f0ea7bc078f0edc35ee26f.bin",
+          "received_at": "2026-10-03T08:37:35.813097+00:00",
+          "sha256": "66eaee6bd397ec574e8c48affc1326892a15bfddf3f0ea7bc078f0edc35ee26f"
+        }
+      },
+      "external_security_id": "ISIN:US5801351017",
+      "share_class": "Common Stock",
+      "verification": "verified"
+    },
+    "MSFT": {
+      "evidence": {
+        "method": "matched provider General Code/ISIN/Type/USD; no historical identifier archive",
+        "provider_identity": {
+          "kind": "identity",
+          "path": "/home/sechi/Stk-ia/data/real_data_baseline/collection/raw/eodhd/9765e07a978f044681e3e62fd0516b956be52bbbcadbd4fbb63daa6c58bde930/03d0c335963570c36a0e4cda082f7e3d569d5397f6a5d166ebff43b39265359f.bin",
+          "received_at": "2026-10-03T08:37:11.796584+00:00",
+          "sha256": "03d0c335963570c36a0e4cda082f7e3d569d5397f6a5d166ebff43b39265359f"
+        }
+      },
+      "external_security_id": "ISIN:US5949181045",
+      "share_class": "Common Stock",
+      "verification": "verified"
+    },
+    "TSLA": {
+      "evidence": {
+        "method": "matched provider General Code/ISIN/Type/USD; no historical identifier archive",
+        "provider_identity": {
+          "kind": "identity",
+          "path": "/home/sechi/Stk-ia/data/real_data_baseline/collection/raw/eodhd/69af7e0861a56620ca8f41c3e214730b8493738d98adbc9b8173e617a98cf45f/7e9325593e480b896bd7d4264941d5bab6294a774c698bdc282be46d25836333.bin",
+          "received_at": "2026-10-03T08:37:27.787521+00:00",
+          "sha256": "7e9325593e480b896bd7d4264941d5bab6294a774c698bdc282be46d25836333"
+        }
+      },
+      "external_security_id": "ISIN:US88160R1014",
+      "share_class": "Common Stock",
+      "verification": "verified"
+    }
+  },
+  "label_evidence_index": "data/forward_evaluation/label_evidence.json",
+  "limitation": "Research-assumed historical training, indicative vendor OHLC and current-vintage volume, fixed surviving securities; not strict historical PIT. Forward input uses actual receipt only.",
+  "lookback_start": "2026-07-01",
+  "models": [
+    {
+      "artifact_sha256": "e5966c29cfd7ff731ed768f732932eedd0e39af71945cfa2b0b21a6d181b2dfb",
+      "model_id": "6d46ecb46aa0289771b08fc93dc03dff1db17ea8beff8ea91ced5fdf7eb127a2",
+      "path": "data/real_data_baseline/classification/models/6d46ecb46aa0289771b08fc93dc03dff1db17ea8beff8ea91ced5fdf7eb127a2.json",
+      "pipeline_sha256": "43af46b3a0c96ae108b558ea1e82bb77f8627a522960baacd8bb367dd45b8199",
+      "preprocessing_sha256": "9d34079b91a1a1a0d0c49c652e24bb15bf51d02cc152495a38f1aa120e7c9330",
+      "settings": {
+        "alpha": 1.0,
+        "formula": "(n_up+alpha)/(n+2*alpha)"
+      }
+    },
+    {
+      "artifact_sha256": "d0f1af9ff596ff6c1c28f76b026e38dbe1d7ef886fe274503505723b70a7e369",
+      "model_id": "f18ca8719429b5fb5f7022d4ff3b77eab723801044a9429ec12b7fb570659f64",
+      "path": "data/real_data_baseline/diagnosis/classification/models/f18ca8719429b5fb5f7022d4ff3b77eab723801044a9429ec12b7fb570659f64.json",
+      "pipeline_sha256": "7eee01af8c5d50b7f536c4f8ae130c29eaf8483fa8d9c5994a75a2d26d294fe8",
+      "preprocessing_sha256": "9d34079b91a1a1a0d0c49c652e24bb15bf51d02cc152495a38f1aa120e7c9330",
+      "settings": {
+        "max_depth": 3,
+        "min_samples_leaf": 32
+      }
+    }
+  ],
+  "output_root": "data/forward_evaluation",
+  "purpose": "frozen_experiment_only_no_champion_no_trading",
+  "sampling": "Monday exchange sessions only; holiday Monday skips week",
+  "seed": 20261003,
+  "seed_collection": "data/real_data_baseline/collection",
+  "source": "eodhd",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "TSLA",
+    "MCD"
+  ],
+  "target_contract": {
+    "entry": "next session open",
+    "exit": "entry+h sessions open",
+    "include_dividend_receivables": true,
+    "label_definition_versions": [
+      "3.0.1"
+    ]
+  },
+  "target_id": "price_return",
+  "timezone": "America/New_York",
+  "training_asof": "2024-10-01T00:00:00.000000Z",
+  "training_count": 680,
+  "training_membership_sha256": "39892625fb4e249cb04b51d287f2c4454d45633e693aeba552a38d7cc4aab04e",
+  "training_range": [
+    "2021-10-04",
+    "2024-09-16"
+  ],
+  "training_unique_dates": 136,
+  "version": "1"
+}
