@@ -1,0 +1,1318 @@
+{
+  "after_existing_frozen_datasets": {
+    "feature_snapshot_memberships": 80,
+    "feature_version_status_counts": {
+      "blocked": 56
+    },
+    "feature_versions": 56,
+    "horizon_label_versions": {
+      "1": 80,
+      "20": 80,
+      "5": 80
+    },
+    "independent_sample_keys": 4,
+    "label_snapshot_memberships": 240,
+    "label_version_status_counts": {
+      "blocked": 180,
+      "pending": 60
+    },
+    "label_versions": 240,
+    "logical_feature_status_counts": {
+      "blocked": 4
+    },
+    "logical_label_status_counts": {
+      "blocked": 9,
+      "pending": 3
+    },
+    "snapshots": 40,
+    "training_eligible_samples": 0,
+    "unique_sample_horizon_pairs": 12
+  },
+  "before": {
+    "feature_snapshot_memberships": 80,
+    "feature_version_status_counts": {
+      "blocked": 56
+    },
+    "feature_versions": 56,
+    "horizon_label_versions": {
+      "1": 80,
+      "20": 80,
+      "5": 80
+    },
+    "independent_sample_keys": 4,
+    "label_snapshot_memberships": 240,
+    "label_version_status_counts": {
+      "blocked": 180,
+      "pending": 60
+    },
+    "label_versions": 240,
+    "logical_feature_status_counts": {
+      "blocked": 4
+    },
+    "logical_label_status_counts": {
+      "blocked": 9,
+      "pending": 3
+    },
+    "snapshots": 40,
+    "training_eligible_samples": 0,
+    "unique_sample_horizon_pairs": 12
+  },
+  "build": {
+    "command": [
+      "python3",
+      "-c",
+      "from setuptools.build_meta import build_wheel; build_wheel(\"dist/stage5_5\")"
+    ],
+    "elapsed_seconds": 0.6724388740258291,
+    "exit_code": 0,
+    "log": "data/stage5_5/build_final.log",
+    "max_rss_kib": 36880,
+    "module_count": 48,
+    "offline_import_and_cli": {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-c",
+        "import sys,pkgutil,importlib,json\nsys.path.insert(0,sys.argv[1]);import market_research\nmods=[importlib.import_module(x.name) for x in pkgutil.walk_packages(market_research.__path__,market_research.__name__+'.')]\nassert all(m.__file__.startswith(sys.argv[1]+'/') for m in [market_research]+mods)\nfrom market_research.cli import main\nassert main(['observed-config-check','--config','configs/observed_ibm_demo.json'])==0\nprint(json.dumps({'imported':len(mods)+1,'source_imports_mixed':False}))\n",
+        "/tmp/tmpfr7kqyy4"
+      ],
+      "elapsed_seconds": 1.638003044994548,
+      "exit_code": 0,
+      "log": "data/stage5_5/wheel_smoke_final.log",
+      "max_rss_kib": 157104
+    },
+    "offline_install": {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--target",
+        "/tmp/tmpfr7kqyy4",
+        "/home/sechi/Stk-ia/dist/stage5_5/market_research_stage1-0.1.0-py3-none-any.whl"
+      ],
+      "elapsed_seconds": 0.6262644450180233,
+      "exit_code": 0,
+      "log": "data/stage5_5/wheel_install_final.log",
+      "max_rss_kib": 46544
+    },
+    "sha256": "6cda5ed93a7f7fb38adedc87e36ee9ec982c98e832f835fc15532caa587f37cf",
+    "source_equal": true,
+    "wheel": "dist/stage5_5/market_research_stage1-0.1.0-py3-none-any.whl"
+  },
+  "code_sha256": "ab0d790d4e2815df1e398ddf691bdf29504b19ee7e349430e68f0c33635ae438",
+  "commit_push_performed": false,
+  "current_operation": {
+    "calendar": {
+      "artifact_references": [
+        {
+          "path": "/home/sechi/Stk-ia/data/stage5_5/observed/calendar.json",
+          "sha256": "6598395cffc07188e5eeab924c7a3c7358df748a520d35f25665d31ff00f66d9"
+        }
+      ],
+      "artifact_sha256": [
+        "6598395cffc07188e5eeab924c7a3c7358df748a520d35f25665d31ff00f66d9"
+      ],
+      "exchange": "XNYS",
+      "historical_notice_verified": false,
+      "input_domain": "market",
+      "source": [
+        "exchange_calendars_derived_reference"
+      ],
+      "version": "ef6b5e59bbabf7e3b7cbc8c1513111a076865db67f97ec89a53105cf8ee8c0fa"
+    },
+    "collection_status": "reprocessed",
+    "cutoff": "2026-10-03T06:28:08.778340Z",
+    "data_period": {
+      "end": "2026-10-02",
+      "start": "2026-05-12"
+    },
+    "feature_status_counts": {
+      "ready": 14
+    },
+    "lookback_anchor": "2026-10-02",
+    "lookback_input_rows": 61,
+    "lookback_status": "ready",
+    "operational_samples_created": 0,
+    "pending_labels_created": 0,
+    "prediction_status": "prediction_not_available",
+    "profile": [
+      {
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "observed-run",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5_5/actual_final_config.json",
+          "--data-dir",
+          "/home/sechi/Stk-ia/data/stage5_5/observed",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5_5/operation_final.json"
+        ],
+        "elapsed_seconds": 2.311401022016071,
+        "exit_code": 0,
+        "log": "data/stage5_5/operation_final.log",
+        "max_rss_kib": 160656
+      },
+      {
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "observed-run",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5_5/actual_final_config.json",
+          "--data-dir",
+          "/home/sechi/Stk-ia/data/stage5_5/observed",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5_5/operation_final_replay.json"
+        ],
+        "elapsed_seconds": 1.8695789059856907,
+        "exit_code": 0,
+        "log": "data/stage5_5/operation_final_replay.log",
+        "max_rss_kib": 158912
+      }
+    ],
+    "query_snapshot_id": "f70c1807630aec737b828e25dd494385c3a47613c8bc8cce14c725714086e241",
+    "replay_idempotent": true,
+    "replay_new_network_download": false,
+    "status": "NON_TRADING_DAY"
+  },
+  "diagnostics": {
+    "category_overlap_counts": {
+      "corporate_actions & code_schema_connection": 12,
+      "corporate_actions & future_outcome": 3,
+      "corporate_actions & past_outcome_missing": 4,
+      "corporate_actions & rights": 12,
+      "corporate_actions & security_identity_listing": 12,
+      "corporate_actions & tradability": 3,
+      "future_outcome & code_schema_connection": 3,
+      "future_outcome & rights": 3,
+      "observed_timing & code_schema_connection": 12,
+      "observed_timing & corporate_actions": 12,
+      "observed_timing & future_outcome": 3,
+      "observed_timing & past_outcome_missing": 4,
+      "observed_timing & price_fields": 12,
+      "observed_timing & rights": 12,
+      "observed_timing & security_identity_listing": 12,
+      "observed_timing & tradability": 3,
+      "past_outcome_missing & code_schema_connection": 4,
+      "past_outcome_missing & rights": 4,
+      "price_fields & code_schema_connection": 12,
+      "price_fields & corporate_actions": 12,
+      "price_fields & future_outcome": 3,
+      "price_fields & past_outcome_missing": 4,
+      "price_fields & rights": 12,
+      "price_fields & security_identity_listing": 12,
+      "price_fields & tradability": 3,
+      "publication_version & code_schema_connection": 12,
+      "publication_version & corporate_actions": 12,
+      "publication_version & future_outcome": 3,
+      "publication_version & observed_timing": 12,
+      "publication_version & past_outcome_missing": 4,
+      "publication_version & price_fields": 12,
+      "publication_version & rights": 12,
+      "publication_version & security_identity_listing": 12,
+      "publication_version & tradability": 3,
+      "rights & code_schema_connection": 12,
+      "security_identity_listing & code_schema_connection": 12,
+      "security_identity_listing & future_outcome": 3,
+      "security_identity_listing & past_outcome_missing": 4,
+      "security_identity_listing & rights": 12,
+      "security_identity_listing & tradability": 3,
+      "tradability & code_schema_connection": 3,
+      "tradability & rights": 3
+    },
+    "category_unique_sample_horizon_counts": {
+      "code_schema_connection": 12,
+      "corporate_actions": 12,
+      "future_outcome": 3,
+      "observed_timing": 12,
+      "past_outcome_missing": 4,
+      "price_fields": 12,
+      "publication_version": 12,
+      "rights": 12,
+      "security_identity_listing": 12,
+      "tradability": 3
+    },
+    "counting_note": "Counts of versions/memberships are not independent market samples; multi-reason counts overlap.",
+    "distinct_sample_horizon_count": 12,
+    "evaluated_at": "2026-10-03T06:28:14.482370Z",
+    "feature_version_status_counts": {
+      "blocked": 56
+    },
+    "label_version_status_counts": {
+      "blocked": 180,
+      "pending": 60
+    },
+    "labels_by_horizon": {
+      "1": 80,
+      "20": 80,
+      "5": 80
+    },
+    "pending_versions": [
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:30:41.611556Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "70cd4854174a2f530af9660090ad43a178a9418c46c77171c590a892c2a99c3e",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:30:41.611556Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "ebb26ffaec0c1f9ba5904dac53c724f969c3c3591f92225801b09e8b3c9aed02",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:30:41.611556Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "65cfdc1ce61e4fb4f1412087927ce00fe534eef8e5bb151194702e94e0ba8a5e",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T14:31:42.659568Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "60396c607cd565d3a06bb2885b18237c294944b0e0078e42adc8febab8e9a227",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T14:31:42.659568Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "7eaa9ca034f8d8cdded4bf2cd6c9e2ba0ec2da5a714de22d316c70deb000b7ab",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T14:31:42.659568Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "18e1f12d4964323cb443fc522f2601523141dd8733678d7c63481db4888dbf92",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:12:35.059831Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "706c8e53710c8dcb51118f6d61f57c954334edc4fc4d23e9548a9b9a6172b01c",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:12:35.059831Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "4ac11d76a5b43cf35189de6f93ac985b91a7f97b9199de4e384f906652ca7a3f",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:12:35.059831Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "84a267281a2da4891f3f1fa064b8131475c9388f297e986838338311bf11a688",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:23:08.298360Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "c65844881275c159def1757f5455acefdddbb6020e5a60cb05f2593b08095b2d",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:23:08.298360Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "63a76921b4cfbcb8b183085950f92bd3a9790f71cff031fbad83ad5940cb78fb",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:23:08.298360Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "5f8582c47eeecd6e63acb8b83e6f652272dc9552064be7bab704bcb5f0c8c25a",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T14:31:42.659568Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "0b85a28b179f75e27b0605f7f51f0bbbdb37d97eafac1a668396f77de445e38b",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T14:31:42.659568Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "bee52ef2adaf718dd84b49284f993e304a04d31a9f1930e829afc49791c4d4cc",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T14:31:42.659568Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "106e2b4efbd04b21587e35e607a74b7409e9a65956a57e58d09b451f9c692680",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:09:21.318476Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "d6244546a8768db2983f675c4b93fa072116ab5dbe0d917e55dd6ea6b4e5bbf9",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:09:21.318476Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "2f3a26ac636f4e1eb1c62369807babf512bfe671ff661b10a866f77ce9c45294",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:09:21.318476Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "e7a4bab672e9893df76f2df76584d3f86336f7a730f443b6ac7d26890d826a41",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:18:59.854652Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "841ea77188493b33d3c0eff158df99787472670bfb64086e38fddb5ac99eae0d",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:18:59.854652Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "806cd4a0eee75080bd72babdffaa46f4264db4ca6330a435fcfd683c5b53a263",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:18:59.854652Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "4cae8272c2c785409e8330f0393be2344204ca1464f60934985d69c565bcd396",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:29:10.067552Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "d2df0aa40468d64edac148715445b419a85737b830e7ed0e6f9628cca4db5d0f",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:29:10.067552Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "7fe16cc51e5a5c4a7c5c314a160f82138ffb30564e7cb229e6659222d63de391",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:29:10.067552Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "566c0e457190f88b6d48036a6be6183066449ff2441c118806d5b0930c7034f5",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:01:49.767319Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "a353b088ef0710a88a257f6bee32e8963e248b398bab9964a7baf63d73a73655",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:01:49.767319Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "2f236da62610b422a8de157adcf5fd72c6f9fc315079dcbc2d41a43ea2af100c",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:01:49.767319Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "1c4f88455141a6927392811d7d1120e98229e156bf8fc8f5b01ba0cb8b8df633",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:01:49.767319Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "21aef35055c47b7ef820bd2612a6bb1d09b140ba52754b5557a9b26cea1ce936",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:01:49.767319Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "72276552bf0da212b6cb72bac664c2635f782539a3f278c7ae075dc16805dc38",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:01:49.767319Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "e3b0b51aec91b07db06b440ad0e4b293cd7167a4dd1de6d8efac2a3e0ec34d07",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:30:41.611556Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "eaf9cd24860f661aa361ce2defff446ba864d84a72f8410cc0e4ac065adf55dc",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:30:41.611556Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "6a3cb16ddbd1cfa207d5eb91baf1c437208effaddd7f842eeb6d580368f508f0",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:30:41.611556Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "50f4427c6dd7c6a678528bcb3155f264a800d4991d6b9d06448487bbadc9ee54",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:29:10.067552Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "884ce2f0711d30b470de077efba31d48fa7f34913cf2f4c9fcc0f77fb16b8e28",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:29:10.067552Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "5557b645df2f4cc3c364a6e0df3a40aaf1188ea49f2ac47aa21ad30baffa43a8",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:29:10.067552Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "7a5d49aa831fd5a6949aa6238cde491929f2ad8dd12f7e90dc786e224c22a611",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:26:49.656221Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "da6af5a75d8a7a4a2243acff8c0eb3ee37c4eada5377ec5afe79ad27efff9d68",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:26:49.656221Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "65b410e0e723a1c7caf9b10b68f58d9ba5b126b1868fa430c7177095f4918083",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:26:49.656221Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "26a19d2bbe1f3e2c1d34c7afc66580fc46cb5df19f7d99b00692c1c2830bffe8",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:09:21.318476Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "c1733d22c8eb074287a98c6772805a728f264c9dbf7be2f52ff9e977c6168a49",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:09:21.318476Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "6c49f01be04cf63e1fdf4cb53c902ccde96bda379b1f80c846befa6b0e90150c",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:09:21.318476Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "32843b410a18827834d95d0dddd276153d17807de3424b7519e27783dcca05d9",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:26:49.656221Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "bddc5d9951ff217d8e3f38ee293665fb789abb8a7854091bcee74ff7cf7f7aee",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:26:49.656221Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "b638c2a5ca77c399c637fa948831aba017ed97ab5dbf98c794214e43119029ec",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:26:49.656221Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "26fef7056683581d152d9b8ff3b4f6e6231995c718ee8a46286c655e71d5d7bb",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:14:35.393906Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "99d20cd9c4a3f05d32d3a4dc5f691d74c8921f06067394a966ff628e4de0dc88",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:14:35.393906Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "9ed10cab6f262226bbd19bac61fcaee6c2ae0c8166c4a222c55127c6922af9bf",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:14:35.393906Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "4354b24d18316407629a957334aa2eac7dae8b113b877f6e6f54e73a231aa85f",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:12:35.059831Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "2071f5614b121b9d848c4e1d01afe2e98a1fc9cce268737e0136408d3992693b",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:12:35.059831Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "31d8031ad76240c6ec68258d714300eab36de8cad51110ea9b24451a017c1ae0",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:12:35.059831Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "da53029c30e4ea792d69f722ef53d39dc9ba51c036f4b7e250b7e09ddd0a9e13",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:18:59.854652Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "3a885a3567c648f68473de5b62452074352b58939a99f192e12bfbd1e268c759",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:18:59.854652Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "c3008f0bcbc824d3e7c823e90ea8752a61c912c4ae5d766531a087d8b5ac6422",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:18:59.854652Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "2819d08ba1c8c234b4fe9ee8740ea82df23be0c5200e97a04c341dea11a11e3c",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:14:35.393906Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "f13e6144d1e159be1b51f4ce5bf71d679576f0da9ca83d873778dcf9bf25e49b",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:14:35.393906Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "42a3e20b914087d59fc9eb42077f32c58e54f9880d9890c0cc73ffda198f0a6a",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:14:35.393906Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "f1bf52ac7028eaa682c83bb6181c40564c32f1361d17433d966abba9db0c1b21",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:23:08.298360Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 1,
+        "label_version_id": "603d3783ca2afd5e374e2f3bc540fba331aa8097542625838c2a814b0cc99950",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:23:08.298360Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 5,
+        "label_version_id": "3c409db6d367002abbe358d5b187a4e7a63353a57678d8d4a61b53a09ddc81b6",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      },
+      {
+        "current_assessment": "future_exit_session",
+        "frozen_evaluation_at": "2026-10-02T13:23:08.298360Z",
+        "frozen_reason": "target_open_not_yet_reached",
+        "horizon": 20,
+        "label_version_id": "c3b8d059644c4d64444a6cbc34b908fb1b8288d58a77cefb27e0935041bda672",
+        "sample_id": "c755a8dc2b4b4f41ac2998750aefec2d6eabd9d8b0189038c177f12c553f2ae9"
+      }
+    ],
+    "reason_unique_sample_horizon_counts": {
+      "actual_receipt_unproven": 12,
+      "calendar_not_historically_verified": 12,
+      "corporate_action_coverage_unconfirmed": 12,
+      "feature_not_ready_by_decision": 12,
+      "feature_sample_not_ready": 12,
+      "label_not_available_at_training_asof": 12,
+      "label_not_ready": 12,
+      "learning_rights_unconfirmed": 12,
+      "legacy_strict_pit_or_rights_unmet": 12,
+      "no_computable_price_features": 12,
+      "no_eligible_feature_inputs": 12,
+      "opening_prices_unavailable_close_only": 6,
+      "past_endpoint_missing_from_local_source_range": 4,
+      "price_semantics_not_requested": 6,
+      "publication_time_unknown": 12,
+      "received_after_cutoff": 12,
+      "security_identity_unverified": 12,
+      "security_trading_status_unverified": 3,
+      "target_open_not_yet_reached": 3
+    },
+    "referenced_feature_version_count": 56,
+    "referenced_label_version_count": 240,
+    "row_details_local": "data/stage5_5/diagnostics.json",
+    "sample_count": 4,
+    "scope_eligible_version_pairs": {
+      "fixed_security_research": 0,
+      "forward_observed": 0,
+      "strict_history": 0
+    },
+    "snapshot_count": 40,
+    "snapshot_membership_count": 240,
+    "snapshot_results": [
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "010944b1a29791a46596174080ace4f4ca0825b07ba7a5c82a2aaf35972fe44a",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "0a9539ea1df3ccf8f91244a191572d73a6fff5c10dee367eff3d36e65f35278d",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "202dd7e00cc245eab0334fcee83ff9f8db1601f53829b2c0da6af969d6a043ae",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "25c7099e63f4557fc1025f288822b639de08b52e160f231528fa223816a32347",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "25cb2d8dcaf0658d4d60c58bdf2f77a061c332f5b9a9ff5640f1042cb009ed3b",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "2bf3edf42544bc22f292c51cdf66cd1fc0ce8a54b6e9718e18f1d31e5af0381e",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "33637de7e865d6b41532add25895de1f706c81a584061af51a767e0f0172bac2",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "401daab78221a1e8a46a0786275de8f76a1ec5586977f08f456f546583fe465f",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "4c28994b77e72a6b4308bab678021d4f5dbe1e0a252160df94051b806d47e199",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "552d8db9d45516d8faa7e038c3e10b15e89e99aaa1b1dd13ecd5267a2eb0cee2",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "5d12c3f9024e2604d437be64036e29e05657785e8d11c84e57b19c8ad47769bd",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "63e4be006b8702b553e131314c5f35ddda6bd1ee618f9333d093bae004d5dac1",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "7efb399b9d566a21fd3e1eb7f81145a7fb87b85d252685d96d9b591e3ffe3663",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "84564280a9add8b0faa4aa800f4da4d9a1d044081f95c933a7a969f220685b2b",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "941db22b39a513e62496d291f679ad9a1b2910e01a57603d1aae734a297724bc",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "97efa28453e6526f1dd3b25fc681814dad93d4368653706409bbd76c6cf3bfe9",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "a04b8a5cfb76d5d29af04ef89ed33b98832a590452865e77f4f59c6df5359e87",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "a530278f7936a92867143058202fc8da328815150da2be9cd38649fb7979d39b",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "a5f5b68e7417974f1e28bc5f6902e5a02677a3d3d2f5489906e3babc8a4cc8b1",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "aaae5d0892cdc7cda2ca3235181d3e86d52fd5c7ef1b8de0c14aa1f7d9cf7184",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "b3aeb1170e254679ccfd85f5bbbd8283a3928167617c006a3abd580a4a06872e",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "b6c331a9458d8ef398ac515988c5d93215765f682545aac5460e86cead7037bd",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "b823d193b8b935fc29fd3deab98213d9daad37a6dbff728aacce730229c72f97",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "beb0ea7092c372855b588290f16e7882e10f94af9d2ea83a8291a46c9559f8b0",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "c361e27d3ec380a4fbc1468825332519d6f792ac1c174a60fd214f1e0325703a",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "c6af192aa685ba0a87ec0a3c3d7ac2417bbbfd0a68d348eda3e9f3e9883a3bf4",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "c9e0187a07b5e84a0a2ca7aea73dbf0239abb42af1e6f5228a76e8caad80c4c9",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "d15cd71fd9426f479025d282fc66f53fda67ca7515874c8f7677d083bf8acf6c",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "d4ae1c7c33ec2f0c89c9d5e889d7dbeccccb331dd5dd52ab13d4a1d036616c39",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "d92c843b4f9fa1d90ac45490faca62f4f45bccaa64e52a304cd7e4961ca2db73",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "e19e1c2f8c44e9cdb2238aa9604e961e3891812ed3641f7ce20a1f7016701b69",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "e1c4169ef1fb8fcd4dd77073b94fd396ab2a653d986a4a7a82fbad9320520e46",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "e291cb71607e4e4e24ae123ded6606fbe13ddb7624f7a5ee84862429a0ade14a",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "ec8c39e6161bca6c28201075922009737717ecbd8f3ab60f1b0599a006880dad",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "f58f79810d6bd051e764d04a85e3cad2631d3105b7cd291d78aae7c96bd9ab64",
+        "strict_selected_count": 0
+      },
+      {
+        "exclusion_counts": {
+          "feature_sample_not_ready": 6
+        },
+        "membership_count": 6,
+        "snapshot_id": "ffad4ceeaa318e6ec860f4a3b8526b340c4d30f7f85042059369a3ef34d7f406",
+        "strict_selected_count": 0
+      }
+    ],
+    "stored_feature_version_count": 56,
+    "strict_eligible_distinct_sample_horizon_count": 0,
+    "version": "5.5.0"
+  },
+  "diff_check": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "elapsed_seconds": 0.002734657027758658,
+    "exit_code": 0,
+    "log": "data/stage5_5/diff_check.log",
+    "max_rss_kib": 24000
+  },
+  "environment": {
+    "cpu_model": "Cortex-A76",
+    "dependencies": {
+      "exchange_calendars": "4.13.2",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1"
+    },
+    "disk_available_bytes": 99832356864,
+    "disk_total_bytes": 122195955712,
+    "logical_cpus": 4,
+    "machine": "aarch64",
+    "platform": "Linux-6.18.50+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+    "ram_available_bytes": 5770231808,
+    "ram_total_bytes": 8453963776,
+    "resource_captured_at": "2026-10-03T06:33:08.078409+00:00",
+    "swap_total_bytes": 2147467264
+  },
+  "generated_at": "2026-10-03T06:33:08.079361+00:00",
+  "limitations": [
+    "Public demo access does not confirm general account/long-term collection/training rights.",
+    "Current lookback arithmetic is not a trading sample or investment prediction.",
+    "Existing pending versions represent three logical horizons and still have future exits.",
+    "Version and blocker counts overlap; snapshots are not independent observations.",
+    "Unchanged existing SQLite ResourceWarning remains in original migration rejection test."
+  ],
+  "missed_decision_check": {
+    "exclusions": {
+      "received_after_cutoff": 183
+    },
+    "inputs": 0,
+    "status": "MISSED_DECISION"
+  },
+  "new_real_data": {
+    "fresh_network_download": true,
+    "http_status": 200,
+    "network_requests": 1,
+    "normalization_rights_not_promoted": true,
+    "period": {
+      "end": "2026-10-02",
+      "start": "2026-05-12"
+    },
+    "processing_completed_at": "2026-10-03T05:47:00.749791+00:00",
+    "raw_sha256": "b4fa59f0a94088fce15b8eded1e0343f1caf2cc7ee4813e9606f404c82ba84d8",
+    "receipt_id": "842d39661f224f989c4ad4ca07281f8f",
+    "received_at": "2026-10-03T05:47:00.714042+00:00",
+    "rows": 100
+  },
+  "official_sources": [
+    "https://www.alphavantage.co/documentation/",
+    "https://www.alphavantage.co/terms_of_service/"
+  ],
+  "orders_schedules_enabled": false,
+  "pip_check": {
+    "command": [
+      "/home/sechi/Stk-ia/.venv/bin/python",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "elapsed_seconds": 0.37552806304302067,
+    "exit_code": 0,
+    "log": "data/stage5_5/pip_check.log",
+    "max_rss_kib": 36800
+  },
+  "post_validation_scope_runner_checks": {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_observed.py",
+      "-v"
+    ],
+    "elapsed_seconds": 12.844502447056584,
+    "exit_code": 0,
+    "log": "data/stage5_5/scope_runner_final_tests.log",
+    "max_rss_kib": 169568
+  },
+  "protected_existing_data": {
+    "changed": [],
+    "files_checked": 3733,
+    "unchanged": true
+  },
+  "real_models_trained": 0,
+  "real_performance_metrics_generated": false,
+  "real_predictions_generated": 0,
+  "scope_comparison": {
+    "fixed_security_research": "CALCULATION_ONLY: whole-market delisted universe not required; per-security/target/rights missing",
+    "forward_observed": "CURRENT_LOOKBACK_PASS; current trading sample deferred on non-trading day; training blocked",
+    "strict_history": "BLOCKED: missing contemporary vintage/universe/security/action/state/rights"
+  },
+  "source_documents": [
+    "README.md",
+    "reports/stage5_validation.md",
+    "reports/stage5_validation.json",
+    "reports/data_readiness_action_plan.md",
+    "reports/stage6_handoff.md",
+    "docs/provider_comparison.md",
+    "docs/time_query_policies.md"
+  ],
+  "stage": "5.5",
+  "stage2_fixed_replay": {
+    "content_sha256": "e59ca49bc81eed31060df908813f476343ba19f13071a16e0abdc5589bc21042",
+    "keys": [
+      "status",
+      "snapshot_id",
+      "content_sha256",
+      "file_evidence_verified",
+      "result"
+    ],
+    "rows": 352,
+    "snapshot_id": "e59ca49bc81eed31060df908813f476343ba19f13071a16e0abdc5589bc21042"
+  },
+  "starting_head": "fb78fc7d712dcd285f9e463ec3673fe732cdc0a5",
+  "strict_requests": [
+    {
+      "command": "training-config-check",
+      "config": "data/stage5/release/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9-strict.json",
+      "exit_code": 3,
+      "output": "data/stage5_5/strict/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9-strict-training-config-check.json",
+      "reason": "strict_dataset_has_no_eligible_samples",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "training-run",
+      "config": "data/stage5/release/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9-strict.json",
+      "exit_code": 3,
+      "output": "data/stage5_5/strict/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9-strict-training-run.json",
+      "reason": "strict_dataset_has_no_eligible_samples",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "training-config-check",
+      "config": "data/stage5/release/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3-strict.json",
+      "exit_code": 3,
+      "output": "data/stage5_5/strict/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3-strict-training-config-check.json",
+      "reason": "strict_dataset_has_no_eligible_samples",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "training-run",
+      "config": "data/stage5/release/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3-strict.json",
+      "exit_code": 3,
+      "output": "data/stage5_5/strict/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3-strict-training-run.json",
+      "reason": "strict_dataset_has_no_eligible_samples",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "training-config-check",
+      "config": "data/stage5/release/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e-strict.json",
+      "exit_code": 3,
+      "output": "data/stage5_5/strict/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e-strict-training-config-check.json",
+      "reason": "strict_dataset_has_no_eligible_samples",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "training-run",
+      "config": "data/stage5/release/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e-strict.json",
+      "exit_code": 3,
+      "output": "data/stage5_5/strict/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e-strict-training-run.json",
+      "reason": "strict_dataset_has_no_eligible_samples",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "training-config-check",
+      "config": "data/stage5/release/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622-strict.json",
+      "exit_code": 3,
+      "output": "data/stage5_5/strict/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622-strict-training-config-check.json",
+      "reason": "strict_dataset_has_no_eligible_samples",
+      "status": "BLOCKED"
+    },
+    {
+      "command": "training-run",
+      "config": "data/stage5/release/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622-strict.json",
+      "exit_code": 3,
+      "output": "data/stage5_5/strict/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622-strict-training-run.json",
+      "reason": "strict_dataset_has_no_eligible_samples",
+      "status": "BLOCKED"
+    }
+  ],
+  "tests": {
+    "command": [
+      "/home/sechi/Stk-ia/.venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "count": 180,
+    "elapsed_seconds": 247.97231067100074,
+    "exit_code": 0,
+    "known_warnings": true,
+    "log": "data/stage5_5/all_tests.log",
+    "max_rss_kib": 237456,
+    "passed": true
+  },
+  "verdicts": {
+    "actual_data_access": "PASS_OFFICIAL_IBM_DEMO_ONLY",
+    "current_observed_lookback": "PASS",
+    "current_operational_sample": "DEFERRED_NON_TRADING_DAY",
+    "engine_connection": "PASS",
+    "real_predictive_power": "NOT_EVALUATED",
+    "real_training_readiness": "BLOCKED",
+    "strict_historical_evaluation": "BLOCKED"
+  }
+}

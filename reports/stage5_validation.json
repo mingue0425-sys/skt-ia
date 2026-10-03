@@ -1,0 +1,4039 @@
+{
+  "actual_market_models_trained": false,
+  "build": {
+    "actual_exit": 0,
+    "command": [
+      "python3",
+      "-c",
+      "from setuptools.build_meta import build_wheel; build_wheel(\"dist/stage5\")"
+    ],
+    "elapsed_seconds": 0.6423415410099551,
+    "expected_exit": 0,
+    "log": "data/stage5/release/wheel.log",
+    "source_equal_modules": 42,
+    "status": "PASS",
+    "wheel": "dist/stage5/market_research_stage1-0.1.0-py3-none-any.whl",
+    "wheel_sha256": "0aabbdedcbc58442a9fe549a8883e6836e0673977e6fda60d4ecce8ffe772359",
+    "wheel_smoke": {
+      "cli_exit": 0,
+      "dependencies_reused_from_verified_venv": true,
+      "imported_project_modules": 42,
+      "installed_from_local_wheel": true,
+      "source_imports_mixed": false,
+      "status": "PASS"
+    }
+  },
+  "code_sha256": "53b0cb7fe4a10fe3ce7eca3c7196a236a3bdaf63d3ae67952020d308eadb769b",
+  "commit_push": false,
+  "dependency_check": {
+    "command": ".venv/bin/python -m pip check",
+    "message": "No broken requirements found",
+    "status": "PASS"
+  },
+  "development_fixes": [
+    "expected generated wheel .egg-info changes allowed and separately recorded; initial aggregate stopped after successful tests/training/replay/build",
+    "GNU time unavailable; use os.wait4 and persist measurements",
+    "small fixture calendar index corrected",
+    "absent output metric reason kept distinct from numeric overflow"
+  ],
+  "diff_check": {
+    "actual_exit": 0,
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "elapsed_seconds": 0.0028167259879410267,
+    "expected_exit": 0,
+    "log": "data/stage5/release/diff-check.log",
+    "status": "PASS"
+  },
+  "elapsed_seconds": 407.2490947020706,
+  "environment": {
+    "dependencies": {
+      "exchange_calendars": "4.13.2",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "threadpoolctl": "3.7.0"
+    },
+    "machine": "aarch64",
+    "platform": "Linux-6.18.50+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]"
+  },
+  "existing_files_changed": [
+    "src/market_research/cli.py",
+    "src/market_research/stage4/simulation.py",
+    "src/market_research/stage4/metrics.py",
+    "src/market_research/stage4/predictions.py",
+    "README.md",
+    "pyproject.toml",
+    "requirements-lock.txt"
+  ],
+  "finished_at": "2026-10-03T04:47:34.295372+00:00",
+  "generated_build_metadata_changes": [
+    "src/market_research_stage1.egg-info/SOURCES.txt",
+    "src/market_research_stage1.egg-info/PKG-INFO",
+    "src/market_research_stage1.egg-info/requires.txt"
+  ],
+  "known_warning": "existing Stage2 migration rejection leaks SQLite connection; ResourceWarning observed; not Codex UI usage warning",
+  "m2_executed": false,
+  "models_trained": true,
+  "orders_schedules_enabled": false,
+  "post_validation_completed_at": "2026-10-03T04:59:42.091289+00:00",
+  "previous_stage3_synthetic": {
+    "count": 7,
+    "database_bytes_unchanged": true,
+    "datasets": [
+      {
+        "content_sha256": "1c58e33aefc3e4574d38b5a717b4e405d83eb8ab492e14c09f2207a08ec66ba6",
+        "dataset_snapshot_id": "1c58e33aefc3e4574d38b5a717b4e405d83eb8ab492e14c09f2207a08ec66ba6",
+        "items": 3
+      },
+      {
+        "content_sha256": "2b56af570eebfb9c7b6b44f7d8ba475b0ae76c540d0785007e8bc72cbce5b91b",
+        "dataset_snapshot_id": "2b56af570eebfb9c7b6b44f7d8ba475b0ae76c540d0785007e8bc72cbce5b91b",
+        "items": 3
+      },
+      {
+        "content_sha256": "47ef523a3fa9542ed3dd582d124cec379580643dc0d3863eaa097907d9f5722b",
+        "dataset_snapshot_id": "47ef523a3fa9542ed3dd582d124cec379580643dc0d3863eaa097907d9f5722b",
+        "items": 3
+      },
+      {
+        "content_sha256": "78aa6ce280725e09a3afae4e88fd0d6828d497b38ed9232a2c3c6272d68f8821",
+        "dataset_snapshot_id": "78aa6ce280725e09a3afae4e88fd0d6828d497b38ed9232a2c3c6272d68f8821",
+        "items": 3
+      },
+      {
+        "content_sha256": "7982cec120480d4a9aa68df27b9d4677c32368eec41fad1efb30e5926db023da",
+        "dataset_snapshot_id": "7982cec120480d4a9aa68df27b9d4677c32368eec41fad1efb30e5926db023da",
+        "items": 3
+      },
+      {
+        "content_sha256": "94f2055b3e4336278989892673e4fba9bbc8f2d230485a3140e6abc18a7c8b47",
+        "dataset_snapshot_id": "94f2055b3e4336278989892673e4fba9bbc8f2d230485a3140e6abc18a7c8b47",
+        "items": 3
+      },
+      {
+        "content_sha256": "e3af2232257341e0a2a47d3570e4cfe908ad1c1ec87dfee011d0e009208a508a",
+        "dataset_snapshot_id": "e3af2232257341e0a2a47d3570e4cfe908ad1c1ec87dfee011d0e009208a508a",
+        "items": 3
+      }
+    ],
+    "status": "PASS"
+  },
+  "protected_existing_data_unchanged": true,
+  "protected_files_checked": 151,
+  "public_artifact_check": {
+    "checked_files": 17,
+    "credential_pattern_matches": 0,
+    "scope": "new Stage5 source/contracts/fictional fixtures/aggregate reports; data/models/row results remain gitignored",
+    "status": "PASS"
+  },
+  "real": {
+    "all_dataset_preservation": {
+      "count": 40,
+      "database_bytes_unchanged": true,
+      "datasets": [
+        {
+          "content_sha256": "010944b1a29791a46596174080ace4f4ca0825b07ba7a5c82a2aaf35972fe44a",
+          "dataset_snapshot_id": "010944b1a29791a46596174080ace4f4ca0825b07ba7a5c82a2aaf35972fe44a",
+          "items": 6
+        },
+        {
+          "content_sha256": "0a9539ea1df3ccf8f91244a191572d73a6fff5c10dee367eff3d36e65f35278d",
+          "dataset_snapshot_id": "0a9539ea1df3ccf8f91244a191572d73a6fff5c10dee367eff3d36e65f35278d",
+          "items": 6
+        },
+        {
+          "content_sha256": "0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+          "dataset_snapshot_id": "0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+          "items": 6
+        },
+        {
+          "content_sha256": "202dd7e00cc245eab0334fcee83ff9f8db1601f53829b2c0da6af969d6a043ae",
+          "dataset_snapshot_id": "202dd7e00cc245eab0334fcee83ff9f8db1601f53829b2c0da6af969d6a043ae",
+          "items": 6
+        },
+        {
+          "content_sha256": "25c7099e63f4557fc1025f288822b639de08b52e160f231528fa223816a32347",
+          "dataset_snapshot_id": "25c7099e63f4557fc1025f288822b639de08b52e160f231528fa223816a32347",
+          "items": 6
+        },
+        {
+          "content_sha256": "25cb2d8dcaf0658d4d60c58bdf2f77a061c332f5b9a9ff5640f1042cb009ed3b",
+          "dataset_snapshot_id": "25cb2d8dcaf0658d4d60c58bdf2f77a061c332f5b9a9ff5640f1042cb009ed3b",
+          "items": 6
+        },
+        {
+          "content_sha256": "2bf3edf42544bc22f292c51cdf66cd1fc0ce8a54b6e9718e18f1d31e5af0381e",
+          "dataset_snapshot_id": "2bf3edf42544bc22f292c51cdf66cd1fc0ce8a54b6e9718e18f1d31e5af0381e",
+          "items": 6
+        },
+        {
+          "content_sha256": "33637de7e865d6b41532add25895de1f706c81a584061af51a767e0f0172bac2",
+          "dataset_snapshot_id": "33637de7e865d6b41532add25895de1f706c81a584061af51a767e0f0172bac2",
+          "items": 6
+        },
+        {
+          "content_sha256": "3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+          "dataset_snapshot_id": "3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+          "items": 6
+        },
+        {
+          "content_sha256": "401daab78221a1e8a46a0786275de8f76a1ec5586977f08f456f546583fe465f",
+          "dataset_snapshot_id": "401daab78221a1e8a46a0786275de8f76a1ec5586977f08f456f546583fe465f",
+          "items": 6
+        },
+        {
+          "content_sha256": "4c28994b77e72a6b4308bab678021d4f5dbe1e0a252160df94051b806d47e199",
+          "dataset_snapshot_id": "4c28994b77e72a6b4308bab678021d4f5dbe1e0a252160df94051b806d47e199",
+          "items": 6
+        },
+        {
+          "content_sha256": "552d8db9d45516d8faa7e038c3e10b15e89e99aaa1b1dd13ecd5267a2eb0cee2",
+          "dataset_snapshot_id": "552d8db9d45516d8faa7e038c3e10b15e89e99aaa1b1dd13ecd5267a2eb0cee2",
+          "items": 6
+        },
+        {
+          "content_sha256": "5d12c3f9024e2604d437be64036e29e05657785e8d11c84e57b19c8ad47769bd",
+          "dataset_snapshot_id": "5d12c3f9024e2604d437be64036e29e05657785e8d11c84e57b19c8ad47769bd",
+          "items": 6
+        },
+        {
+          "content_sha256": "63e4be006b8702b553e131314c5f35ddda6bd1ee618f9333d093bae004d5dac1",
+          "dataset_snapshot_id": "63e4be006b8702b553e131314c5f35ddda6bd1ee618f9333d093bae004d5dac1",
+          "items": 6
+        },
+        {
+          "content_sha256": "7efb399b9d566a21fd3e1eb7f81145a7fb87b85d252685d96d9b591e3ffe3663",
+          "dataset_snapshot_id": "7efb399b9d566a21fd3e1eb7f81145a7fb87b85d252685d96d9b591e3ffe3663",
+          "items": 6
+        },
+        {
+          "content_sha256": "84564280a9add8b0faa4aa800f4da4d9a1d044081f95c933a7a969f220685b2b",
+          "dataset_snapshot_id": "84564280a9add8b0faa4aa800f4da4d9a1d044081f95c933a7a969f220685b2b",
+          "items": 6
+        },
+        {
+          "content_sha256": "8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+          "dataset_snapshot_id": "8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+          "items": 6
+        },
+        {
+          "content_sha256": "941db22b39a513e62496d291f679ad9a1b2910e01a57603d1aae734a297724bc",
+          "dataset_snapshot_id": "941db22b39a513e62496d291f679ad9a1b2910e01a57603d1aae734a297724bc",
+          "items": 6
+        },
+        {
+          "content_sha256": "97efa28453e6526f1dd3b25fc681814dad93d4368653706409bbd76c6cf3bfe9",
+          "dataset_snapshot_id": "97efa28453e6526f1dd3b25fc681814dad93d4368653706409bbd76c6cf3bfe9",
+          "items": 6
+        },
+        {
+          "content_sha256": "a04b8a5cfb76d5d29af04ef89ed33b98832a590452865e77f4f59c6df5359e87",
+          "dataset_snapshot_id": "a04b8a5cfb76d5d29af04ef89ed33b98832a590452865e77f4f59c6df5359e87",
+          "items": 6
+        },
+        {
+          "content_sha256": "a530278f7936a92867143058202fc8da328815150da2be9cd38649fb7979d39b",
+          "dataset_snapshot_id": "a530278f7936a92867143058202fc8da328815150da2be9cd38649fb7979d39b",
+          "items": 6
+        },
+        {
+          "content_sha256": "a5f5b68e7417974f1e28bc5f6902e5a02677a3d3d2f5489906e3babc8a4cc8b1",
+          "dataset_snapshot_id": "a5f5b68e7417974f1e28bc5f6902e5a02677a3d3d2f5489906e3babc8a4cc8b1",
+          "items": 6
+        },
+        {
+          "content_sha256": "aaae5d0892cdc7cda2ca3235181d3e86d52fd5c7ef1b8de0c14aa1f7d9cf7184",
+          "dataset_snapshot_id": "aaae5d0892cdc7cda2ca3235181d3e86d52fd5c7ef1b8de0c14aa1f7d9cf7184",
+          "items": 6
+        },
+        {
+          "content_sha256": "b3aeb1170e254679ccfd85f5bbbd8283a3928167617c006a3abd580a4a06872e",
+          "dataset_snapshot_id": "b3aeb1170e254679ccfd85f5bbbd8283a3928167617c006a3abd580a4a06872e",
+          "items": 6
+        },
+        {
+          "content_sha256": "b6c331a9458d8ef398ac515988c5d93215765f682545aac5460e86cead7037bd",
+          "dataset_snapshot_id": "b6c331a9458d8ef398ac515988c5d93215765f682545aac5460e86cead7037bd",
+          "items": 6
+        },
+        {
+          "content_sha256": "b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+          "dataset_snapshot_id": "b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+          "items": 6
+        },
+        {
+          "content_sha256": "b823d193b8b935fc29fd3deab98213d9daad37a6dbff728aacce730229c72f97",
+          "dataset_snapshot_id": "b823d193b8b935fc29fd3deab98213d9daad37a6dbff728aacce730229c72f97",
+          "items": 6
+        },
+        {
+          "content_sha256": "beb0ea7092c372855b588290f16e7882e10f94af9d2ea83a8291a46c9559f8b0",
+          "dataset_snapshot_id": "beb0ea7092c372855b588290f16e7882e10f94af9d2ea83a8291a46c9559f8b0",
+          "items": 6
+        },
+        {
+          "content_sha256": "c361e27d3ec380a4fbc1468825332519d6f792ac1c174a60fd214f1e0325703a",
+          "dataset_snapshot_id": "c361e27d3ec380a4fbc1468825332519d6f792ac1c174a60fd214f1e0325703a",
+          "items": 6
+        },
+        {
+          "content_sha256": "c6af192aa685ba0a87ec0a3c3d7ac2417bbbfd0a68d348eda3e9f3e9883a3bf4",
+          "dataset_snapshot_id": "c6af192aa685ba0a87ec0a3c3d7ac2417bbbfd0a68d348eda3e9f3e9883a3bf4",
+          "items": 6
+        },
+        {
+          "content_sha256": "c9e0187a07b5e84a0a2ca7aea73dbf0239abb42af1e6f5228a76e8caad80c4c9",
+          "dataset_snapshot_id": "c9e0187a07b5e84a0a2ca7aea73dbf0239abb42af1e6f5228a76e8caad80c4c9",
+          "items": 6
+        },
+        {
+          "content_sha256": "d15cd71fd9426f479025d282fc66f53fda67ca7515874c8f7677d083bf8acf6c",
+          "dataset_snapshot_id": "d15cd71fd9426f479025d282fc66f53fda67ca7515874c8f7677d083bf8acf6c",
+          "items": 6
+        },
+        {
+          "content_sha256": "d4ae1c7c33ec2f0c89c9d5e889d7dbeccccb331dd5dd52ab13d4a1d036616c39",
+          "dataset_snapshot_id": "d4ae1c7c33ec2f0c89c9d5e889d7dbeccccb331dd5dd52ab13d4a1d036616c39",
+          "items": 6
+        },
+        {
+          "content_sha256": "d92c843b4f9fa1d90ac45490faca62f4f45bccaa64e52a304cd7e4961ca2db73",
+          "dataset_snapshot_id": "d92c843b4f9fa1d90ac45490faca62f4f45bccaa64e52a304cd7e4961ca2db73",
+          "items": 6
+        },
+        {
+          "content_sha256": "e19e1c2f8c44e9cdb2238aa9604e961e3891812ed3641f7ce20a1f7016701b69",
+          "dataset_snapshot_id": "e19e1c2f8c44e9cdb2238aa9604e961e3891812ed3641f7ce20a1f7016701b69",
+          "items": 6
+        },
+        {
+          "content_sha256": "e1c4169ef1fb8fcd4dd77073b94fd396ab2a653d986a4a7a82fbad9320520e46",
+          "dataset_snapshot_id": "e1c4169ef1fb8fcd4dd77073b94fd396ab2a653d986a4a7a82fbad9320520e46",
+          "items": 6
+        },
+        {
+          "content_sha256": "e291cb71607e4e4e24ae123ded6606fbe13ddb7624f7a5ee84862429a0ade14a",
+          "dataset_snapshot_id": "e291cb71607e4e4e24ae123ded6606fbe13ddb7624f7a5ee84862429a0ade14a",
+          "items": 6
+        },
+        {
+          "content_sha256": "ec8c39e6161bca6c28201075922009737717ecbd8f3ab60f1b0599a006880dad",
+          "dataset_snapshot_id": "ec8c39e6161bca6c28201075922009737717ecbd8f3ab60f1b0599a006880dad",
+          "items": 6
+        },
+        {
+          "content_sha256": "f58f79810d6bd051e764d04a85e3cad2631d3105b7cd291d78aae7c96bd9ab64",
+          "dataset_snapshot_id": "f58f79810d6bd051e764d04a85e3cad2631d3105b7cd291d78aae7c96bd9ab64",
+          "items": 6
+        },
+        {
+          "content_sha256": "ffad4ceeaa318e6ec860f4a3b8526b340c4d30f7f85042059369a3ef34d7f406",
+          "dataset_snapshot_id": "ffad4ceeaa318e6ec860f4a3b8526b340c4d30f7f85042059369a3ef34d7f406",
+          "items": 6
+        }
+      ],
+      "status": "PASS"
+    },
+    "all_frozen_strict_selection": {
+      "counts": [
+        {
+          "dataset_snapshot_id": "010944b1a29791a46596174080ace4f4ca0825b07ba7a5c82a2aaf35972fe44a",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "0a9539ea1df3ccf8f91244a191572d73a6fff5c10dee367eff3d36e65f35278d",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "202dd7e00cc245eab0334fcee83ff9f8db1601f53829b2c0da6af969d6a043ae",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "25c7099e63f4557fc1025f288822b639de08b52e160f231528fa223816a32347",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "25cb2d8dcaf0658d4d60c58bdf2f77a061c332f5b9a9ff5640f1042cb009ed3b",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "2bf3edf42544bc22f292c51cdf66cd1fc0ce8a54b6e9718e18f1d31e5af0381e",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "33637de7e865d6b41532add25895de1f706c81a584061af51a767e0f0172bac2",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "401daab78221a1e8a46a0786275de8f76a1ec5586977f08f456f546583fe465f",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "4c28994b77e72a6b4308bab678021d4f5dbe1e0a252160df94051b806d47e199",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "552d8db9d45516d8faa7e038c3e10b15e89e99aaa1b1dd13ecd5267a2eb0cee2",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "5d12c3f9024e2604d437be64036e29e05657785e8d11c84e57b19c8ad47769bd",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "63e4be006b8702b553e131314c5f35ddda6bd1ee618f9333d093bae004d5dac1",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "7efb399b9d566a21fd3e1eb7f81145a7fb87b85d252685d96d9b591e3ffe3663",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "84564280a9add8b0faa4aa800f4da4d9a1d044081f95c933a7a969f220685b2b",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "941db22b39a513e62496d291f679ad9a1b2910e01a57603d1aae734a297724bc",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "97efa28453e6526f1dd3b25fc681814dad93d4368653706409bbd76c6cf3bfe9",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "a04b8a5cfb76d5d29af04ef89ed33b98832a590452865e77f4f59c6df5359e87",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "a530278f7936a92867143058202fc8da328815150da2be9cd38649fb7979d39b",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "a5f5b68e7417974f1e28bc5f6902e5a02677a3d3d2f5489906e3babc8a4cc8b1",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "aaae5d0892cdc7cda2ca3235181d3e86d52fd5c7ef1b8de0c14aa1f7d9cf7184",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "b3aeb1170e254679ccfd85f5bbbd8283a3928167617c006a3abd580a4a06872e",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "b6c331a9458d8ef398ac515988c5d93215765f682545aac5460e86cead7037bd",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "b823d193b8b935fc29fd3deab98213d9daad37a6dbff728aacce730229c72f97",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "beb0ea7092c372855b588290f16e7882e10f94af9d2ea83a8291a46c9559f8b0",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "c361e27d3ec380a4fbc1468825332519d6f792ac1c174a60fd214f1e0325703a",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "c6af192aa685ba0a87ec0a3c3d7ac2417bbbfd0a68d348eda3e9f3e9883a3bf4",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "c9e0187a07b5e84a0a2ca7aea73dbf0239abb42af1e6f5228a76e8caad80c4c9",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "d15cd71fd9426f479025d282fc66f53fda67ca7515874c8f7677d083bf8acf6c",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "d4ae1c7c33ec2f0c89c9d5e889d7dbeccccb331dd5dd52ab13d4a1d036616c39",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "d92c843b4f9fa1d90ac45490faca62f4f45bccaa64e52a304cd7e4961ca2db73",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "e19e1c2f8c44e9cdb2238aa9604e961e3891812ed3641f7ce20a1f7016701b69",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "e1c4169ef1fb8fcd4dd77073b94fd396ab2a653d986a4a7a82fbad9320520e46",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "e291cb71607e4e4e24ae123ded6606fbe13ddb7624f7a5ee84862429a0ade14a",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "ec8c39e6161bca6c28201075922009737717ecbd8f3ab60f1b0599a006880dad",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "f58f79810d6bd051e764d04a85e3cad2631d3105b7cd291d78aae7c96bd9ab64",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        },
+        {
+          "dataset_snapshot_id": "ffad4ceeaa318e6ec860f4a3b8526b340c4d30f7f85042059369a3ef34d7f406",
+          "exclusion_counts": {
+            "feature_sample_not_ready": 6
+          },
+          "selected_count": 0
+        }
+      ],
+      "database_bytes_unchanged": true,
+      "elapsed_seconds": 0.7031817510724068,
+      "snapshots": 40,
+      "status": "PASS",
+      "total_selected_memberships": 0,
+      "training_asof": "2026-10-03T04:50:09.607267+00:00"
+    },
+    "commands": [
+      {
+        "actual_exit": 3,
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "training-config-check",
+          "--db",
+          "/home/sechi/Stk-ia/data/stage3/pit_market.sqlite",
+          "--dataset-db",
+          "/home/sechi/Stk-ia/data/stage3/datasets.sqlite",
+          "--mode",
+          "strict",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5/release/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622-strict.json",
+          "--training-root",
+          "/home/sechi/Stk-ia/data/stage5/release/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5/release/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622-training-config-check.json"
+        ],
+        "elapsed_seconds": 1.8556940109701827,
+        "expected_exit": 3,
+        "log": "data/stage5/release/b7b44934-training-config-check.log",
+        "status": "PASS"
+      },
+      {
+        "actual_exit": 3,
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "training-run",
+          "--db",
+          "/home/sechi/Stk-ia/data/stage3/pit_market.sqlite",
+          "--dataset-db",
+          "/home/sechi/Stk-ia/data/stage3/datasets.sqlite",
+          "--mode",
+          "strict",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5/release/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622-strict.json",
+          "--training-root",
+          "/home/sechi/Stk-ia/data/stage5/release/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5/release/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622-training-run.json"
+        ],
+        "elapsed_seconds": 1.8874178699916229,
+        "expected_exit": 3,
+        "log": "data/stage5/release/b7b44934-training-run.log",
+        "status": "PASS"
+      },
+      {
+        "actual_exit": 3,
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "training-config-check",
+          "--db",
+          "/home/sechi/Stk-ia/data/stage3/pit_market.sqlite",
+          "--dataset-db",
+          "/home/sechi/Stk-ia/data/stage3/datasets.sqlite",
+          "--mode",
+          "strict",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5/release/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e-strict.json",
+          "--training-root",
+          "/home/sechi/Stk-ia/data/stage5/release/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5/release/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e-training-config-check.json"
+        ],
+        "elapsed_seconds": 1.8670690450817347,
+        "expected_exit": 3,
+        "log": "data/stage5/release/8943d855-training-config-check.log",
+        "status": "PASS"
+      },
+      {
+        "actual_exit": 3,
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "training-run",
+          "--db",
+          "/home/sechi/Stk-ia/data/stage3/pit_market.sqlite",
+          "--dataset-db",
+          "/home/sechi/Stk-ia/data/stage3/datasets.sqlite",
+          "--mode",
+          "strict",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5/release/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e-strict.json",
+          "--training-root",
+          "/home/sechi/Stk-ia/data/stage5/release/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5/release/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e-training-run.json"
+        ],
+        "elapsed_seconds": 1.7835324270417914,
+        "expected_exit": 3,
+        "log": "data/stage5/release/8943d855-training-run.log",
+        "status": "PASS"
+      },
+      {
+        "actual_exit": 3,
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "training-config-check",
+          "--db",
+          "/home/sechi/Stk-ia/data/stage3/pit_market.sqlite",
+          "--dataset-db",
+          "/home/sechi/Stk-ia/data/stage3/datasets.sqlite",
+          "--mode",
+          "strict",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5/release/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9-strict.json",
+          "--training-root",
+          "/home/sechi/Stk-ia/data/stage5/release/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5/release/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9-training-config-check.json"
+        ],
+        "elapsed_seconds": 1.8229995049769059,
+        "expected_exit": 3,
+        "log": "data/stage5/release/0dddb941-training-config-check.log",
+        "status": "PASS"
+      },
+      {
+        "actual_exit": 3,
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "training-run",
+          "--db",
+          "/home/sechi/Stk-ia/data/stage3/pit_market.sqlite",
+          "--dataset-db",
+          "/home/sechi/Stk-ia/data/stage3/datasets.sqlite",
+          "--mode",
+          "strict",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5/release/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9-strict.json",
+          "--training-root",
+          "/home/sechi/Stk-ia/data/stage5/release/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5/release/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9-training-run.json"
+        ],
+        "elapsed_seconds": 1.848433506092988,
+        "expected_exit": 3,
+        "log": "data/stage5/release/0dddb941-training-run.log",
+        "status": "PASS"
+      },
+      {
+        "actual_exit": 3,
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "training-config-check",
+          "--db",
+          "/home/sechi/Stk-ia/data/stage3/pit_market.sqlite",
+          "--dataset-db",
+          "/home/sechi/Stk-ia/data/stage3/datasets.sqlite",
+          "--mode",
+          "strict",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5/release/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3-strict.json",
+          "--training-root",
+          "/home/sechi/Stk-ia/data/stage5/release/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5/release/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3-training-config-check.json"
+        ],
+        "elapsed_seconds": 1.8089656850788742,
+        "expected_exit": 3,
+        "log": "data/stage5/release/3dc3ff4e-training-config-check.log",
+        "status": "PASS"
+      },
+      {
+        "actual_exit": 3,
+        "command": [
+          "/home/sechi/Stk-ia/.venv/bin/python",
+          "-m",
+          "market_research.cli",
+          "training-run",
+          "--db",
+          "/home/sechi/Stk-ia/data/stage3/pit_market.sqlite",
+          "--dataset-db",
+          "/home/sechi/Stk-ia/data/stage3/datasets.sqlite",
+          "--mode",
+          "strict",
+          "--config",
+          "/home/sechi/Stk-ia/data/stage5/release/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3-strict.json",
+          "--training-root",
+          "/home/sechi/Stk-ia/data/stage5/release/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+          "--output",
+          "/home/sechi/Stk-ia/data/stage5/release/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3-training-run.json"
+        ],
+        "elapsed_seconds": 1.8724892350146547,
+        "expected_exit": 3,
+        "log": "data/stage5/release/3dc3ff4e-training-run.log",
+        "status": "PASS"
+      }
+    ],
+    "datasets": [
+      {
+        "dataset_snapshot_id": "b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+        "exclusion_counts": {
+          "feature_blocked": 6,
+          "feature_decision_entry_exit_order": 6,
+          "feature_sample_not_ready": 6,
+          "label_blocked": 6,
+          "label_not_available_at_asof": 6,
+          "learning_rights_or_strict_pit_unmet": 6,
+          "operational_availability_unverified": 6,
+          "security_identifier_unverified": 6,
+          "security_identity_missing": 6,
+          "strict_historical_pit_unmet": 6,
+          "training_selection_rejected": 6
+        },
+        "feature_status_counts": {
+          "blocked": 2
+        },
+        "label_status_counts": {
+          "blocked": 6
+        },
+        "selected_count": 0,
+        "source_reason_counts": {
+          "no_computable_price_features": 2,
+          "no_eligible_feature_inputs": 2,
+          "opening_prices_unavailable_close_only": 6
+        },
+        "strict_request_status": "BLOCKED"
+      },
+      {
+        "dataset_snapshot_id": "8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+        "exclusion_counts": {
+          "feature_blocked": 6,
+          "feature_decision_entry_exit_order": 6,
+          "feature_sample_not_ready": 6,
+          "label_blocked": 6,
+          "label_not_available_at_asof": 6,
+          "learning_rights_or_strict_pit_unmet": 6,
+          "operational_availability_unverified": 6,
+          "security_identifier_unverified": 6,
+          "security_identity_missing": 6,
+          "strict_historical_pit_unmet": 6,
+          "training_selection_rejected": 6
+        },
+        "feature_status_counts": {
+          "blocked": 2
+        },
+        "label_status_counts": {
+          "blocked": 6
+        },
+        "selected_count": 0,
+        "source_reason_counts": {
+          "no_computable_price_features": 2,
+          "no_eligible_feature_inputs": 2,
+          "opening_prices_unavailable_close_only": 6
+        },
+        "strict_request_status": "BLOCKED"
+      },
+      {
+        "dataset_snapshot_id": "0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+        "exclusion_counts": {
+          "feature_blocked": 6,
+          "feature_decision_entry_exit_order": 6,
+          "feature_sample_not_ready": 6,
+          "label_blocked": 3,
+          "label_not_available_at_asof": 6,
+          "label_pending": 3,
+          "learning_rights_or_strict_pit_unmet": 6,
+          "operational_availability_unverified": 6,
+          "security_identifier_unverified": 6,
+          "security_identity_missing": 6,
+          "strict_historical_pit_unmet": 6,
+          "training_selection_rejected": 6
+        },
+        "feature_status_counts": {
+          "blocked": 2
+        },
+        "label_status_counts": {
+          "blocked": 3,
+          "pending": 3
+        },
+        "selected_count": 0,
+        "source_reason_counts": {
+          "no_computable_price_features": 2,
+          "no_eligible_feature_inputs": 2,
+          "security_trading_status_unverified": 3,
+          "target_open_not_yet_reached": 3
+        },
+        "strict_request_status": "BLOCKED"
+      },
+      {
+        "dataset_snapshot_id": "3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+        "exclusion_counts": {
+          "feature_blocked": 6,
+          "feature_decision_entry_exit_order": 6,
+          "feature_sample_not_ready": 6,
+          "label_blocked": 3,
+          "label_not_available_at_asof": 6,
+          "label_pending": 3,
+          "learning_rights_or_strict_pit_unmet": 6,
+          "operational_availability_unverified": 6,
+          "security_identifier_unverified": 6,
+          "security_identity_missing": 6,
+          "strict_historical_pit_unmet": 6,
+          "training_selection_rejected": 6
+        },
+        "feature_status_counts": {
+          "blocked": 2
+        },
+        "label_status_counts": {
+          "blocked": 3,
+          "pending": 3
+        },
+        "selected_count": 0,
+        "source_reason_counts": {
+          "no_computable_price_features": 2,
+          "no_eligible_feature_inputs": 2,
+          "security_trading_status_unverified": 3,
+          "target_open_not_yet_reached": 3
+        },
+        "strict_request_status": "BLOCKED"
+      }
+    ],
+    "eligibility_exclusion_counts": {
+      "feature_blocked": 24,
+      "feature_decision_entry_exit_order": 24,
+      "feature_sample_not_ready": 24,
+      "label_blocked": 18,
+      "label_not_available_at_asof": 24,
+      "label_pending": 6,
+      "learning_rights_or_strict_pit_unmet": 24,
+      "operational_availability_unverified": 24,
+      "security_identifier_unverified": 24,
+      "security_identity_missing": 24,
+      "strict_historical_pit_unmet": 24,
+      "training_selection_rejected": 24
+    },
+    "feature_status_counts": {
+      "blocked": 8
+    },
+    "label_status_counts": {
+      "blocked": 18,
+      "pending": 6
+    },
+    "real_metrics_generated": false,
+    "real_models_trained": false,
+    "real_predictive_power": "NOT_EVALUATED",
+    "source_reason_counts": {
+      "no_computable_price_features": 8,
+      "no_eligible_feature_inputs": 8,
+      "opening_prices_unavailable_close_only": 12,
+      "security_trading_status_unverified": 6,
+      "target_open_not_yet_reached": 6
+    },
+    "stage2_bytes_unchanged": true,
+    "stage2_snapshot_rows": 352,
+    "status": "BLOCKED",
+    "training_selected_count": 0
+  },
+  "repository_check": {
+    "head": "fb78fc7d712dcd285f9e463ec3673fe732cdc0a5",
+    "origin_host_path": "github.com/mingue0425-sys/skt-ia.git",
+    "origin_matches_requested_repository": true,
+    "status": "PASS"
+  },
+  "reproducibility": "immutable JSON models and result hash, fixed-model predictions and Stage4 replay; cross-platform byte-identical retraining not promised",
+  "retraining_profile": {
+    "checks": [
+      {
+        "dataset": "signal",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "zero",
+        "model_id": "2f84df2b04e21a2211430bdb4e76669e02c2fdb98a0f321b31813a8bf870fe34",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "mean",
+        "model_id": "073a8b6ae3dc814ca4a9ab86ee7db22ab26808f46972505ce66b29e099f0adbd",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "ridge",
+        "model_id": "778ffaff1ca71af768180496aef534a443fda2e1d38c4cabd1233bdd355915b0",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "tree",
+        "model_id": "fd3c171630c9e9a23701e01c9b1b3fbb721b90aae81226097689f6e213a78443",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "zero",
+        "model_id": "1728a46c97923c63180372211e3b08bdc10d7b86378819633a36b4eb0bffc9d8",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "mean",
+        "model_id": "b2992db6a1362643a5f6861e0ccc5041a432661d4dcd1b4425180d95af77cd45",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "ridge",
+        "model_id": "ef98438d95123ec51a7570b59e499b300ab1f15f068aad542828df89a415d045",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "tree",
+        "model_id": "9261e1e16cbfb9b592b06fff2baaa093c32d4e64fdec54eecc83a38c8d1f8729",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "frequency",
+        "model_id": "d17475944b0b097f5a269d153f7db2cca8fb684a23f5b1eb65e66977cbe231b3",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "logistic",
+        "model_id": "dbaf6d6a8e394430c8ba603f0f9f677644e014b48da000aca09b62d1a5f04a93",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "tree",
+        "model_id": "907deb78a15139f656e50d2ab65a0f6e3c1ba952f9d151d349df58c975178c3e",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "frequency",
+        "model_id": "29c4cef369b28f53d252d4939040859fd7ac643d1c3ed19443ccf684c457c887",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "logistic",
+        "model_id": "a0b8fdaafae4ef3ef7b2220e7659ddb9db714070dd908edbcc16d8f9cfe8a893",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "signal",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "tree",
+        "model_id": "8511250093e011aa6fbf76bcdb3c1c092923a1d12ae2ffb6c9fda178963dc01e",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "zero",
+        "model_id": "5067b6d64e818a098c68d2ac3dad66bdb162ead1826339b20c3a03c512168632",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "mean",
+        "model_id": "9e8a4cdb64c0ee36c0dad00d7e9ad12f425e9d26ddc5194b605f94cfb649abb9",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "ridge",
+        "model_id": "0a66d7da8be7269b3b371ede4127d8134c6524906963a4d9f55501b791874d8e",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "tree",
+        "model_id": "801914c441d6cb4818a02a9696b8c4d0a16d215eac67c68a48e279ababfba61e",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "zero",
+        "model_id": "f41214e42f1f92fcf4832bddc0d66fa36c7c57d50f607207e92b578d28adcd91",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "mean",
+        "model_id": "d83334893be488bb85ae02d42232ee2fb8068858dc835c8bc4f70ab0ceb03970",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "ridge",
+        "model_id": "2babcff7d54cbf67985b001cf7bd341ae9caf9301f0566da1cd502ff71ad0eb4",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "tree",
+        "model_id": "38761d43b259c5d5e328ab6cf30fb5e3884b21cd1e34a588f80b395decf5852f",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "regression"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "frequency",
+        "model_id": "6f63c8447ac0d514b942f3cfe8e43e3952084694a151d9a9d2d55cf27f09220d",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "logistic",
+        "model_id": "4b24b2245c812b844f2aa603b14fe69d75604bde979b48135947885422bed3cb",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "0",
+        "max_absolute_error": 0.0,
+        "model": "tree",
+        "model_id": "3b8f491f0e866a6c2cf105f22b13e47ef853140f51bbd949f4a1c7278ced2a7a",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "frequency",
+        "model_id": "f7dd9e514d6bd4913a044ceef9cacc45bc65a254852e90a2dd554565b4e556d9",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "logistic",
+        "model_id": "7d4f5dc6409d636c9f92ada45ebb04d351ba5abb743afafc17d142c604495280",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      },
+      {
+        "dataset": "null",
+        "fold_id": "1",
+        "max_absolute_error": 0.0,
+        "model": "tree",
+        "model_id": "9ebab63991df55412e6b102cdca1059450c0da316d4d63e78390edea0647e339",
+        "pipeline_byte_hash_equal": true,
+        "prediction_tolerance": "rtol=atol=1e-12",
+        "task": "classification"
+      }
+    ],
+    "count": 28,
+    "environment": {
+      "dependencies": {
+        "exchange_calendars": "4.13.2",
+        "numpy": "2.5.3",
+        "pandas": "3.0.6",
+        "scikit-learn": "1.9.1",
+        "scipy": "1.18.1",
+        "threadpoolctl": "3.7.0"
+      },
+      "machine": "aarch64",
+      "platform": "Linux-6.18.50+rpt-rpi-2712-aarch64-with-glibc2.41",
+      "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]"
+    },
+    "executed_at": "2026-10-03T04:43:51.713977+00:00",
+    "pipeline_hash_equal_count": 28,
+    "resources": {
+      "actual_exit": 0,
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "scripts/profile_stage5_training.py"
+      ],
+      "cpu_system_seconds": 8.114761,
+      "cpu_user_seconds": 51.915417,
+      "elapsed_seconds": 59.89561789599247,
+      "expected_exit": 0,
+      "log": "data/stage5/release/retraining-profile.log",
+      "max_rss_kib": 291136,
+      "measurement": "os.wait4 individual child rusage; Linux ru_maxrss in KiB; not concurrent total RSS",
+      "status": "PASS"
+    },
+    "scope": "Fresh train-only synthetic fits in current pinned Linux environment; fixed-model holdout prediction tolerance checked; cross-platform byte-identical retraining is not promised; no new model artifact or actual-market model",
+    "status": "PASS"
+  },
+  "risk_evidence": {
+    "1": {
+      "evidence": "test_holdout_transform_does_not_fit_statistics_or_model; test_changing_holdout_and_outcomes_leaves_fit_unchanged",
+      "status": "PASS"
+    },
+    "10": {
+      "evidence": "test_ridge_independent_closed_form",
+      "status": "PASS"
+    },
+    "11": {
+      "evidence": "test_mean_zero_frequency_hand_values",
+      "status": "PASS"
+    },
+    "12": {
+      "evidence": "test_artifact_reload_mode_hash_environment_and_origin; 28 fixed-model replays",
+      "status": "PASS"
+    },
+    "13": {
+      "evidence": "test_end_to_end_and_mathematical_label_path_consistency; Stage4 prediction validation; saved-model CLI chain",
+      "status": "PASS"
+    },
+    "14": {
+      "evidence": "regression/classification integration tests; standalone model-predict/prediction-evaluate/simulation-run",
+      "status": "PASS"
+    },
+    "15": {
+      "evidence": "four actual training-config-check and four training-run refusals; all 40 actual snapshot selectors empty",
+      "status": "PASS"
+    },
+    "16": {
+      "evidence": "test_artifact_reload_mode_hash_environment_and_origin; test_strict_synthetic_refuses_and_no_candidate_selection",
+      "status": "PASS"
+    },
+    "17": {
+      "evidence": "fixed database hashes, 40 real and 7 previous synthetic replays, Stage2 352 rows, retraining/reload/Stage4 fixed replay",
+      "status": "PASS"
+    },
+    "18": {
+      "evidence": "test_fit_and_inference_interfaces_cannot_read_test_labels; model_selection=none rejects selection requests",
+      "status": "PASS"
+    },
+    "2": {
+      "evidence": "test_future_corrected_versions_do_not_change_frozen_training",
+      "status": "PASS"
+    },
+    "3": {
+      "evidence": "test_immature_label_and_total_return_no_fallback; Stage4 training_asof tests",
+      "status": "PASS"
+    },
+    "4": {
+      "evidence": "test_allowlist_rejects_outcomes_metadata_identity_date",
+      "status": "PASS"
+    },
+    "5": {
+      "evidence": "test_missing_constant_all_missing_and_large_values; test_infinity_and_nan_are_rejected",
+      "status": "PASS"
+    },
+    "6": {
+      "evidence": "test_required_structural_fields_cannot_be_imputed",
+      "status": "PASS"
+    },
+    "7": {
+      "evidence": "test_exact_columns_align_order_and_reject_missing_extra",
+      "status": "PASS"
+    },
+    "8": {
+      "evidence": "test_one_class_error_and_explicit_fallback",
+      "status": "PASS"
+    },
+    "9": {
+      "evidence": "test_empty_small_and_no_informative_columns; Stage4 insufficient fold tests",
+      "status": "PASS"
+    }
+  },
+  "source_instructions": "No AGENTS.md found at repository/ancestors or beneath repository; user Stage5 scope applied.",
+  "source_verification": "existing provider research reused; Alpha/Massive/Sharadar official documents selectively checked 2026-10-03; no data purchase/download",
+  "stage": 5,
+  "standalone_cli": [
+    {
+      "actual_exit": 0,
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "scripts/replay_stage5_example.py",
+        "--task",
+        "regression"
+      ],
+      "cpu_system_seconds": 9.376033,
+      "cpu_user_seconds": 61.738686,
+      "elapsed_seconds": 69.94959017401561,
+      "expected_exit": 0,
+      "log": "data/stage5/release/standalone-regression.log",
+      "max_rss_kib": 255984,
+      "measurement": "os.wait4 individual child rusage; Linux ru_maxrss in KiB; not concurrent total RSS",
+      "status": "PASS"
+    },
+    {
+      "actual_exit": 0,
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "scripts/replay_stage5_example.py",
+        "--task",
+        "classification"
+      ],
+      "cpu_system_seconds": 9.272597,
+      "cpu_user_seconds": 61.718997,
+      "elapsed_seconds": 69.85213577898685,
+      "expected_exit": 0,
+      "log": "data/stage5/release/standalone-classification.log",
+      "max_rss_kib": 255984,
+      "measurement": "os.wait4 individual child rusage; Linux ru_maxrss in KiB; not concurrent total RSS",
+      "status": "PASS"
+    }
+  ],
+  "started_at": "2026-10-03T04:40:47.046273+00:00",
+  "starting_existing_tests": 145,
+  "starting_head": "fb78fc7d712dcd285f9e463ec3673fe732cdc0a5",
+  "starting_worktree": " M .gitignore\n M README.md\n M docs/normalization_schema.md\n M reports/unit_test_results.json\n M src/market_research/cli.py\n M src/market_research/collect.py\n?? configs/stage2_smoke.json\n?? docs/dataset_contract.md\n?? docs/feature_contract.md\n?? docs/label_contract.md\n?? docs/local_store_schema.md\n?? docs/simulation_contract.md\n?? docs/time_query_policies.md\n?? docs/validation_contract.md\n?? reports/stage2_validation.json\n?? reports/stage2_validation.md\n?? reports/stage3_handoff.md\n?? reports/stage3_validation.json\n?? reports/stage3_validation.md\n?? reports/stage4_handoff.md\n?? reports/stage4_validation.json\n?? reports/stage4_validation.md\n?? reports/stage5_handoff.md\n?? scripts/make_synthetic_stage2.py\n?? scripts/prepare_stage2_calendar.py\n?? scripts/prepare_synthetic_stage3.py\n?? scripts/prepare_synthetic_stage4.py\n?? scripts/validate_stage2.py\n?? scripts/validate_stage3.py\n?? scripts/validate_stage4.py\n?? src/market_research/datasets/\n?? src/market_research/pit/\n?? src/market_research/stage4/\n?? tests/fixture_builder.py\n?? tests/fixtures/stage2_expected.json\n?? tests/fixtures/stage3_expected.json\n?? tests/stage3_fixture_builder.py\n?? tests/stage4_fixture_builder.py\n?? tests/test_datasets.py\n?? tests/test_pit.py\n?? tests/test_stage4.py\n",
+  "supporting_source_hashes": {
+    "scripts/check_stage5_wheel.py": "8693eaadce82867a1ead02395de9dbeebff1750f6d540dfc01dcba821e0bd9f4",
+    "scripts/prepare_synthetic_stage5.py": "a3b8e43eedae269343e08cbc346dd141e6bf09c603dfaee76c176c390ceb355d",
+    "scripts/profile_stage5_training.py": "db91b90ce305b6cc297e3a041fedac6f88a9b756154d72253ba32f8f645ffd10",
+    "scripts/replay_stage5_example.py": "41006cdeeb2e8e2fe91c581906b94557642302790a54fc64258dc678b018c87b",
+    "scripts/validate_stage5.py": "6f805892c358593a4fecf4fe351c0dc5efe7353451da9c45bbbf2e79c11c65fa",
+    "tests/stage5_fixture_builder.py": "60fb1f646aeeb54f5c75d87b1f12bc5c12e9408d887b9f1ac75d8281c2bdfbb6",
+    "tests/test_training.py": "e7d28af65ac6a70ea58d4470ec1558fa556b264396337959ee195ae0697c94b1"
+  },
+  "synthetic": [
+    {
+      "commands": [
+        {
+          "elapsed_seconds": null,
+          "log": "data/stage5/release/signal-regression.log",
+          "max_rss_kib": null,
+          "measurement": "Prior successful training measurement was not persisted before aggregate failure; NOT_RECORDED. Current full tests and standalone CLI chains measured separately.",
+          "status": "PASS"
+        }
+      ],
+      "dataset_snapshot_id": "30487609ab8df6579fee06aae183c7a59c8acb2b9837fad8be68c55f13752402",
+      "fixed_input_bytes_unchanged": true,
+      "generator": {
+        "beta": 0.025,
+        "calibration": "none; not required",
+        "domain": "SYNTHETIC_TEST_ONLY",
+        "feature_observation": "complete bar available close+180s before close+3600s decision",
+        "formula": "x_i iid Uniform(-1,1); epsilon_i iid N(0,.006^2), independent streams in one seeded RNG; O_0=100; log(O_i/O_(i-1))=beta*x_(i-2)+epsilon_i (x_-1=0); C_i=O_i; H_i=O_i*(1.02+.01*x_i); L_i=.99*O_i; V_i=floor(10000*(1+.7*x_i))",
+        "future_noise_in_features": false,
+        "null_interpretation": "when beta=0, future epsilon_(i+2:i+6) independent of feature history; finite sample chance performance allowed",
+        "purpose": "connection and reproducibility, never evidence of stock predictive power",
+        "samples": 170,
+        "seed": 20261003,
+        "sessions": 252,
+        "signal": true,
+        "target": "O_(i+6)/O_(i+1)-1; Stage3 actual label computation, no actions; return conditional mean depends on known x_i when beta != 0"
+      },
+      "models": [
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.16
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.03427959452382202
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.0015221096597590445
+            }
+          },
+          "model": "zero",
+          "model_id": "2f84df2b04e21a2211430bdb4e76669e02c2fdb98a0f321b31813a8bf870fe34",
+          "pipeline_sha256": "28e3b7c83ebaf28575fd2aa0dd6ef5f9f5c40d759f7798d3471a0c5c954e03de",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.84
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.028509625178205364
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.001049770564782551
+            }
+          },
+          "model": "mean",
+          "model_id": "073a8b6ae3dc814ca4a9ab86ee7db22ab26808f46972505ce66b29e099f0adbd",
+          "pipeline_sha256": "0b9647cacdec8298548cbb8f836f344e250edb6076f79f81b3da94d226277d20",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.12161662075572778,
+            "costs": {
+              "commission": "10.00",
+              "execution_difference": "25.46746473388432",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "12.733749052231531840",
+              "spread": "12.733749052231531840",
+              "tax": "0.00"
+            },
+            "fill_count": 10,
+            "max_drawdown": 0.009374658975760938,
+            "max_invested_weight": 0.26057247815772266,
+            "order_status_counts": {
+              "filled": 10
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.009374658975760938,
+            "reference_total_return": 0.01553,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.01553,
+            "trade_count": 5,
+            "turnover_one_way": 2.5201161619999235,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.6
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.02851063373440369
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.0013282680402721546
+            }
+          },
+          "model": "ridge",
+          "model_id": "778ffaff1ca71af768180496aef534a443fda2e1d38c4cabd1233bdd355915b0",
+          "pipeline_sha256": "6bd1316c791998286d180926301237be51fa291ecfbc9d8d6354cf7d17b267cc",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.09485325776310181,
+            "costs": {
+              "commission": "8.00",
+              "execution_difference": "19.94078714456842",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "9.970403778377977560",
+              "spread": "9.970403778377977560",
+              "tax": "0.00"
+            },
+            "fill_count": 8,
+            "max_drawdown": 0.008878141892178058,
+            "max_invested_weight": 0.2561639357113408,
+            "order_status_counts": {
+              "filled": 8
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.008878141892178058,
+            "reference_total_return": 0.021516,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.021516,
+            "trade_count": 4,
+            "turnover_one_way": 1.9645997913115787,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.76
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.028936871968883778
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.0012991041484866535
+            }
+          },
+          "model": "tree",
+          "model_id": "fd3c171630c9e9a23701e01c9b1b3fbb721b90aae81226097689f6e213a78443",
+          "pipeline_sha256": "3b44a94ff3d7cdf9e896b13c68896977c2887e25504bf413f726bbbe87930088",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.09452541283350678,
+            "costs": {
+              "commission": "8.00",
+              "execution_difference": "19.88500517334082",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "9.942484177418782300",
+              "spread": "9.942484177418782300",
+              "tax": "0.00"
+            },
+            "fill_count": 8,
+            "max_drawdown": 0.0071063780632073135,
+            "max_invested_weight": 0.2565584792415257,
+            "order_status_counts": {
+              "filled": 8
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0071063780632073135,
+            "reference_total_return": 0.031086,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.031086,
+            "trade_count": 4,
+            "turnover_one_way": 1.946515454327692,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.2
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.04311841586122406
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.002781874465011764
+            }
+          },
+          "model": "zero",
+          "model_id": "1728a46c97923c63180372211e3b08bdc10d7b86378819633a36b4eb0bffc9d8",
+          "pipeline_sha256": "40f118590669e81e068a98bc9d747a8c2ed1be0a554cf8ebd31abc2736f66c05",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.8
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.04165825983454377
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.002591154786150091
+            }
+          },
+          "model": "mean",
+          "model_id": "b2992db6a1362643a5f6861e0ccc5041a432661d4dcd1b4425180d95af77cd45",
+          "pipeline_sha256": "0ec2cae10e08458445090eb610b2c2ef8b07e40a4b74747bbc5f3b4b5e29e12b",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.6
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.04107748109300751
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.0023447980121500773
+            }
+          },
+          "model": "ridge",
+          "model_id": "ef98438d95123ec51a7570b59e499b300ab1f15f068aad542828df89a415d045",
+          "pipeline_sha256": "ace2b40724f8c01437e79ac112bf6373ecb5b39ee52d7354006a8fd78dfe9d7f",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.07029666295895587,
+            "costs": {
+              "commission": "6.00",
+              "execution_difference": "15.02437438880040",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "7.512184329716212870",
+              "spread": "7.512184329716212870",
+              "tax": "0.00"
+            },
+            "fill_count": 6,
+            "max_drawdown": 0.009999766315641482,
+            "max_invested_weight": 0.2587679741665323,
+            "order_status_counts": {
+              "filled": 6
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.009999766315641482,
+            "reference_total_return": 0.034309,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.034309,
+            "trade_count": 3,
+            "turnover_one_way": 1.4849533702957813,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.5
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.0422563866314933
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.0024051793787151165
+            }
+          },
+          "model": "tree",
+          "model_id": "9261e1e16cbfb9b592b06fff2baaa093c32d4e64fdec54eecc83a38c8d1f8729",
+          "pipeline_sha256": "67f94d42dd0649aed013d1df6dc9e5ea2bad61a40b4221e652a69a5ae3142893",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.024149472254285285,
+            "costs": {
+              "commission": "2.00",
+              "execution_difference": "5.14354528687431",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "2.571769557763588615",
+              "spread": "2.571769557763588615",
+              "tax": "0.00"
+            },
+            "fill_count": 2,
+            "max_drawdown": 0.000342753987984854,
+            "max_invested_weight": 0.2587679741665323,
+            "order_status_counts": {
+              "filled": 2
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.000342753987984854,
+            "reference_total_return": 0.027799,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.027799,
+            "trade_count": 1,
+            "turnover_one_way": 0.5094483514822222,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        }
+      ],
+      "name": "signal",
+      "result_content_sha256": "c62111b176aae962b6b89d03bd5464d28d019b82cbae13bafc7edcc205d47a86",
+      "scope": "connection validation; not stock predictive power or profitability",
+      "status": "PASS",
+      "task": "regression",
+      "verification": "Reuse completed successful training/replay only after current input, artifact, environment, code, config, predictions and run hashes verify."
+    },
+    {
+      "commands": [
+        {
+          "elapsed_seconds": null,
+          "log": "data/stage5/release/signal-classification.log",
+          "max_rss_kib": null,
+          "measurement": "Prior successful training measurement was not persisted before aggregate failure; NOT_RECORDED. Current full tests and standalone CLI chains measured separately.",
+          "status": "PASS"
+        }
+      ],
+      "dataset_snapshot_id": "30487609ab8df6579fee06aae183c7a59c8acb2b9837fad8be68c55f13752402",
+      "fixed_input_bytes_unchanged": true,
+      "generator": {
+        "beta": 0.025,
+        "calibration": "none; not required",
+        "domain": "SYNTHETIC_TEST_ONLY",
+        "feature_observation": "complete bar available close+180s before close+3600s decision",
+        "formula": "x_i iid Uniform(-1,1); epsilon_i iid N(0,.006^2), independent streams in one seeded RNG; O_0=100; log(O_i/O_(i-1))=beta*x_(i-2)+epsilon_i (x_-1=0); C_i=O_i; H_i=O_i*(1.02+.01*x_i); L_i=.99*O_i; V_i=floor(10000*(1+.7*x_i))",
+        "future_noise_in_features": false,
+        "null_interpretation": "when beta=0, future epsilon_(i+2:i+6) independent of feature history; finite sample chance performance allowed",
+        "purpose": "connection and reproducibility, never evidence of stock predictive power",
+        "samples": 170,
+        "seed": 20261003,
+        "sessions": 252,
+        "signal": true,
+        "target": "O_(i+6)/O_(i+1)-1; Stage3 actual label computation, no actions; return conditional mean depends on known x_i when beta != 0"
+      },
+      "models": [
+        {
+          "calibration_count": 25,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 0.630588651284518
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.21881898321458762
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.84
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "frequency",
+          "model_id": "d17475944b0b097f5a269d153f7db2cca8fb684a23f5b1eb65e66977cbe231b3",
+          "pipeline_sha256": "8b8de5b00abf10112c5fecd8d53eccd186a93a0cd5b54d0f532b28b4e796c959",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 25,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 0.7533440852321142
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.26418824380047945
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.6
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "logistic",
+          "model_id": "dbaf6d6a8e394430c8ba603f0f9f677644e014b48da000aca09b62d1a5f04a93",
+          "pipeline_sha256": "283bad9b55a8dd5cd5c713dc4b5c01b36e3a96f48190d7da8ae0425ecaefda08",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.09452541283350678,
+            "costs": {
+              "commission": "8.00",
+              "execution_difference": "19.88500517334082",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "9.942484177418782300",
+              "spread": "9.942484177418782300",
+              "tax": "0.00"
+            },
+            "fill_count": 8,
+            "max_drawdown": 0.0071063780632073135,
+            "max_invested_weight": 0.2565584792415257,
+            "order_status_counts": {
+              "filled": 8
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0071063780632073135,
+            "reference_total_return": 0.031086,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.031086,
+            "trade_count": 4,
+            "turnover_one_way": 1.946515454327692,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 25,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 1.8843310874960786
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.22148669921979944
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.68
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "tree",
+          "model_id": "907deb78a15139f656e50d2ab65a0f6e3c1ba952f9d151d349df58c975178c3e",
+          "pipeline_sha256": "cc3346c0423969899b97ef1e21fe6f15bd7e34a3eb9ee089bf7591e841984794",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.09387597159025098,
+            "costs": {
+              "commission": "8.00",
+              "execution_difference": "19.99264852686830",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "9.99631743210935603",
+              "spread": "9.99631743210935603",
+              "tax": "0.00"
+            },
+            "fill_count": 8,
+            "max_drawdown": 0.008827342282929142,
+            "max_invested_weight": 0.2574917394877167,
+            "order_status_counts": {
+              "filled": 8
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.008827342282929142,
+            "reference_total_return": 0.029479,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.029479,
+            "trade_count": 4,
+            "turnover_one_way": 1.9595349704303469,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 20,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 0.6981401229843983
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.2524964141793593
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.2
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "frequency",
+          "model_id": "29c4cef369b28f53d252d4939040859fd7ac643d1c3ed19443ccf684c457c887",
+          "pipeline_sha256": "1e8beafe3e20673f90c4c270828d1db90714ab7a4c64d00731db2b7603c03add",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 20,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 0.7905057830254641
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.28982559806330377
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.5
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "logistic",
+          "model_id": "a0b8fdaafae4ef3ef7b2220e7659ddb9db714070dd908edbcc16d8f9cfe8a893",
+          "pipeline_sha256": "7c52e48b0bd317161502d1ae5bc9cad763a48640bee0ce99240f3541b47948fd",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.07029666295895587,
+            "costs": {
+              "commission": "6.00",
+              "execution_difference": "15.02437438880040",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "7.512184329716212870",
+              "spread": "7.512184329716212870",
+              "tax": "0.00"
+            },
+            "fill_count": 6,
+            "max_drawdown": 0.009999766315641482,
+            "max_invested_weight": 0.2587679741665323,
+            "order_status_counts": {
+              "filled": 6
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.009999766315641482,
+            "reference_total_return": 0.034309,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.034309,
+            "trade_count": 3,
+            "turnover_one_way": 1.4849533702957813,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 20,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 0.8612977403432229
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.3188633628029036
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.55
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "tree",
+          "model_id": "8511250093e011aa6fbf76bcdb3c1c092923a1d12ae2ffb6c9fda178963dc01e",
+          "pipeline_sha256": "9e4a3d8b2d9b24c272f70d87a3cffdce6f48875ec9c231cbbb623741eed66130",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.07080500165110441,
+            "costs": {
+              "commission": "6.00",
+              "execution_difference": "15.17342128447378",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "7.58671014406297237",
+              "spread": "7.58671014406297237",
+              "tax": "0.00"
+            },
+            "fill_count": 6,
+            "max_drawdown": 0.003534633195292408,
+            "max_invested_weight": 0.2509835705302227,
+            "order_status_counts": {
+              "filled": 6
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.003534633195292408,
+            "reference_total_return": 0.040688,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.040688,
+            "trade_count": 3,
+            "turnover_one_way": 1.499703201589172,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        }
+      ],
+      "name": "signal",
+      "result_content_sha256": "77d6efbbe65dcfc497dccbc4a5c446d8b3e6e426a1271c7f3635dbe7941580d1",
+      "scope": "connection validation; not stock predictive power or profitability",
+      "status": "PASS",
+      "task": "classification",
+      "verification": "Reuse completed successful training/replay only after current input, artifact, environment, code, config, predictions and run hashes verify."
+    },
+    {
+      "commands": [
+        {
+          "elapsed_seconds": null,
+          "log": "data/stage5/release/null-regression.log",
+          "max_rss_kib": null,
+          "measurement": "Prior successful training measurement was not persisted before aggregate failure; NOT_RECORDED. Current full tests and standalone CLI chains measured separately.",
+          "status": "PASS"
+        }
+      ],
+      "dataset_snapshot_id": "bdd5c05ae0fc7814161fa174bb196f55af9d6ea4956653d700eb82a60379191b",
+      "fixed_input_bytes_unchanged": true,
+      "generator": {
+        "beta": 0.0,
+        "calibration": "none; not required",
+        "domain": "SYNTHETIC_TEST_ONLY",
+        "feature_observation": "complete bar available close+180s before close+3600s decision",
+        "formula": "x_i iid Uniform(-1,1); epsilon_i iid N(0,.006^2), independent streams in one seeded RNG; O_0=100; log(O_i/O_(i-1))=beta*x_(i-2)+epsilon_i (x_-1=0); C_i=O_i; H_i=O_i*(1.02+.01*x_i); L_i=.99*O_i; V_i=floor(10000*(1+.7*x_i))",
+        "future_noise_in_features": false,
+        "null_interpretation": "when beta=0, future epsilon_(i+2:i+6) independent of feature history; finite sample chance performance allowed",
+        "purpose": "connection and reproducibility, never evidence of stock predictive power",
+        "samples": 170,
+        "seed": 20261003,
+        "sessions": 252,
+        "signal": false,
+        "target": "O_(i+6)/O_(i+1)-1; Stage3 actual label computation, no actions; return conditional mean depends on known x_i when beta != 0"
+      },
+      "models": [
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.24
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.008975786506643428
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.00012144279535549417
+            }
+          },
+          "model": "zero",
+          "model_id": "5067b6d64e818a098c68d2ac3dad66bdb162ead1826339b20c3a03c512168632",
+          "pipeline_sha256": "15dffce5d2f5236809b223b596e61fc25a8c519d165e8b8bf2e065c385ef85cc",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.24
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.012399531962499556
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.0002161540744192252
+            }
+          },
+          "model": "mean",
+          "model_id": "9e8a4cdb64c0ee36c0dad00d7e9ad12f425e9d26ddc5194b605f94cfb649abb9",
+          "pipeline_sha256": "d062b37a62ff8af3950b1e0fadc95077ed1ecc4bc0a16c8561d3d1620a432260",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.44
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.011109356942010856
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.00018824709409176354
+            }
+          },
+          "model": "ridge",
+          "model_id": "0a66d7da8be7269b3b371ede4127d8134c6524906963a4d9f55501b791874d8e",
+          "pipeline_sha256": "22b3ca0de09f7a1b9fee9172903f9399c0c268197cb02ee7f6bd14af489a81b1",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.07020742502123473,
+            "costs": {
+              "commission": "6.00",
+              "execution_difference": "14.61496925533442",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "7.30749293173223421",
+              "spread": "7.30749293173223421",
+              "tax": "0.00"
+            },
+            "fill_count": 6,
+            "max_drawdown": 0.003819446175319658,
+            "max_invested_weight": 0.24695572077748512,
+            "order_status_counts": {
+              "filled": 6
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.003819446175319658,
+            "reference_total_return": -0.000806,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": -0.000806,
+            "trade_count": 3,
+            "turnover_one_way": 1.4618125827190214,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.44
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.011903617900778193
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.00023116381780724515
+            }
+          },
+          "model": "tree",
+          "model_id": "801914c441d6cb4818a02a9696b8c4d0a16d215eac67c68a48e279ababfba61e",
+          "pipeline_sha256": "4a70c183b0b97b7df9cc097d736c6f4ef7a370c1e7c1e2fec09912592f342195",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.09511352884690503,
+            "costs": {
+              "commission": "8.00",
+              "execution_difference": "19.78420308328107",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "9.892096741066642025",
+              "spread": "9.892096741066642025",
+              "tax": "0.00"
+            },
+            "fill_count": 8,
+            "max_drawdown": 0.00462292001087527,
+            "max_invested_weight": 0.2532366542280779,
+            "order_status_counts": {
+              "filled": 8
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.00462292001087527,
+            "reference_total_return": 0.002458,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.002458,
+            "trade_count": 4,
+            "turnover_one_way": 1.9770833141273392,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.0
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.014088967234629091
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.00024056004373757548
+            }
+          },
+          "model": "zero",
+          "model_id": "f41214e42f1f92fcf4832bddc0d66fa36c7c57d50f607207e92b578d28adcd91",
+          "pipeline_sha256": "53ea3df624849b923a2eb25319b0caf891052eb7d10343131df8930be52152f9",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.0
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.01975816796070721
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.0004324462471626402
+            }
+          },
+          "model": "mean",
+          "model_id": "d83334893be488bb85ae02d42232ee2fb8068858dc835c8bc4f70ab0ceb03970",
+          "pipeline_sha256": "9a1937fa1432ff2ffa8d112819c5e8f05672b4384bd37b3b3146c798b2ac78bb",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.1
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.017830179096496625
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.00036965573411297856
+            }
+          },
+          "model": "ridge",
+          "model_id": "2babcff7d54cbf67985b001cf7bd341ae9caf9301f0566da1cd502ff71ad0eb4",
+          "pipeline_sha256": "675395edd83f9ab8474e91eebc63a8b6fa920fa9595a1448dd0e3d111f2c833d",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 0,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "brier": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.6
+            },
+            "mae": {
+              "reason": null,
+              "value": 0.014624482758246609
+            },
+            "mse": {
+              "reason": null,
+              "value": 0.000295908969979467
+            }
+          },
+          "model": "tree",
+          "model_id": "38761d43b259c5d5e328ab6cf30fb5e3884b21cd1e34a588f80b395decf5852f",
+          "pipeline_sha256": "12500373664e699bcaa1f9883d692f7e45e80fb9814a6979a7efda0f2ffe816b",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.07119007436215709,
+            "costs": {
+              "commission": "6.00",
+              "execution_difference": "14.89634924912400",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "7.448173477187737250",
+              "spread": "7.448173477187737250",
+              "tax": "0.00"
+            },
+            "fill_count": 6,
+            "max_drawdown": 0.002633460268887165,
+            "max_invested_weight": 0.2521226271651102,
+            "order_status_counts": {
+              "filled": 6
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.002633460268887165,
+            "reference_total_return": 0.006417,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.006417,
+            "trade_count": 3,
+            "turnover_one_way": 1.486591155161174,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        }
+      ],
+      "name": "null",
+      "result_content_sha256": "af925f3349ed76d296237b4ac069d532bf88cc0a042e82f31ed7cd44873ff0e4",
+      "scope": "connection validation; not stock predictive power or profitability",
+      "status": "PASS",
+      "task": "regression",
+      "verification": "Reuse completed successful training/replay only after current input, artifact, environment, code, config, predictions and run hashes verify."
+    },
+    {
+      "commands": [
+        {
+          "elapsed_seconds": null,
+          "log": "data/stage5/release/null-classification.log",
+          "max_rss_kib": null,
+          "measurement": "Prior successful training measurement was not persisted before aggregate failure; NOT_RECORDED. Current full tests and standalone CLI chains measured separately.",
+          "status": "PASS"
+        }
+      ],
+      "dataset_snapshot_id": "bdd5c05ae0fc7814161fa174bb196f55af9d6ea4956653d700eb82a60379191b",
+      "fixed_input_bytes_unchanged": true,
+      "generator": {
+        "beta": 0.0,
+        "calibration": "none; not required",
+        "domain": "SYNTHETIC_TEST_ONLY",
+        "feature_observation": "complete bar available close+180s before close+3600s decision",
+        "formula": "x_i iid Uniform(-1,1); epsilon_i iid N(0,.006^2), independent streams in one seeded RNG; O_0=100; log(O_i/O_(i-1))=beta*x_(i-2)+epsilon_i (x_-1=0); C_i=O_i; H_i=O_i*(1.02+.01*x_i); L_i=.99*O_i; V_i=floor(10000*(1+.7*x_i))",
+        "future_noise_in_features": false,
+        "null_interpretation": "when beta=0, future epsilon_(i+2:i+6) independent of feature history; finite sample chance performance allowed",
+        "purpose": "connection and reproducibility, never evidence of stock predictive power",
+        "samples": 170,
+        "seed": 20261003,
+        "sessions": 252,
+        "signal": false,
+        "target": "O_(i+6)/O_(i+1)-1; Stage3 actual label computation, no actions; return conditional mean depends on known x_i when beta != 0"
+      },
+      "models": [
+        {
+          "calibration_count": 25,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 0.9393397690520172
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.3675836251660428
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.24
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "frequency",
+          "model_id": "6f63c8447ac0d514b942f3cfe8e43e3952084694a151d9a9d2d55cf27f09220d",
+          "pipeline_sha256": "10c0aad84cf152444dd193734212d7463fd8e1c371b07699ae5b36d95f337c24",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 25,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 0.9523690449545947
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.3521375427871831
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.48
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "logistic",
+          "model_id": "4b24b2245c812b844f2aa603b14fe69d75604bde979b48135947885422bed3cb",
+          "pipeline_sha256": "e10ba3e6c2e11e4ce3cde7829dc90260f72af33e16cd1d5b6299f2462a7d49e9",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.09530762407539049,
+            "costs": {
+              "commission": "8.00",
+              "execution_difference": "19.83145412947440",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "9.915728342483380010",
+              "spread": "9.915728342483380010",
+              "tax": "0.00"
+            },
+            "fill_count": 8,
+            "max_drawdown": 0.0035324326444095403,
+            "max_invested_weight": 0.2532366542280779,
+            "order_status_counts": {
+              "filled": 8
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0035324326444095403,
+            "reference_total_return": 0.003934,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.003934,
+            "trade_count": 4,
+            "turnover_one_way": 1.9781275939501608,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 25,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 25,
+          "fold_id": "0",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 3.5236267833695996
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.348053125
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.48
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "tree",
+          "model_id": "3b8f491f0e866a6c2cf105f22b13e47ef853140f51bbd949f4a1c7278ced2a7a",
+          "pipeline_sha256": "64d6c21c754aad260996a68adf34387c39c3a5732018d82da93089f496b986a9",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.09409588408110148,
+            "costs": {
+              "commission": "8.00",
+              "execution_difference": "19.53290570432089",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "9.766437970979804585",
+              "spread": "9.766437970979804585",
+              "tax": "0.00"
+            },
+            "fill_count": 8,
+            "max_drawdown": 0.004060034670226869,
+            "max_invested_weight": 0.24995429372501188,
+            "order_status_counts": {
+              "filled": 8
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.004060034670226869,
+            "reference_total_return": -0.000938,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": -0.000938,
+            "trade_count": 4,
+            "turnover_one_way": 1.9551344525354184,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 89
+        },
+        {
+          "calibration_count": 20,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 1.1069110914828049
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.44812512806502286
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.0
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "frequency",
+          "model_id": "f7dd9e514d6bd4913a044ceef9cacc45bc65a254852e90a2dd554565b4e556d9",
+          "pipeline_sha256": "010fb778839d759b906cb4868d1c28c36272d689836e31fefd3225505fb5c52b",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 20,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 0.8479308168848503
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.32128286678904394
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.45
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "logistic",
+          "model_id": "7d4f5dc6409d636c9f92ada45ebb04d351ba5abb743afafc17d142c604495280",
+          "pipeline_sha256": "54868d4e25640bd612b72ffaf23d6f294d6545f2b15e6cfb20134476ae0ed13f",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.0473057278501051,
+            "costs": {
+              "commission": "4.00",
+              "execution_difference": "9.89221372926808",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "4.94609836118785740",
+              "spread": "4.94609836118785740",
+              "tax": "0.00"
+            },
+            "fill_count": 4,
+            "max_drawdown": 0.0026440968149132,
+            "max_invested_weight": 0.24959578750805958,
+            "order_status_counts": {
+              "filled": 4
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0026440968149132,
+            "reference_total_return": 0.004922,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.004922,
+            "trade_count": 2,
+            "turnover_one_way": 0.9887721181242365,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        },
+        {
+          "calibration_count": 20,
+          "cash": {
+            "average_invested_weight": 0.0,
+            "costs": {
+              "commission": "0",
+              "execution_difference": "0",
+              "impact": "0",
+              "other": "0",
+              "slippage": "0",
+              "spread": "0",
+              "tax": "0"
+            },
+            "fill_count": 0,
+            "max_drawdown": 0.0,
+            "max_invested_weight": 0.0,
+            "order_status_counts": {},
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.0,
+            "reference_total_return": 0.0,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.0,
+            "trade_count": 0,
+            "turnover_one_way": 0.0,
+            "unfilled_order_count": 0
+          },
+          "evaluated": 20,
+          "fold_id": "1",
+          "metrics": {
+            "binary_log_loss": {
+              "reason": null,
+              "value": 4.057436846589611
+            },
+            "brier": {
+              "reason": null,
+              "value": 0.31361882716049383
+            },
+            "direction_accuracy": {
+              "reason": null,
+              "value": 0.25
+            },
+            "mae": {
+              "reason": "output_not_provided",
+              "value": null
+            },
+            "mse": {
+              "reason": "output_not_provided",
+              "value": null
+            }
+          },
+          "model": "tree",
+          "model_id": "9ebab63991df55412e6b102cdca1059450c0da316d4d63e78390edea0647e339",
+          "pipeline_sha256": "c637f61993b2d5836c49dfea713529334e4d28d02fc657c0c4d391e794570421",
+          "reload": "PASS",
+          "simulation": {
+            "average_invested_weight": 0.047365100317352304,
+            "costs": {
+              "commission": "4.00",
+              "execution_difference": "9.90587421179475",
+              "impact": "0.00000000000000",
+              "other": "0.00",
+              "slippage": "4.952942826035646875",
+              "spread": "4.952942826035646875",
+              "tax": "0.00"
+            },
+            "fill_count": 4,
+            "max_drawdown": 0.00156949655359305,
+            "max_invested_weight": 0.2514832191593026,
+            "order_status_counts": {
+              "filled": 4
+            },
+            "partial_fill_count": 0,
+            "reference_max_drawdown": 0.00156949655359305,
+            "reference_total_return": 0.00746,
+            "return_reason": null,
+            "sharpe": null,
+            "sharpe_reason": "not_provided_stage4_descriptive_accounting_only",
+            "total_return": 0.00746,
+            "trade_count": 2,
+            "turnover_one_way": 0.9884068293617435,
+            "unfilled_order_count": 0
+          },
+          "stage4_replay": "PASS",
+          "training_count": 119
+        }
+      ],
+      "name": "null",
+      "result_content_sha256": "a919ab9e1837c32435e9d507f7928cf858008015bfbc11db12801ef57fa73874",
+      "scope": "connection validation; not stock predictive power or profitability",
+      "status": "PASS",
+      "task": "classification",
+      "verification": "Reuse completed successful training/replay only after current input, artifact, environment, code, config, predictions and run hashes verify."
+    }
+  ],
+  "tests": {
+    "actual_exit": 0,
+    "command": [
+      "/home/sechi/Stk-ia/.venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "cpu_system_seconds": 28.480122,
+    "cpu_user_seconds": 186.854274,
+    "elapsed_seconds": 215.41952449199744,
+    "errors": 0,
+    "expected_exit": 0,
+    "failures": 0,
+    "log": "data/stage5/release/all-tests.log",
+    "max_rss_kib": 237488,
+    "measurement": "os.wait4 individual child rusage; Linux ru_maxrss in KiB; not concurrent total RSS",
+    "skipped": 0,
+    "status": "PASS",
+    "tests_run": 164
+  },
+  "trained_model_domains": [
+    "synthetic"
+  ],
+  "verdicts": {
+    "artifact_reload_stage4": "PASS",
+    "m2_hardware": "NOT_EVALUATED",
+    "real_data_readiness": "BLOCKED",
+    "real_predictive_power": "NOT_EVALUATED",
+    "stage6_entry": "BLOCKED",
+    "synthetic_training_flow": "PASS",
+    "tests": "PASS"
+  }
+}

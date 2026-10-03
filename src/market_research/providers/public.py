@@ -177,6 +177,69 @@ class AlphaVantage(Provider):
             raise ProviderError("schema_change") from None
 
 
+class EODHD(Provider):
+    """Official EOD/demo endpoints; raw OHLC and adjusted close stay separate."""
+    def request(self, spec):
+        endpoint = {"daily": "eod", "dividends": "div", "splits": "splits", "identity": "fundamentals"}.get(spec["kind"])
+        if not endpoint:
+            raise ProviderError("unsupported_request")
+        key = os.environ.get("EODHD_API_TOKEN") if spec.get("auth_mode") == "environment" else "demo"
+        if not key:
+            raise ProviderError("authentication_missing")
+        params = {"api_token": key, "fmt": "json"}
+        if spec["kind"] == "identity":
+            params["filter"] = "General"
+        else:
+            params.update({"from": spec["start"], "to": spec["end"]})
+        return ("https://eodhd.com/api/" + endpoint + "/" + quote(spec["symbol"] + ".US", safe="") + "?" + urlencode(params),
+                2, () if key == "demo" else (key,))
+
+    def normalize(self, spec, body):
+        data = decode_json(body)
+        out = blank()
+        if spec["kind"] == "identity":
+            if not isinstance(data, dict) or data.get("Code") != spec["symbol"]:
+                raise ProviderError("schema_change")
+            out["metadata"] = data
+            out["documents"] = [{"document_id": "security_general", "source_fields": data,
+                                  "note": "Current provider identity, not historical security master"}]
+            return out
+        if not isinstance(data, list):
+            raise ProviderError("schema_change")
+        try:
+            for row in data:
+                d = row["date"]
+                date.fromisoformat(d)
+                if not spec["start"] <= d <= spec["end"]:
+                    raise ProviderError("response_outside_requested_period")
+                if spec["kind"] == "daily":
+                    b = bar(spec, d, [row[k] for k in ("open", "high", "low", "close", "volume")], "raw_as_traded")
+                    b.update(adjusted_close=number(row["adjusted_close"]),
+                             adjusted_close_semantics="split_and_distribution_adjusted_current_vintage",
+                             volume_unit="shares", volume_adjustment_basis="split_adjusted_current_vintage",
+                             session_scope="vendor_eod_indicative_not_official_auction")
+                    out["bars"].append(b)
+                else:
+                    a = {"source": spec["source"], "requested_symbol": spec["symbol"],
+                         "local_instrument_id": "temporary:" + spec["source"] + ":" + spec["symbol"],
+                         "event_date": d, "event_type": spec["kind"],
+                         "publication_time_utc": None, "revision_time_utc": None}
+                    if spec["kind"] == "splits":
+                        n, denominator = row["split"].split("/")
+                        a.update(numerator=number(n), denominator=number(denominator), effective_date=d)
+                        if a["numerator"] <= 0 or a["denominator"] <= 0:
+                            raise ProviderError("schema_change")
+                    else:
+                        a.update(amount=number(row["unadjustedValue"]), currency=row["currency"],
+                                 amount_semantics="as_declared_cash_per_share", ex_date=d,
+                                 declaration_date=row.get("declarationDate"), record_date=row.get("recordDate"),
+                                 payment_date=row.get("paymentDate"))
+                    out["actions"].append(a)
+            return out
+        except (KeyError, TypeError, ValueError):
+            raise ProviderError("schema_change") from None
+
+
 class Stooq(Provider):
     def request(self, spec):
         params = {"s": spec["symbol"].lower() + ".us", "i": "d",
@@ -253,7 +316,7 @@ class Document(Provider):
 
 def get_provider(name):
     providers = {"yahoo": Yahoo, "alpha_vantage": AlphaVantage, "stooq": Stooq,
-                 "nasdaq_directory": NasdaqDirectory, "official_document": Document}
+                 "nasdaq_directory": NasdaqDirectory, "official_document": Document, "eodhd": EODHD}
     if name not in providers:
         raise ProviderError("unsupported_source")
     return providers[name]()

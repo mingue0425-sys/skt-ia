@@ -1,0 +1,6 @@
+{
+  "purpose": "Manual future receipt accumulation only; run after data access, retention and model-training permission review. Not historical PIT, no schedules or orders.",
+  "requests": [
+    {"source": "alpha_vantage", "kind": "daily", "symbol": "IBM", "outputsize": "compact", "auth_mode": "environment", "smoke": true}
+  ]
+}

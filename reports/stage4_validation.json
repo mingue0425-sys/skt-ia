@@ -1,0 +1,1100 @@
+{
+  "actual": {
+    "current_price_diagnostics": "not repeated; not an eligible past decision sample",
+    "datasets": [
+      {
+        "content_sha256": "b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+        "dataset_snapshot_id": "b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+        "exclusion_counts": {
+          "feature_blocked": 6,
+          "feature_decision_entry_exit_order": 6,
+          "feature_sample_not_ready": 6,
+          "label_blocked": 6,
+          "label_not_available_at_asof": 6,
+          "learning_rights_or_strict_pit_unmet": 6,
+          "operational_availability_unverified": 6,
+          "security_identifier_unverified": 6,
+          "security_identity_missing": 6,
+          "strict_historical_pit_unmet": 6,
+          "training_selection_rejected": 6
+        },
+        "execution_status_counts": {
+          "blocked": 2
+        },
+        "feature_query_exclusion_counts": {
+          "actual_receipt_unproven": 366,
+          "price_semantics_not_requested": 610,
+          "received_after_cutoff": 244
+        },
+        "feature_ready_basis_counts": {
+          "assumed_dependency_processing_schedule": 2
+        },
+        "feature_status_counts": {
+          "blocked": 2
+        },
+        "identifier_counts": {
+          "missing": 2
+        },
+        "integrity": "PASS",
+        "label_query_exclusion_counts": {
+          "actual_receipt_unproven": 60,
+          "price_semantics_not_requested": 100
+        },
+        "label_status_counts": {
+          "blocked": 6
+        },
+        "learning_rights_status_counts": {
+          "unconfirmed": 6
+        },
+        "query_policy": "observed",
+        "reason_counts": {
+          "no_computable_price_features": 2,
+          "no_eligible_feature_inputs": 2,
+          "opening_prices_unavailable_close_only": 6
+        },
+        "strict_run_status": "BLOCKED",
+        "training_selected": 0
+      },
+      {
+        "content_sha256": "8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+        "dataset_snapshot_id": "8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+        "exclusion_counts": {
+          "feature_blocked": 6,
+          "feature_decision_entry_exit_order": 6,
+          "feature_sample_not_ready": 6,
+          "label_blocked": 6,
+          "label_not_available_at_asof": 6,
+          "learning_rights_or_strict_pit_unmet": 6,
+          "operational_availability_unverified": 6,
+          "security_identifier_unverified": 6,
+          "security_identity_missing": 6,
+          "strict_historical_pit_unmet": 6,
+          "training_selection_rejected": 6
+        },
+        "execution_status_counts": {
+          "blocked": 2
+        },
+        "feature_query_exclusion_counts": {
+          "price_semantics_not_requested": 610,
+          "publication_time_unknown": 610
+        },
+        "feature_ready_basis_counts": {
+          "assumed_dependency_processing_schedule": 2
+        },
+        "feature_status_counts": {
+          "blocked": 2
+        },
+        "identifier_counts": {
+          "missing": 2
+        },
+        "integrity": "PASS",
+        "label_query_exclusion_counts": {
+          "price_semantics_not_requested": 100,
+          "publication_time_unknown": 100
+        },
+        "label_status_counts": {
+          "blocked": 6
+        },
+        "learning_rights_status_counts": {
+          "unconfirmed": 6
+        },
+        "query_policy": "historical_verified",
+        "reason_counts": {
+          "no_computable_price_features": 2,
+          "no_eligible_feature_inputs": 2,
+          "opening_prices_unavailable_close_only": 6
+        },
+        "strict_run_status": "BLOCKED",
+        "training_selected": 0
+      },
+      {
+        "content_sha256": "0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+        "dataset_snapshot_id": "0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+        "exclusion_counts": {
+          "feature_blocked": 6,
+          "feature_decision_entry_exit_order": 6,
+          "feature_sample_not_ready": 6,
+          "label_blocked": 3,
+          "label_not_available_at_asof": 6,
+          "label_pending": 3,
+          "learning_rights_or_strict_pit_unmet": 6,
+          "operational_availability_unverified": 6,
+          "security_identifier_unverified": 6,
+          "security_identity_missing": 6,
+          "strict_historical_pit_unmet": 6,
+          "training_selection_rejected": 6
+        },
+        "execution_status_counts": {
+          "blocked": 2
+        },
+        "feature_query_exclusion_counts": {
+          "actual_receipt_unproven": 366,
+          "received_after_cutoff": 488
+        },
+        "feature_ready_basis_counts": {
+          "assumed_dependency_processing_schedule": 2
+        },
+        "feature_status_counts": {
+          "blocked": 2
+        },
+        "identifier_counts": {
+          "missing": 2
+        },
+        "integrity": "PASS",
+        "label_query_exclusion_counts": {
+          "actual_receipt_unproven": 63
+        },
+        "label_status_counts": {
+          "blocked": 3,
+          "pending": 3
+        },
+        "learning_rights_status_counts": {
+          "unconfirmed": 6
+        },
+        "query_policy": "observed",
+        "reason_counts": {
+          "no_computable_price_features": 2,
+          "no_eligible_feature_inputs": 2,
+          "security_trading_status_unverified": 3,
+          "target_open_not_yet_reached": 3
+        },
+        "strict_run_status": "BLOCKED",
+        "training_selected": 0
+      },
+      {
+        "content_sha256": "3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+        "dataset_snapshot_id": "3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+        "exclusion_counts": {
+          "feature_blocked": 6,
+          "feature_decision_entry_exit_order": 6,
+          "feature_sample_not_ready": 6,
+          "label_blocked": 3,
+          "label_not_available_at_asof": 6,
+          "label_pending": 3,
+          "learning_rights_or_strict_pit_unmet": 6,
+          "operational_availability_unverified": 6,
+          "security_identifier_unverified": 6,
+          "security_identity_missing": 6,
+          "strict_historical_pit_unmet": 6,
+          "training_selection_rejected": 6
+        },
+        "execution_status_counts": {
+          "blocked": 2
+        },
+        "feature_query_exclusion_counts": {
+          "publication_time_unknown": 854
+        },
+        "feature_ready_basis_counts": {
+          "assumed_dependency_processing_schedule": 2
+        },
+        "feature_status_counts": {
+          "blocked": 2
+        },
+        "identifier_counts": {
+          "missing": 2
+        },
+        "integrity": "PASS",
+        "label_query_exclusion_counts": {
+          "publication_time_unknown": 147
+        },
+        "label_status_counts": {
+          "blocked": 3,
+          "pending": 3
+        },
+        "learning_rights_status_counts": {
+          "unconfirmed": 6
+        },
+        "query_policy": "historical_verified",
+        "reason_counts": {
+          "no_computable_price_features": 2,
+          "no_eligible_feature_inputs": 2,
+          "security_trading_status_unverified": 3,
+          "target_open_not_yet_reached": 3
+        },
+        "strict_run_status": "BLOCKED",
+        "training_selected": 0
+      }
+    ],
+    "eligibility_exclusion_counts": {
+      "feature_blocked": 24,
+      "feature_decision_entry_exit_order": 24,
+      "feature_sample_not_ready": 24,
+      "label_blocked": 18,
+      "label_not_available_at_asof": 24,
+      "label_pending": 6,
+      "learning_rights_or_strict_pit_unmet": 24,
+      "operational_availability_unverified": 24,
+      "security_identifier_unverified": 24,
+      "security_identity_missing": 24,
+      "strict_historical_pit_unmet": 24,
+      "training_selection_rejected": 24
+    },
+    "evaluation_asof": "2026-10-02T14:31:42.659568Z",
+    "exclusion_count_semantics": "multi-reason membership counts; selector aggregate and extra contract counts are distinct names",
+    "feature_status_counts": {
+      "blocked": 8
+    },
+    "fixed_dataset_preservation": {
+      "count": 40,
+      "database_bytes_unchanged": true,
+      "datasets": [
+        {
+          "content_sha256": "010944b1a29791a46596174080ace4f4ca0825b07ba7a5c82a2aaf35972fe44a",
+          "dataset_snapshot_id": "010944b1a29791a46596174080ace4f4ca0825b07ba7a5c82a2aaf35972fe44a",
+          "items": 6
+        },
+        {
+          "content_sha256": "0a9539ea1df3ccf8f91244a191572d73a6fff5c10dee367eff3d36e65f35278d",
+          "dataset_snapshot_id": "0a9539ea1df3ccf8f91244a191572d73a6fff5c10dee367eff3d36e65f35278d",
+          "items": 6
+        },
+        {
+          "content_sha256": "0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+          "dataset_snapshot_id": "0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9",
+          "items": 6
+        },
+        {
+          "content_sha256": "202dd7e00cc245eab0334fcee83ff9f8db1601f53829b2c0da6af969d6a043ae",
+          "dataset_snapshot_id": "202dd7e00cc245eab0334fcee83ff9f8db1601f53829b2c0da6af969d6a043ae",
+          "items": 6
+        },
+        {
+          "content_sha256": "25c7099e63f4557fc1025f288822b639de08b52e160f231528fa223816a32347",
+          "dataset_snapshot_id": "25c7099e63f4557fc1025f288822b639de08b52e160f231528fa223816a32347",
+          "items": 6
+        },
+        {
+          "content_sha256": "25cb2d8dcaf0658d4d60c58bdf2f77a061c332f5b9a9ff5640f1042cb009ed3b",
+          "dataset_snapshot_id": "25cb2d8dcaf0658d4d60c58bdf2f77a061c332f5b9a9ff5640f1042cb009ed3b",
+          "items": 6
+        },
+        {
+          "content_sha256": "2bf3edf42544bc22f292c51cdf66cd1fc0ce8a54b6e9718e18f1d31e5af0381e",
+          "dataset_snapshot_id": "2bf3edf42544bc22f292c51cdf66cd1fc0ce8a54b6e9718e18f1d31e5af0381e",
+          "items": 6
+        },
+        {
+          "content_sha256": "33637de7e865d6b41532add25895de1f706c81a584061af51a767e0f0172bac2",
+          "dataset_snapshot_id": "33637de7e865d6b41532add25895de1f706c81a584061af51a767e0f0172bac2",
+          "items": 6
+        },
+        {
+          "content_sha256": "3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+          "dataset_snapshot_id": "3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3",
+          "items": 6
+        },
+        {
+          "content_sha256": "401daab78221a1e8a46a0786275de8f76a1ec5586977f08f456f546583fe465f",
+          "dataset_snapshot_id": "401daab78221a1e8a46a0786275de8f76a1ec5586977f08f456f546583fe465f",
+          "items": 6
+        },
+        {
+          "content_sha256": "4c28994b77e72a6b4308bab678021d4f5dbe1e0a252160df94051b806d47e199",
+          "dataset_snapshot_id": "4c28994b77e72a6b4308bab678021d4f5dbe1e0a252160df94051b806d47e199",
+          "items": 6
+        },
+        {
+          "content_sha256": "552d8db9d45516d8faa7e038c3e10b15e89e99aaa1b1dd13ecd5267a2eb0cee2",
+          "dataset_snapshot_id": "552d8db9d45516d8faa7e038c3e10b15e89e99aaa1b1dd13ecd5267a2eb0cee2",
+          "items": 6
+        },
+        {
+          "content_sha256": "5d12c3f9024e2604d437be64036e29e05657785e8d11c84e57b19c8ad47769bd",
+          "dataset_snapshot_id": "5d12c3f9024e2604d437be64036e29e05657785e8d11c84e57b19c8ad47769bd",
+          "items": 6
+        },
+        {
+          "content_sha256": "63e4be006b8702b553e131314c5f35ddda6bd1ee618f9333d093bae004d5dac1",
+          "dataset_snapshot_id": "63e4be006b8702b553e131314c5f35ddda6bd1ee618f9333d093bae004d5dac1",
+          "items": 6
+        },
+        {
+          "content_sha256": "7efb399b9d566a21fd3e1eb7f81145a7fb87b85d252685d96d9b591e3ffe3663",
+          "dataset_snapshot_id": "7efb399b9d566a21fd3e1eb7f81145a7fb87b85d252685d96d9b591e3ffe3663",
+          "items": 6
+        },
+        {
+          "content_sha256": "84564280a9add8b0faa4aa800f4da4d9a1d044081f95c933a7a969f220685b2b",
+          "dataset_snapshot_id": "84564280a9add8b0faa4aa800f4da4d9a1d044081f95c933a7a969f220685b2b",
+          "items": 6
+        },
+        {
+          "content_sha256": "8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+          "dataset_snapshot_id": "8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e",
+          "items": 6
+        },
+        {
+          "content_sha256": "941db22b39a513e62496d291f679ad9a1b2910e01a57603d1aae734a297724bc",
+          "dataset_snapshot_id": "941db22b39a513e62496d291f679ad9a1b2910e01a57603d1aae734a297724bc",
+          "items": 6
+        },
+        {
+          "content_sha256": "97efa28453e6526f1dd3b25fc681814dad93d4368653706409bbd76c6cf3bfe9",
+          "dataset_snapshot_id": "97efa28453e6526f1dd3b25fc681814dad93d4368653706409bbd76c6cf3bfe9",
+          "items": 6
+        },
+        {
+          "content_sha256": "a04b8a5cfb76d5d29af04ef89ed33b98832a590452865e77f4f59c6df5359e87",
+          "dataset_snapshot_id": "a04b8a5cfb76d5d29af04ef89ed33b98832a590452865e77f4f59c6df5359e87",
+          "items": 6
+        },
+        {
+          "content_sha256": "a530278f7936a92867143058202fc8da328815150da2be9cd38649fb7979d39b",
+          "dataset_snapshot_id": "a530278f7936a92867143058202fc8da328815150da2be9cd38649fb7979d39b",
+          "items": 6
+        },
+        {
+          "content_sha256": "a5f5b68e7417974f1e28bc5f6902e5a02677a3d3d2f5489906e3babc8a4cc8b1",
+          "dataset_snapshot_id": "a5f5b68e7417974f1e28bc5f6902e5a02677a3d3d2f5489906e3babc8a4cc8b1",
+          "items": 6
+        },
+        {
+          "content_sha256": "aaae5d0892cdc7cda2ca3235181d3e86d52fd5c7ef1b8de0c14aa1f7d9cf7184",
+          "dataset_snapshot_id": "aaae5d0892cdc7cda2ca3235181d3e86d52fd5c7ef1b8de0c14aa1f7d9cf7184",
+          "items": 6
+        },
+        {
+          "content_sha256": "b3aeb1170e254679ccfd85f5bbbd8283a3928167617c006a3abd580a4a06872e",
+          "dataset_snapshot_id": "b3aeb1170e254679ccfd85f5bbbd8283a3928167617c006a3abd580a4a06872e",
+          "items": 6
+        },
+        {
+          "content_sha256": "b6c331a9458d8ef398ac515988c5d93215765f682545aac5460e86cead7037bd",
+          "dataset_snapshot_id": "b6c331a9458d8ef398ac515988c5d93215765f682545aac5460e86cead7037bd",
+          "items": 6
+        },
+        {
+          "content_sha256": "b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+          "dataset_snapshot_id": "b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622",
+          "items": 6
+        },
+        {
+          "content_sha256": "b823d193b8b935fc29fd3deab98213d9daad37a6dbff728aacce730229c72f97",
+          "dataset_snapshot_id": "b823d193b8b935fc29fd3deab98213d9daad37a6dbff728aacce730229c72f97",
+          "items": 6
+        },
+        {
+          "content_sha256": "beb0ea7092c372855b588290f16e7882e10f94af9d2ea83a8291a46c9559f8b0",
+          "dataset_snapshot_id": "beb0ea7092c372855b588290f16e7882e10f94af9d2ea83a8291a46c9559f8b0",
+          "items": 6
+        },
+        {
+          "content_sha256": "c361e27d3ec380a4fbc1468825332519d6f792ac1c174a60fd214f1e0325703a",
+          "dataset_snapshot_id": "c361e27d3ec380a4fbc1468825332519d6f792ac1c174a60fd214f1e0325703a",
+          "items": 6
+        },
+        {
+          "content_sha256": "c6af192aa685ba0a87ec0a3c3d7ac2417bbbfd0a68d348eda3e9f3e9883a3bf4",
+          "dataset_snapshot_id": "c6af192aa685ba0a87ec0a3c3d7ac2417bbbfd0a68d348eda3e9f3e9883a3bf4",
+          "items": 6
+        },
+        {
+          "content_sha256": "c9e0187a07b5e84a0a2ca7aea73dbf0239abb42af1e6f5228a76e8caad80c4c9",
+          "dataset_snapshot_id": "c9e0187a07b5e84a0a2ca7aea73dbf0239abb42af1e6f5228a76e8caad80c4c9",
+          "items": 6
+        },
+        {
+          "content_sha256": "d15cd71fd9426f479025d282fc66f53fda67ca7515874c8f7677d083bf8acf6c",
+          "dataset_snapshot_id": "d15cd71fd9426f479025d282fc66f53fda67ca7515874c8f7677d083bf8acf6c",
+          "items": 6
+        },
+        {
+          "content_sha256": "d4ae1c7c33ec2f0c89c9d5e889d7dbeccccb331dd5dd52ab13d4a1d036616c39",
+          "dataset_snapshot_id": "d4ae1c7c33ec2f0c89c9d5e889d7dbeccccb331dd5dd52ab13d4a1d036616c39",
+          "items": 6
+        },
+        {
+          "content_sha256": "d92c843b4f9fa1d90ac45490faca62f4f45bccaa64e52a304cd7e4961ca2db73",
+          "dataset_snapshot_id": "d92c843b4f9fa1d90ac45490faca62f4f45bccaa64e52a304cd7e4961ca2db73",
+          "items": 6
+        },
+        {
+          "content_sha256": "e19e1c2f8c44e9cdb2238aa9604e961e3891812ed3641f7ce20a1f7016701b69",
+          "dataset_snapshot_id": "e19e1c2f8c44e9cdb2238aa9604e961e3891812ed3641f7ce20a1f7016701b69",
+          "items": 6
+        },
+        {
+          "content_sha256": "e1c4169ef1fb8fcd4dd77073b94fd396ab2a653d986a4a7a82fbad9320520e46",
+          "dataset_snapshot_id": "e1c4169ef1fb8fcd4dd77073b94fd396ab2a653d986a4a7a82fbad9320520e46",
+          "items": 6
+        },
+        {
+          "content_sha256": "e291cb71607e4e4e24ae123ded6606fbe13ddb7624f7a5ee84862429a0ade14a",
+          "dataset_snapshot_id": "e291cb71607e4e4e24ae123ded6606fbe13ddb7624f7a5ee84862429a0ade14a",
+          "items": 6
+        },
+        {
+          "content_sha256": "ec8c39e6161bca6c28201075922009737717ecbd8f3ab60f1b0599a006880dad",
+          "dataset_snapshot_id": "ec8c39e6161bca6c28201075922009737717ecbd8f3ab60f1b0599a006880dad",
+          "items": 6
+        },
+        {
+          "content_sha256": "f58f79810d6bd051e764d04a85e3cad2631d3105b7cd291d78aae7c96bd9ab64",
+          "dataset_snapshot_id": "f58f79810d6bd051e764d04a85e3cad2631d3105b7cd291d78aae7c96bd9ab64",
+          "items": 6
+        },
+        {
+          "content_sha256": "ffad4ceeaa318e6ec860f4a3b8526b340c4d30f7f85042059369a3ef34d7f406",
+          "dataset_snapshot_id": "ffad4ceeaa318e6ec860f4a3b8526b340c4d30f7f85042059369a3ef34d7f406",
+          "items": 6
+        }
+      ],
+      "status": "PASS"
+    },
+    "historical_performance": "BLOCKED",
+    "label_status_counts": {
+      "blocked": 18,
+      "pending": 6
+    },
+    "original_stage2_snapshot": {
+      "content_sha256": "e59ca49bc81eed31060df908813f476343ba19f13071a16e0abdc5589bc21042",
+      "items": 352,
+      "status": "PASS"
+    },
+    "source_reason_counts": {
+      "no_computable_price_features": 8,
+      "no_eligible_feature_inputs": 8,
+      "opening_prices_unavailable_close_only": 12,
+      "security_trading_status_unverified": 6,
+      "target_open_not_yet_reached": 6
+    },
+    "stage2_database_bytes_unchanged": true,
+    "status": "BLOCKED",
+    "training_selected_count": 0
+  },
+  "automatic_trading": false,
+  "baseline_tests": {
+    "errors": 0,
+    "failures": 0,
+    "resource_warning": "unclosed sqlite connection",
+    "run": 108,
+    "skipped": 0
+  },
+  "build": {
+    "sha256": "ae4dd6f2cf13b30b6c2b773d40a45d503e75be4933af1a4a4b788172fadee25c",
+    "source_identical_modules": 37,
+    "status": "PASS",
+    "wheel": "dist/stage4/market_research_stage1-0.1.0-py3-none-any.whl"
+  },
+  "code_sha256": "caf8a77d32184c168cba0b021e79f692c71846c83023ea0c2aa2abbd41af2644",
+  "commands": [
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "scripts/prepare_synthetic_stage4.py",
+        "--root",
+        "tests/generated/stage4-actions"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "split-plan",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--dataset-id",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--dataset-hash",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--mode",
+        "synthetic",
+        "--config",
+        "tests/generated/stage4-actions/split.json",
+        "--output",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/split-plan.json"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "split-check",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--dataset-id",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--dataset-hash",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--mode",
+        "synthetic",
+        "--config",
+        "tests/generated/stage4-actions/split.json",
+        "--output",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/split-check.json"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "prediction-check",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--dataset-id",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--dataset-hash",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--mode",
+        "synthetic",
+        "--predictions",
+        "tests/generated/stage4-actions/predictions.json",
+        "--output",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/prediction-check.json"
+      ],
+      "expected_returncode": 2,
+      "returncode": 2,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "prediction-evaluate",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--dataset-id",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--dataset-hash",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--mode",
+        "synthetic",
+        "--predictions",
+        "tests/generated/stage4-actions/predictions.json",
+        "--output",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/prediction-evaluate.json",
+        "--evaluation-asof",
+        "2024-06-01T00:00:00Z",
+        "--horizon",
+        "1"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "simulation-run",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--mode",
+        "synthetic",
+        "--config",
+        "tests/generated/stage4-actions/config.json",
+        "--predictions",
+        "tests/generated/stage4-actions/predictions.json",
+        "--run-root",
+        "tests/generated/stage4-actions/runs",
+        "--output",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/run-meta.json"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "run-show",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--run-file",
+        "tests/generated/stage4-actions/runs/f9d6eb9fd5819638da80e67aa83da395af88675d8da805480d0d011c836476d2.json",
+        "--output",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/run-show.json"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "run-replay",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--run-file",
+        "tests/generated/stage4-actions/runs/f9d6eb9fd5819638da80e67aa83da395af88675d8da805480d0d011c836476d2.json",
+        "--output",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/run-replay.json"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "stage4-report",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--run-file",
+        "tests/generated/stage4-actions/runs/f9d6eb9fd5819638da80e67aa83da395af88675d8da805480d0d011c836476d2.json",
+        "--output",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/stage4-report.json"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "prediction-check",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--dataset-id",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--dataset-hash",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--mode",
+        "synthetic",
+        "--predictions",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/invalid-predictions.json"
+      ],
+      "expected_returncode": 1,
+      "returncode": 1,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "split-check",
+        "--db",
+        "tests/generated/stage4-actions/pit.sqlite",
+        "--dataset-db",
+        "tests/generated/stage4-actions/datasets.sqlite",
+        "--dataset-id",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--dataset-hash",
+        "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+        "--mode",
+        "synthetic",
+        "--config",
+        "/home/sechi/Stk-ia/tests/generated/stage4-actions/empty-split.json"
+      ],
+      "expected_returncode": 3,
+      "returncode": 3,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "simulation-run",
+        "--db",
+        "data/stage3/pit_market.sqlite",
+        "--dataset-db",
+        "data/stage3/datasets.sqlite",
+        "--mode",
+        "strict",
+        "--config",
+        "data/stage4/b7b449343b85679143f2725a2fc54e50f5de635e26df6893efdf86535d90e622-strict.json"
+      ],
+      "expected_returncode": 3,
+      "returncode": 3,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "simulation-run",
+        "--db",
+        "data/stage3/pit_market.sqlite",
+        "--dataset-db",
+        "data/stage3/datasets.sqlite",
+        "--mode",
+        "strict",
+        "--config",
+        "data/stage4/8943d855f99697620500a5d291b89f28ed8de70d3042e72e0aa03b8c6e47495e-strict.json"
+      ],
+      "expected_returncode": 3,
+      "returncode": 3,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "simulation-run",
+        "--db",
+        "data/stage3/pit_market.sqlite",
+        "--dataset-db",
+        "data/stage3/datasets.sqlite",
+        "--mode",
+        "strict",
+        "--config",
+        "data/stage4/0dddb941af8813f7b2027a8e739f4253b0959c057ef667f80ac181710e346de9-strict.json"
+      ],
+      "expected_returncode": 3,
+      "returncode": 3,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "/home/sechi/Stk-ia/.venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "simulation-run",
+        "--db",
+        "data/stage3/pit_market.sqlite",
+        "--dataset-db",
+        "data/stage3/datasets.sqlite",
+        "--mode",
+        "strict",
+        "--config",
+        "data/stage4/3dc3ff4e9515ecd5d66aca2e0aa7f4ed817f79c99e1246aa055bcd1f6b5dcba3-strict.json"
+      ],
+      "expected_returncode": 3,
+      "returncode": 3,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "python3",
+        "-c",
+        "from setuptools.build_meta import build_wheel; build_wheel(\"dist/stage4\")"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    }
+  ],
+  "commit_push": false,
+  "elapsed_seconds": 50.37207600194961,
+  "environment": {
+    "dependencies": {
+      "exchange_calendars": "4.13.2",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6"
+    },
+    "m2_executed": false,
+    "machine": "aarch64",
+    "platform": "Linux-6.18.50+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+    "sqlite": "3.46.1"
+  },
+  "existing_changed_files_this_stage": [
+    "src/market_research/cli.py",
+    "README.md"
+  ],
+  "finished_at": "2026-10-02T15:43:34.512207+00:00",
+  "generated_build_metadata_changes": [
+    "src/market_research_stage1.egg-info/SOURCES.txt"
+  ],
+  "models_trained": false,
+  "network": "none",
+  "offline_tests": {
+    "errors": 0,
+    "failures": 0,
+    "passed": 145,
+    "skipped": 0,
+    "status": "PASS",
+    "tests_run": 145
+  },
+  "post_run_checks_at": "2026-10-02T15:45:12.289902+00:00",
+  "previous_stage3_synthetic_replay": {
+    "count": 7,
+    "database_bytes_unchanged": true,
+    "datasets": [
+      {
+        "content_sha256": "1c58e33aefc3e4574d38b5a717b4e405d83eb8ab492e14c09f2207a08ec66ba6",
+        "dataset_snapshot_id": "1c58e33aefc3e4574d38b5a717b4e405d83eb8ab492e14c09f2207a08ec66ba6",
+        "items": 3
+      },
+      {
+        "content_sha256": "2b56af570eebfb9c7b6b44f7d8ba475b0ae76c540d0785007e8bc72cbce5b91b",
+        "dataset_snapshot_id": "2b56af570eebfb9c7b6b44f7d8ba475b0ae76c540d0785007e8bc72cbce5b91b",
+        "items": 3
+      },
+      {
+        "content_sha256": "47ef523a3fa9542ed3dd582d124cec379580643dc0d3863eaa097907d9f5722b",
+        "dataset_snapshot_id": "47ef523a3fa9542ed3dd582d124cec379580643dc0d3863eaa097907d9f5722b",
+        "items": 3
+      },
+      {
+        "content_sha256": "78aa6ce280725e09a3afae4e88fd0d6828d497b38ed9232a2c3c6272d68f8821",
+        "dataset_snapshot_id": "78aa6ce280725e09a3afae4e88fd0d6828d497b38ed9232a2c3c6272d68f8821",
+        "items": 3
+      },
+      {
+        "content_sha256": "7982cec120480d4a9aa68df27b9d4677c32368eec41fad1efb30e5926db023da",
+        "dataset_snapshot_id": "7982cec120480d4a9aa68df27b9d4677c32368eec41fad1efb30e5926db023da",
+        "items": 3
+      },
+      {
+        "content_sha256": "94f2055b3e4336278989892673e4fba9bbc8f2d230485a3140e6abc18a7c8b47",
+        "dataset_snapshot_id": "94f2055b3e4336278989892673e4fba9bbc8f2d230485a3140e6abc18a7c8b47",
+        "items": 3
+      },
+      {
+        "content_sha256": "e3af2232257341e0a2a47d3570e4cfe908ad1c1ec87dfee011d0e009208a508a",
+        "dataset_snapshot_id": "e3af2232257341e0a2a47d3570e4cfe908ad1c1ec87dfee011d0e009208a508a",
+        "items": 3
+      }
+    ],
+    "status": "PASS"
+  },
+  "protected_input_hash_checks": 27,
+  "protected_inputs_unchanged": true,
+  "public_artifact_check": {
+    "credential_pattern_matches": 0,
+    "market_raw_database_row_exports_in_candidates": false,
+    "new_paths": [
+      "docs/simulation_contract.md",
+      "docs/validation_contract.md",
+      "reports/stage4_validation.json",
+      "reports/stage4_validation.md",
+      "reports/stage5_handoff.md",
+      "scripts/prepare_synthetic_stage4.py",
+      "scripts/validate_stage4.py",
+      "src/market_research/stage4/__init__.py",
+      "src/market_research/stage4/cli.py",
+      "src/market_research/stage4/inputs.py",
+      "src/market_research/stage4/metrics.py",
+      "src/market_research/stage4/predictions.py",
+      "src/market_research/stage4/runs.py",
+      "src/market_research/stage4/simulation.py",
+      "src/market_research/stage4/splits.py",
+      "src/market_research/stage4/tape.py",
+      "tests/stage4_fixture_builder.py",
+      "tests/test_stage4.py"
+    ],
+    "new_stage4_files": 18,
+    "scope": "new Stage4 code/fictional fixtures/contracts/aggregate reports; market originals and runs remain ignored",
+    "status": "PASS"
+  },
+  "resolved_initial_stage4_checks": {
+    "build_failure": "runtime venv had no setuptools.build_meta; used preinstalled system setuptools 78.1.1 without network",
+    "test_causes": [
+      "expected timestamp spelling lacked canonical microseconds",
+      "expected four round trips ignored held-signal defer policy"
+    ],
+    "test_failures": 2
+  },
+  "resolved_later_stage4_checks": {
+    "additional_engine_checks": "logical action duplicate/conflict, finite loss overflow, final eligibility membership",
+    "cause": "mocked cross-snapshot test initially reused one shared action snapshot and never supplied a second version",
+    "resolution": "supplied a separate mocked frozen snapshot with the same logical event and different split terms; rejection passes",
+    "test_fixture_failures": 1
+  },
+  "runtime_warning_analysis": {
+    "case": "test_pit.PitTests.test_35_real_migration_upgrade_preserves_existing_receipt",
+    "cause": "Database(old_path) opens SQLite before expected migration rejection and its failed constructor does not close the connection",
+    "disposition": "existing Stage2 path retained; not a Stage4 blocking defect",
+    "focused_check": {
+      "command": "PYTHONTRACEMALLOC=5 .venv/bin/python -W always::ResourceWarning (focused unittest plus gc.collect)",
+      "errors": 0,
+      "failures": 0,
+      "tests_run": 1
+    },
+    "status": "IDENTIFIED_NONFATAL",
+    "trace_origin": "src/market_research/pit/database.py:32; tests/test_pit.py:410"
+  },
+  "runtime_warning_scope": "existing test_pit.test_35 rejects Database(old_path) after opening SQLite; constructor does not close on that failure; Stage4 contexts close normally; source left unchanged outside Stage4 blocker scope",
+  "runtime_warnings": [
+    {
+      "category": "ResourceWarning",
+      "message": "unclosed database in <sqlite3.Connection object at 0x7fff9ece3e20>"
+    }
+  ],
+  "stage": 4,
+  "started_at": "2026-10-02T15:42:44.140129+00:00",
+  "starting_commit": "fb78fc7d712dcd285f9e463ec3673fe732cdc0a5",
+  "starting_readme_evidence": "read at start; existing uncommitted README preserved and extended; root README was outside initial directory hash inventory",
+  "starting_worktree": " M .gitignore\n M README.md\n M docs/normalization_schema.md\n M reports/unit_test_results.json\n M src/market_research/cli.py\n M src/market_research/collect.py\n?? configs/stage2_smoke.json\n?? docs/dataset_contract.md\n?? docs/feature_contract.md\n?? docs/label_contract.md\n?? docs/local_store_schema.md\n?? docs/time_query_policies.md\n?? reports/stage2_validation.json\n?? reports/stage2_validation.md\n?? reports/stage3_handoff.md\n?? reports/stage3_validation.json\n?? reports/stage3_validation.md\n?? reports/stage4_handoff.md\n?? scripts/make_synthetic_stage2.py\n?? scripts/prepare_stage2_calendar.py\n?? scripts/prepare_synthetic_stage3.py\n?? scripts/validate_stage2.py\n?? scripts/validate_stage3.py\n?? src/market_research/datasets/\n?? src/market_research/pit/\n?? tests/fixture_builder.py\n?? tests/fixtures/stage2_expected.json\n?? tests/fixtures/stage3_expected.json\n?? tests/stage3_fixture_builder.py\n?? tests/test_datasets.py\n?? tests/test_pit.py\n",
+  "synthetic": {
+    "cost_totals": {
+      "commission": "4.00",
+      "execution_difference": "3.700000",
+      "impact": "0.0",
+      "other": "0.00",
+      "slippage": "1.850",
+      "spread": "1.850",
+      "tax": "0.00"
+    },
+    "counts": {
+      "corporate_action_events": 3,
+      "evaluated": 4,
+      "fills": 4,
+      "test_predictions": 4
+    },
+    "dataset_content_sha256": "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+    "dataset_snapshot_id": "6413bea3a2ffd8df9ef69922b9bcb9f8406d764d54f8b7f524661d165cb2e6a8",
+    "feature_version": "3.0.1",
+    "fixed_replay": "PASS",
+    "independent_terminal_cash": "1028.30",
+    "label_version": "3.0.1",
+    "mode": "synthetic",
+    "prediction_version": "4.0.0",
+    "required_risk_evidence": {
+      "1": {
+        "status": "PASS",
+        "test": "test_same_date_same_partition_and_rolling_expanding"
+      },
+      "10": {
+        "status": "PASS",
+        "test": "test_split_wealth_continuity_and_pending_order_adjustment"
+      },
+      "11": {
+        "status": "PASS",
+        "test": "test_dividend_right_receivable_payment_no_duplicates"
+      },
+      "12": {
+        "status": "PASS",
+        "test": "test_insufficient_cash_partial_and_reject"
+      },
+      "13": {
+        "status": "PASS",
+        "test": "test_repeated_held_signal_deferred"
+      },
+      "14": {
+        "status": "PASS",
+        "test": "test_halt_blocks_entry_and_exit"
+      },
+      "15": {
+        "status": "PASS",
+        "test": "test_missing_exit_and_delisting_preserve_position"
+      },
+      "16": {
+        "status": "PASS",
+        "test": "test_spread_slippage_embedded_only_once"
+      },
+      "17": {
+        "status": "PASS",
+        "test": "test_future_daily_volume_not_used_for_sizing"
+      },
+      "18": {
+        "status": "PASS",
+        "test": "test_one_five_twenty_exit_session_indices"
+      },
+      "19": {
+        "status": "PASS",
+        "test": "test_probability_rank_missing_and_quantiles_hand_values"
+      },
+      "2": {
+        "status": "PASS",
+        "test": "test_actual_label_boundary_purge"
+      },
+      "20": {
+        "status": "PASS",
+        "test": "test_end_to_end_fixed_run_hash_and_integrity"
+      },
+      "21": {
+        "status": "PASS",
+        "test": "actual strict CLI four frozen datasets"
+      },
+      "22": {
+        "status": "PASS",
+        "test": "test_oracle_separate_and_synthetic_not_promoted"
+      },
+      "23": {
+        "status": "PASS",
+        "test": "test_expired_entry_does_not_affect_holdings_or_nav"
+      },
+      "24": {
+        "status": "PASS",
+        "test": "test_pending_orders_and_terminal_positions_retained"
+      },
+      "3": {
+        "status": "PASS",
+        "test": "test_training_asof_blocks_future_maturity_and_correction"
+      },
+      "4": {
+        "status": "PASS",
+        "test": "test_training_asof_blocks_future_maturity_and_correction"
+      },
+      "5": {
+        "status": "PASS",
+        "test": "test_empty_and_insufficient_fold_no_metrics"
+      },
+      "6": {
+        "status": "PASS",
+        "test": "test_replay_clock_separate_late_prediction_blocked"
+      },
+      "7": {
+        "status": "PASS",
+        "test": "test_constant_price_no_wealth_created"
+      },
+      "8": {
+        "status": "PASS",
+        "test": "test_buy_sell_commission_hand_cash"
+      },
+      "9": {
+        "status": "PASS",
+        "test": "test_rising_falling_nav_and_drawdown"
+      }
+    },
+    "result_content_sha256": "fb60a4be4f3bee3e49a90ffc87390110681ea74aa70cf92029a95e4303dfd332",
+    "run_id": "f9d6eb9fd5819638da80e67aa83da395af88675d8da805480d0d011c836476d2",
+    "scope": "engine correctness only; deterministic manual predictions; no real investment performance",
+    "status": "PASS",
+    "terminal_cash": "1028.30"
+  },
+  "verdicts": {
+    "engine_correctness": "PASS",
+    "m2_hardware": "BLOCKED",
+    "real_data_readiness": "BLOCKED",
+    "real_historical_performance": "BLOCKED",
+    "stage5_research": "CONDITIONAL",
+    "stage5_synthetic_baseline": "PASS"
+  }
+}

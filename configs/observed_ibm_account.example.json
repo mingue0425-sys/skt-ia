@@ -1,0 +1,68 @@
+{
+  "version": "5.5.0",
+  "input_domain": "market",
+  "access_scope": "account_operation",
+  "scope_contract": {
+    "version": "5.5.0",
+    "scope": "forward_observed",
+    "source": "alpha_vantage",
+    "symbol": "IBM",
+    "market_representative": false
+  },
+  "series": {
+    "source": "alpha_vantage",
+    "symbol": "IBM",
+    "price_kind": "ohlcv",
+    "price_semantics": "as_traded",
+    "currency": "USD"
+  },
+  "request": {
+    "source": "alpha_vantage",
+    "kind": "daily",
+    "symbol": "IBM",
+    "outputsize": "compact",
+    "auth_mode": "environment"
+  },
+  "timezone": "America/New_York",
+  "exchange": "XNYS",
+  "calendar_start": "2026-01-01",
+  "calendar_end": "2027-12-31",
+  "decision_policy": "regular_close_plus_60_minutes",
+  "cutoff_policy": "after_processing",
+  "freshness_sessions": 0,
+  "required_fields": [
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume"
+  ],
+  "required_features": [
+    "close_price_change_5",
+    "close_to_ma_20",
+    "realized_log_price_change_volatility_20"
+  ],
+  "horizons": [
+    1,
+    5,
+    20
+  ],
+  "minimum_training": {
+    "samples": 100,
+    "date_span_days": 180,
+    "train": 60,
+    "validation": 20,
+    "test": 20
+  },
+  "http": {
+    "timeout_seconds": 20,
+    "max_attempts": 3,
+    "alpha_spacing_seconds": 12,
+    "local_daily_budget": 25
+  },
+  "collection_rights": null,
+  "learning_rights": null,
+  "trading_state": null,
+  "action_coverage": null,
+  "calendar_library_version": "4.13.2"
+}

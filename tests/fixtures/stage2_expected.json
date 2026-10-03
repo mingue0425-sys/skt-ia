@@ -1,0 +1,15 @@
+{
+  "data_origin": "SYNTHETIC_TEST_ONLY",
+  "cases": [
+    {"case": "initial_and_correction", "policy": "historical_verified", "cutoff": "2024-01-03T22:00:00Z", "expected_close": [100]},
+    {"case": "initial_and_correction", "policy": "historical_verified", "cutoff": "2024-01-06T22:00:00Z", "expected_close": [110]},
+    {"case": "late_event_publication", "policy": "historical_verified", "cutoff": "2024-01-03T22:00:00Z", "expected_close": []},
+    {"case": "early_publication_late_receipt", "policy": "observed", "cutoff": "2024-01-03T22:00:00Z", "expected_close": []},
+    {"case": "early_publication_late_receipt", "policy": "historical_verified", "cutoff": "2024-01-03T22:00:00Z", "expected_close": [100]},
+    {"case": "null_publication", "policy": "historical_verified", "cutoff": "2024-01-06T22:00:00Z", "expected_close": []},
+    {"case": "date_only_publication", "policy": "historical_verified", "cutoff": "2024-01-06T22:00:00Z", "expected_close": []},
+    {"case": "date_only_publication", "policy": "research_assumed", "cutoff": "2024-01-04T06:00:00Z", "expected_close": [100]},
+    {"case": "unordered_conflict", "policy": "historical_verified", "cutoff": "2024-01-06T22:00:00Z", "expected_close": []}
+  ],
+  "assumption_rule": {"id": "date_end_plus_delay", "version": "1", "timezone": "America/New_York", "delay_hours": 1}
+}

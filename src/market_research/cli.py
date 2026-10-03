@@ -7,17 +7,40 @@ from .collect import collect_batch
 from .storage import write_json, sha256, code_version
 from .http import utc_now
 from .validation import build_report
+from .pit.cli import COMMANDS as DB_COMMANDS, options as db_options, run as run_db
+from .datasets.cli import COMMANDS as DATASET_COMMANDS, options as dataset_options, run as run_dataset
+from .stage4.cli import COMMANDS as STAGE4_COMMANDS, options as stage4_options, run as run_stage4
+
+
+from .training.cli import COMMANDS as TRAINING_COMMANDS, options as training_options, run as run_training_cli
+
+
+from .observed.cli import COMMANDS as OBSERVED_COMMANDS, run as run_observed
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Stage 1 market data feasibility")
-    parser.add_argument("command", choices=("collect", "smoke", "validate"))
+    parser = argparse.ArgumentParser(description="Market data collection and local versioned queries")
+    parser.add_argument("command", choices=("collect", "smoke", "validate") + DB_COMMANDS + DATASET_COMMANDS + STAGE4_COMMANDS + TRAINING_COMMANDS + OBSERVED_COMMANDS)
     parser.add_argument("--config", default="configs/sample.json")
     parser.add_argument("--data-dir", default="data")
     parser.add_argument("--project-root", default=".")
     parser.add_argument("--output")
     parser.add_argument("--refresh", action="store_true", help="Preserve a new response observation, never overwrite raw")
+    db_options(parser)
+    dataset_options(parser)
+    stage4_options(parser)
+    training_options(parser)
     args = parser.parse_args(argv)
+    if args.command in OBSERVED_COMMANDS:
+        return run_observed(args)
+    if args.command in TRAINING_COMMANDS:
+        return run_training_cli(args)
+    if args.command in DB_COMMANDS:
+        return run_db(args)
+    if args.command in DATASET_COMMANDS:
+        return run_dataset(args)
+    if args.command in STAGE4_COMMANDS:
+        return run_stage4(args)
     config_path = Path(args.config)
     config_bytes = config_path.read_bytes()
     config = json.loads(config_bytes)

@@ -45,3 +45,15 @@ schema_version, collector_version을 기록한다. 실패의 row_count/empty_res
 실패 request만 재시도한다. 파일은 임시 파일→fsync→원자적 replace로 저장한다.
 수집기는 단일 프로세스·순차 실행 계약이며 동시 프로세스의 ledger locking이나
 분산 수집은 이번 범위에 포함하지 않는다.
+
+## 2단계 additive 필드와 저장 연결
+
+새 HTTP record의 receipt_id는 사건별 UUID이고 raw SHA와 별개다. reprocess에는
+origin_receipt_id를 남긴다. parsing/가격 구조 검사와 normalized 저장이 끝난 후
+processing_completed_at_utc와 processing_validation을 추가한다. recorded_at_utc는
+원래 파싱 전 초기 작성 시각으로 유지하며 완료 시각으로 해석하지 않는다.
+기존 1.0.0 payload는 변경하지 않고 importer가 누락 필드의 증거 수준을 구별한다.
+normalizer tag만으로 버전을 식별하지 않으며 code SHA/schema/artifact hash를 함께 저장한다.
+
+DB 가격 의미·close_only 분리·시간/공개 버전 근거·원본 연결은
+[local_store_schema.md](local_store_schema.md), [time_query_policies.md](time_query_policies.md)에 정의한다.

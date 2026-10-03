@@ -1,0 +1,498 @@
+{
+  "collection_received_at_range": {
+    "end": "2026-10-03T08:37:35.813097+00:00",
+    "start": "2026-10-03T08:36:58.278638+00:00"
+  },
+  "dataset_count": 1165,
+  "dataset_exclusion_counts": {},
+  "dataset_ready_count": 1165,
+  "dataset_snapshot_id": "768f8e2ccda885674081e03b104919bc16bb1e466de105e29f4a530a5f3548d5",
+  "decision_dates": {
+    "test": {
+      "end": "2026-09-21",
+      "start": "2025-10-06"
+    },
+    "train": {
+      "end": "2024-09-16",
+      "start": "2021-10-04"
+    },
+    "validation": {
+      "end": "2025-09-22",
+      "start": "2024-10-07"
+    }
+  },
+  "decision_sampling": "Monday sessions only; chosen before evaluation",
+  "documentation": {
+    "actions": "https://eodhd.com/financial-apis/api-splits-dividends",
+    "prices": "https://eodhd.com/financial-apis/api-for-historical-data-and-volumes",
+    "terms": "https://eodhd.com/financial-apis/terms-conditions"
+  },
+  "environment": {
+    "dependencies": {
+      "exchange_calendars": "4.13.2",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "threadpoolctl": "3.7.0"
+    },
+    "machine": "aarch64",
+    "platform": "Linux-6.18.50+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]"
+  },
+  "features": [
+    "close_price_change_5",
+    "close_to_ma_20",
+    "realized_log_price_change_volatility_20",
+    "intraday_high_low_ratio",
+    "volume_to_prior20_mean"
+  ],
+  "models": [
+    {
+      "evaluation_exclusion_counts": {},
+      "metrics": {
+        "binary_log_loss": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "brier": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "direction_accuracy": {
+          "reason": null,
+          "value": 0.5148936170212766
+        },
+        "mae": {
+          "reason": null,
+          "value": 0.03410221798485615
+        },
+        "mse": {
+          "reason": null,
+          "value": 0.0021904269746513398
+        }
+      },
+      "model": "zero",
+      "model_id": "afb541f5c6c7493d75936ea37993f4631741946b2466f7d1bb96771d4a3bf029",
+      "rank_ic": {
+        "reason": "no_defined_daily_ic",
+        "value": null
+      },
+      "rank_ic_defined_dates": 0,
+      "task": "regression",
+      "test_count": 235,
+      "validation_count": 235
+    },
+    {
+      "evaluation_exclusion_counts": {},
+      "metrics": {
+        "binary_log_loss": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "brier": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "direction_accuracy": {
+          "reason": null,
+          "value": 0.4851063829787234
+        },
+        "mae": {
+          "reason": null,
+          "value": 0.03432293186454261
+        },
+        "mse": {
+          "reason": null,
+          "value": 0.002203239944922639
+        }
+      },
+      "model": "mean",
+      "model_id": "572a372260578935d22da45bdb09a06214ad8175ee47ee1532abf151990c7787",
+      "rank_ic": {
+        "reason": "no_defined_daily_ic",
+        "value": null
+      },
+      "rank_ic_defined_dates": 0,
+      "task": "regression",
+      "test_count": 235,
+      "validation_count": 235
+    },
+    {
+      "evaluation_exclusion_counts": {},
+      "metrics": {
+        "binary_log_loss": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "brier": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "direction_accuracy": {
+          "reason": null,
+          "value": 0.49361702127659574
+        },
+        "mae": {
+          "reason": null,
+          "value": 0.034419775442599006
+        },
+        "mse": {
+          "reason": null,
+          "value": 0.002272139631159792
+        }
+      },
+      "model": "ridge",
+      "model_id": "40f7caa6b7f6288576023dea958782f027bfd3baa96a1e92c769ee3fc83fd6ce",
+      "rank_ic": {
+        "reason": null,
+        "value": 0.05319148936170212
+      },
+      "rank_ic_defined_dates": 47,
+      "task": "regression",
+      "test_count": 235,
+      "validation_count": 235
+    },
+    {
+      "evaluation_exclusion_counts": {},
+      "metrics": {
+        "binary_log_loss": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "brier": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "direction_accuracy": {
+          "reason": null,
+          "value": 0.4765957446808511
+        },
+        "mae": {
+          "reason": null,
+          "value": 0.03659159554777631
+        },
+        "mse": {
+          "reason": null,
+          "value": 0.0025941529262898627
+        }
+      },
+      "model": "tree",
+      "model_id": "24c29d05680dc1203b6098052155a6f8a118d99f7deaf946b865b7c272f15f9c",
+      "rank_ic": {
+        "reason": null,
+        "value": 0.0180806120836195
+      },
+      "rank_ic_defined_dates": 16,
+      "task": "regression",
+      "test_count": 235,
+      "validation_count": 235
+    },
+    {
+      "evaluation_exclusion_counts": {},
+      "metrics": {
+        "binary_log_loss": {
+          "reason": null,
+          "value": 0.6968837827831031
+        },
+        "brier": {
+          "reason": null,
+          "value": 0.2518653364822229
+        },
+        "direction_accuracy": {
+          "reason": null,
+          "value": 0.4851063829787234
+        },
+        "mae": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "mse": {
+          "reason": "output_not_provided",
+          "value": null
+        }
+      },
+      "model": "frequency",
+      "model_id": "6d46ecb46aa0289771b08fc93dc03dff1db17ea8beff8ea91ced5fdf7eb127a2",
+      "rank_ic": {
+        "reason": "no_defined_daily_ic",
+        "value": null
+      },
+      "rank_ic_defined_dates": 0,
+      "task": "classification",
+      "test_count": 235,
+      "validation_count": 235
+    },
+    {
+      "evaluation_exclusion_counts": {},
+      "metrics": {
+        "binary_log_loss": {
+          "reason": null,
+          "value": 0.6989437788130235
+        },
+        "brier": {
+          "reason": null,
+          "value": 0.2529642048547211
+        },
+        "direction_accuracy": {
+          "reason": null,
+          "value": 0.4851063829787234
+        },
+        "mae": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "mse": {
+          "reason": "output_not_provided",
+          "value": null
+        }
+      },
+      "model": "logistic",
+      "model_id": "61e1b0311cec8929d744e18c5b45e0a17ae89ce2d30684515dc9307c9371fbdc",
+      "rank_ic": {
+        "reason": "no_defined_daily_ic",
+        "value": null
+      },
+      "rank_ic_defined_dates": 0,
+      "task": "classification",
+      "test_count": 235,
+      "validation_count": 235
+    },
+    {
+      "evaluation_exclusion_counts": {},
+      "metrics": {
+        "binary_log_loss": {
+          "reason": null,
+          "value": 0.721145333297422
+        },
+        "brier": {
+          "reason": null,
+          "value": 0.26107928571052186
+        },
+        "direction_accuracy": {
+          "reason": null,
+          "value": 0.4851063829787234
+        },
+        "mae": {
+          "reason": "output_not_provided",
+          "value": null
+        },
+        "mse": {
+          "reason": "output_not_provided",
+          "value": null
+        }
+      },
+      "model": "tree",
+      "model_id": "2c7ded85e286eca341efc06bd69dfe1b00026db39e9d56b764e4947f6a74e87e",
+      "rank_ic": {
+        "reason": "no_defined_daily_ic",
+        "value": null
+      },
+      "rank_ic_defined_dates": 0,
+      "task": "classification",
+      "test_count": 235,
+      "validation_count": 235
+    }
+  ],
+  "partition_counts": {
+    "test": 235,
+    "train": 680,
+    "validation": 235
+  },
+  "presets": {
+    "frequency": {
+      "alpha": 1.0,
+      "formula": "(n_up+alpha)/(n+2*alpha)"
+    },
+    "logistic": {
+      "C": 1.0,
+      "fit_intercept": true,
+      "max_iter": 300,
+      "solver": "lbfgs",
+      "tol": 1e-08
+    },
+    "mean": {},
+    "ridge": {
+      "alpha": 1.0,
+      "fit_intercept": true,
+      "solver": "svd"
+    },
+    "tree": {
+      "max_depth": 3,
+      "min_samples_leaf": 8
+    },
+    "zero": {}
+  },
+  "quality": {
+    "AAPL": {
+      "daily_rows": 1320,
+      "dividends": 21,
+      "end": "2026-10-02",
+      "isin": "US0378331005",
+      "issues": {},
+      "missing_reference_sessions": [],
+      "splits": 0,
+      "start": "2021-07-01"
+    },
+    "AMZN": {
+      "daily_rows": 1320,
+      "dividends": 0,
+      "end": "2026-10-02",
+      "isin": "US0231351067",
+      "issues": {
+        "large_price_move_review_action_or_error": 1
+      },
+      "missing_reference_sessions": [],
+      "splits": 1,
+      "start": "2021-07-01"
+    },
+    "MCD": {
+      "daily_rows": 1320,
+      "dividends": 21,
+      "end": "2026-10-02",
+      "isin": "US5801351017",
+      "issues": {},
+      "missing_reference_sessions": [],
+      "splits": 0,
+      "start": "2021-07-01"
+    },
+    "MSFT": {
+      "daily_rows": 1320,
+      "dividends": 21,
+      "end": "2026-10-02",
+      "isin": "US5949181045",
+      "issues": {},
+      "missing_reference_sessions": [],
+      "splits": 0,
+      "start": "2021-07-01"
+    },
+    "TSLA": {
+      "daily_rows": 1320,
+      "dividends": 0,
+      "end": "2026-10-02",
+      "isin": "US88160R1014",
+      "issues": {
+        "large_price_move_review_action_or_error": 1
+      },
+      "missing_reference_sessions": [],
+      "splits": 1,
+      "start": "2021-07-01"
+    }
+  },
+  "rank_ic_comparison": {
+    "common_dates": 16,
+    "constant_baselines": "undefined",
+    "equal_date_mean": {
+      "ridge": 0.03125,
+      "tree": 0.0180806120836195
+    }
+  },
+  "reproducibility": {
+    "atol": 1e-12,
+    "models": [
+      {
+        "model": "zero",
+        "pipeline_hash_equal": true,
+        "reload": "PASS",
+        "repeated_fit": "PASS",
+        "task": "regression"
+      },
+      {
+        "model": "mean",
+        "pipeline_hash_equal": true,
+        "reload": "PASS",
+        "repeated_fit": "PASS",
+        "task": "regression"
+      },
+      {
+        "model": "ridge",
+        "pipeline_hash_equal": true,
+        "reload": "PASS",
+        "repeated_fit": "PASS",
+        "task": "regression"
+      },
+      {
+        "model": "tree",
+        "pipeline_hash_equal": true,
+        "reload": "PASS",
+        "repeated_fit": "PASS",
+        "task": "regression"
+      },
+      {
+        "model": "frequency",
+        "pipeline_hash_equal": true,
+        "reload": "PASS",
+        "repeated_fit": "PASS",
+        "task": "classification"
+      },
+      {
+        "model": "logistic",
+        "pipeline_hash_equal": true,
+        "reload": "PASS",
+        "repeated_fit": "PASS",
+        "task": "classification"
+      },
+      {
+        "model": "tree",
+        "pipeline_hash_equal": true,
+        "reload": "PASS",
+        "repeated_fit": "PASS",
+        "task": "classification"
+      }
+    ],
+    "rtol": 1e-12
+  },
+  "seed": 20261003,
+  "simulation": {
+    "reason": "Vendor indicative opening prices are not verified auction fills; historical halt/special-action completeness assumed",
+    "status": "NOT_RUN"
+  },
+  "source": "eodhd",
+  "split": {
+    "folds": [
+      {
+        "test": [
+          "2025-10-01",
+          "2026-09-25"
+        ],
+        "train": [
+          "2021-10-01",
+          "2024-09-30"
+        ],
+        "training_asof": "2024-10-01T00:00:00Z",
+        "validation": [
+          "2024-10-01",
+          "2025-09-30"
+        ]
+      }
+    ],
+    "horizon": 5,
+    "kind": "explicit",
+    "min_samples": {
+      "test": 20,
+      "train": 60,
+      "validation": 20
+    }
+  },
+  "split_excluded_count": 15,
+  "split_exclusion_counts": {
+    "label_interval_overlaps_validation": 5,
+    "training_ineligible_at_asof": 10,
+    "validation_label_overlaps_test": 5
+  },
+  "status": "OK",
+  "strict_learning_ready_count": 0,
+  "strict_selection": 0,
+  "strictness": "NOT_STRICT_PIT",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "TSLA",
+    "MCD"
+  ],
+  "test_entry_exit_range": {
+    "intended_entry_at": "2025-10-07T13:30:00.000000Z",
+    "intended_exit_at": "2026-09-29T13:30:00.000000Z"
+  }
+}

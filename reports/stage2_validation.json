@@ -1,0 +1,581 @@
+{
+  "additional_execution_checks": {
+    "git_diff_check": {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    "publication_scope_audit": {
+      "public_candidate_files": 51,
+      "raw_normalized_database_rows_excluded": true,
+      "secret_pattern_scan": "PASS",
+      "status": "PASS"
+    },
+    "schema1_snapshot_after_schema2_upgrade": {
+      "command": ".venv/bin/python -m market_research.cli snapshot-verify --db data/stage2.sqlite --snapshot-id 3ea9ef3bf5648c88630c7d5a0c599aeaa143b901fdfa4c750a0c443143f4ec39",
+      "content_sha256": "3ea9ef3bf5648c88630c7d5a0c599aeaa143b901fdfa4c750a0c443143f4ec39",
+      "selected_count": 252,
+      "status": "PASS"
+    },
+    "wheel_build": {
+      "command": ".venv/bin/python -m pip wheel --no-deps --wheel-dir /tmp/skt-ia-stage2-wheel .",
+      "current_pit_modules_identical": 8,
+      "status": "PASS",
+      "wheel_sha256": "bf3b4a1fc8cff6fb9c510e7817861e142c3ca9b602db1e3c0af2f0971c0b9ded"
+    }
+  },
+  "applicable_agents_md": [],
+  "baseline_offline_tests": {
+    "command": ".venv/bin/python scripts/verify.py",
+    "executed_before_changes": true,
+    "failed": 0,
+    "passed": 31
+  },
+  "calendar": {
+    "calendar_source": [
+      "exchange_calendars_derived_reference"
+    ],
+    "calendar_version": "af58297ed15eabc47a114de5099d7adcc2d509d672faea7b6e399da3235089ce",
+    "historical_notice_verification": "unverified",
+    "rows": 1254,
+    "status": "PASS"
+  },
+  "code_sha256": "a9c4ffbd20ef2ad0b7353c2638e2a61a8f21532959787b5910844ecb211b5f47",
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "scripts/verify.py"
+      ],
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "scripts/make_synthetic_stage2.py"
+      ],
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "db-init",
+        "--db",
+        "tests/generated/cli-stage2.sqlite"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "db-import",
+        "--db",
+        "tests/generated/cli-stage2.sqlite",
+        "--data-dir",
+        "tests/generated/stage2",
+        "--input-domain",
+        "synthetic"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "db-query",
+        "--db",
+        "tests/generated/cli-stage2.sqlite",
+        "--cutoff",
+        "2024-01-03T22:00:00Z",
+        "--policy",
+        "historical_verified",
+        "--input-domain",
+        "synthetic",
+        "--symbol-mode",
+        "provider_label",
+        "--allow-temporary",
+        "--symbols",
+        "SYN",
+        "--require-data"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "snapshot-create",
+        "--db",
+        "tests/generated/cli-stage2.sqlite",
+        "--cutoff",
+        "2024-01-03T22:00:00Z",
+        "--policy",
+        "historical_verified",
+        "--input-domain",
+        "synthetic",
+        "--symbol-mode",
+        "provider_label",
+        "--allow-temporary",
+        "--symbols",
+        "SYN"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "snapshot-verify",
+        "--db",
+        "tests/generated/cli-stage2.sqlite",
+        "--snapshot-id",
+        "291e31c5f36602affe3a77cb48f530970136f1e9e63f609aeabfbd63fe9f8dca"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "snapshot-replay",
+        "--db",
+        "tests/generated/cli-stage2.sqlite",
+        "--snapshot-id",
+        "291e31c5f36602affe3a77cb48f530970136f1e9e63f609aeabfbd63fe9f8dca"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "db-query",
+        "--db",
+        "tests/generated/cli-stage2.sqlite",
+        "--cutoff",
+        "2024-01-03T22:00:00Z",
+        "--policy",
+        "historical_verified",
+        "--input-domain",
+        "synthetic",
+        "--symbol-mode",
+        "provider_label",
+        "--allow-temporary",
+        "--symbols",
+        "SYN",
+        "--start",
+        "2099-01-01",
+        "--require-data"
+      ],
+      "expected_returncode": 1,
+      "returncode": 1,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "market_research.cli",
+        "db-audit",
+        "--db",
+        "tests/generated/cli-stage2.sqlite"
+      ],
+      "expected_returncode": 0,
+      "returncode": 0,
+      "status": "PASS"
+    }
+  ],
+  "database_size_bytes": 93671424,
+  "diagnostic_failure_resolved": {
+    "command": "python3 inline diagnostic",
+    "resolution": "rerun with installed .venv/bin/python; no data corruption or network failure",
+    "result": "ModuleNotFoundError: market_research"
+  },
+  "elapsed_seconds": 8.072386407991871,
+  "environment": {
+    "machine": "aarch64",
+    "platform": "Linux-6.18.50+rpt-rpi-2712-aarch64-with-glibc2.41",
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+    "sqlite": "3.46.1"
+  },
+  "generated_at_utc": "2026-10-02T12:23:06.048820+00:00",
+  "idempotent_immutable_counts": true,
+  "live_smoke": {
+    "finished_at_utc": "2026-10-02T11:01:00.065742+00:00",
+    "results": [
+      {
+        "actual_data_period": {
+          "end": "2024-12-31",
+          "start": "2024-01-02"
+        },
+        "counts": {
+          "actions": 4,
+          "bars": 252,
+          "directory": 0,
+          "documents": 0
+        },
+        "fetched_at_utc": "2026-10-02T11:00:59.433742+00:00",
+        "http_status": 200,
+        "network_download_performed": true,
+        "processing_completed_at_utc": "2026-10-02T11:00:59.496198+00:00",
+        "source": "yahoo",
+        "status": "success"
+      },
+      {
+        "actual_data_period": {
+          "end": "2026-10-01",
+          "start": "2026-05-11"
+        },
+        "counts": {
+          "actions": 0,
+          "bars": 100,
+          "directory": 0,
+          "documents": 0
+        },
+        "fetched_at_utc": "2026-10-02T11:01:00.029853+00:00",
+        "http_status": 200,
+        "network_download_performed": true,
+        "processing_completed_at_utc": "2026-10-02T11:01:00.058699+00:00",
+        "source": "alpha_vantage",
+        "status": "success"
+      }
+    ],
+    "scope": "actual independent network execution; no historical publication or ID evidence implied",
+    "started_at_utc": "2026-10-02T11:00:58.892239+00:00",
+    "status": "PASS"
+  },
+  "local_inputs": {
+    "calendar": "/home/sechi/market-data-stage1/data/derived/calendar.json",
+    "data_roots": [
+      "/home/sechi/market-data-stage1/data",
+      "/home/sechi/Stk-ia/data/stage2_collection"
+    ],
+    "database": "/home/sechi/Stk-ia/data/stage2-validation.sqlite",
+    "smoke_report": "/home/sechi/Stk-ia/data/stage2-smoke.json"
+  },
+  "memory_measurement_scope": "this validation process only, not M2 hardware or every child process",
+  "offline_tests": {
+    "errors": 0,
+    "failures": 0,
+    "passed": 72,
+    "skipped": 0,
+    "status": "PASS",
+    "test_kind": "offline_synthetic_fixtures_only",
+    "tests_run": 72
+  },
+  "process_peak_rss_mib": 444.234375,
+  "public_artifact_scope": "aggregates only; raw/normalized/DB/snapshot row contents remain gitignored local artifacts",
+  "real_audit": {
+    "counts": {
+      "artifact_receipts": 62,
+      "corporate_action_versions": 89,
+      "daily_price_versions": 33076,
+      "manifest_links": 76,
+      "normalized_artifacts": 62,
+      "query_snapshots": 8,
+      "raw_receipts": 41,
+      "security_records": 13302,
+      "snapshot_items": 2816,
+      "symbol_assertions": 45515,
+      "trading_session_versions": 1254,
+      "version_edges": 0
+    },
+    "failures": [],
+    "file_checks": true,
+    "foreign_keys_enabled": true,
+    "schema_version": 2,
+    "status": "PASS"
+  },
+  "real_historical_verified": {
+    "calendar_versions": [],
+    "conflict_count": 0,
+    "excluded_count": 7138,
+    "exclusion_counts": {
+      "price_semantics_not_requested": 2334,
+      "publication_time_unknown": 4804
+    },
+    "limitations": [
+      "No source licensing, historical universe completeness, profitability or identity guarantees are implied.",
+      "Temporary internal records are not verified permanent security IDs; cross-source linkage is unverified.",
+      "Provider request symbols are labels, not historically verified effective ticker mappings."
+    ],
+    "request": {
+      "assumption_rule": null,
+      "calendar_version": null,
+      "cutoff": "2024-12-31T22:00:00.000000Z",
+      "end": "2026-10-01",
+      "family": "prices",
+      "identifier_requirement": "temporary_allowed",
+      "input_domain": "market",
+      "policy": "historical_verified",
+      "policy_version": "2.1.0",
+      "price_semantics": [
+        "as_traded",
+        "split_adjusted"
+      ],
+      "session_requirement": null,
+      "sources": [],
+      "stale_after_hours": 48,
+      "start": "2024-01-02",
+      "symbol_mode": "provider_label",
+      "symbols": [
+        "AAPL",
+        "IBM"
+      ]
+    },
+    "selected_count": 0,
+    "status": "EMPTY",
+    "strictness": "HISTORICAL_VERSION_EVIDENCE"
+  },
+  "real_imports": [
+    {
+      "counts": {
+        "idempotent": 74
+      },
+      "database_counts": {
+        "artifact_receipts": 62,
+        "corporate_action_versions": 89,
+        "daily_price_versions": 33076,
+        "manifest_links": 76,
+        "normalized_artifacts": 62,
+        "query_snapshots": 7,
+        "raw_receipts": 41,
+        "security_records": 13302,
+        "snapshot_items": 2464,
+        "symbol_assertions": 45515,
+        "trading_session_versions": 1254,
+        "version_edges": 0
+      },
+      "input_domain": "market",
+      "quarantine_reasons": {},
+      "quarantined": 0,
+      "run_id": "277e3e4ad499480c96773c18ac47e55a",
+      "source_failure_note": "Source HTTP failures are receipts only, never price data; import PASS is not source access PASS.",
+      "status": "PASS"
+    },
+    {
+      "counts": {
+        "idempotent": 2
+      },
+      "database_counts": {
+        "artifact_receipts": 62,
+        "corporate_action_versions": 89,
+        "daily_price_versions": 33076,
+        "manifest_links": 76,
+        "normalized_artifacts": 62,
+        "query_snapshots": 7,
+        "raw_receipts": 41,
+        "security_records": 13302,
+        "snapshot_items": 2464,
+        "symbol_assertions": 45515,
+        "trading_session_versions": 1254,
+        "version_edges": 0
+      },
+      "input_domain": "market",
+      "quarantine_reasons": {},
+      "quarantined": 0,
+      "run_id": "f4ea96b39e504208bc07704e0986832e",
+      "source_failure_note": "Source HTTP failures are receipts only, never price data; import PASS is not source access PASS.",
+      "status": "PASS"
+    }
+  ],
+  "real_observed": {
+    "calendar_versions": [
+      "af58297ed15eabc47a114de5099d7adcc2d509d672faea7b6e399da3235089ce"
+    ],
+    "conflict_count": 0,
+    "excluded_count": 6234,
+    "exclusion_counts": {
+      "actual_receipt_unproven": 3900,
+      "price_semantics_not_requested": 2334
+    },
+    "limitations": [
+      "No source licensing, historical universe completeness, profitability or identity guarantees are implied.",
+      "Temporary internal records are not verified permanent security IDs; cross-source linkage is unverified.",
+      "Provider request symbols are labels, not historically verified effective ticker mappings.",
+      "Library reference sessions bound regular-session observations; vendor session coverage and historical notice versions remain unverified.",
+      "Bound source-version order is used when complete; otherwise receipt order describes observed responses, not the provider's historical revision chronology."
+    ],
+    "request": {
+      "assumption_rule": null,
+      "calendar_version": null,
+      "cutoff": "2026-10-02T12:23:01.911901Z",
+      "end": "2026-10-01",
+      "family": "prices",
+      "identifier_requirement": "temporary_allowed",
+      "input_domain": "market",
+      "policy": "observed",
+      "policy_version": "2.1.0",
+      "price_semantics": [
+        "as_traded",
+        "split_adjusted"
+      ],
+      "session_requirement": null,
+      "sources": [],
+      "stale_after_hours": 48,
+      "start": "2024-01-02",
+      "symbol_mode": "provider_label",
+      "symbols": [
+        "AAPL",
+        "IBM"
+      ]
+    },
+    "selected_count": 352,
+    "status": "OK",
+    "strictness": "OBSERVED_RECEIPTS"
+  },
+  "real_snapshot": {
+    "content_sha256": "e59ca49bc81eed31060df908813f476343ba19f13071a16e0abdc5589bc21042",
+    "replay_equal": true,
+    "selected_count": 352,
+    "snapshot_id": "e59ca49bc81eed31060df908813f476343ba19f13071a16e0abdc5589bc21042"
+  },
+  "real_statistics": {
+    "database_counts": {
+      "artifact_receipts": 62,
+      "corporate_action_versions": 89,
+      "daily_price_versions": 33076,
+      "manifest_links": 76,
+      "normalized_artifacts": 62,
+      "query_snapshots": 8,
+      "raw_receipts": 41,
+      "security_records": 13302,
+      "snapshot_items": 2816,
+      "symbol_assertions": 45515,
+      "trading_session_versions": 1254,
+      "version_edges": 0
+    },
+    "network_evidence_counts": {
+      "explicit": 19,
+      "legacy_unknown": 22
+    },
+    "normalized_hash_verification_counts": {
+      "legacy_filename_canonical_hash_no_manifest_byte_hash": 17,
+      "manifest_byte_hash": 45
+    },
+    "parsing_completion_known": 2,
+    "receipt_status_counts": {
+      "access_challenge": 3,
+      "access_restricted": 1,
+      "entitlement_restricted": 1,
+      "http_error": 3,
+      "not_found": 6,
+      "success": 27
+    }
+  },
+  "real_verified_identity_default": {
+    "calendar_versions": [],
+    "conflict_count": 0,
+    "excluded_count": 7138,
+    "exclusion_counts": {
+      "security_identity_unverified": 7138
+    },
+    "limitations": [
+      "No source licensing, historical universe completeness, profitability or identity guarantees are implied.",
+      "Provider request symbols are labels, not historically verified effective ticker mappings.",
+      "Bound source-version order is used when complete; otherwise receipt order describes observed responses, not the provider's historical revision chronology."
+    ],
+    "request": {
+      "assumption_rule": null,
+      "calendar_version": null,
+      "cutoff": "2026-10-02T12:23:01.911901Z",
+      "end": "2026-10-01",
+      "family": "prices",
+      "identifier_requirement": "verified",
+      "input_domain": "market",
+      "policy": "observed",
+      "policy_version": "2.1.0",
+      "price_semantics": [
+        "as_traded"
+      ],
+      "session_requirement": null,
+      "sources": [],
+      "stale_after_hours": 48,
+      "start": "2024-01-02",
+      "symbol_mode": "provider_label",
+      "symbols": [
+        "AAPL",
+        "IBM"
+      ]
+    },
+    "selected_count": 0,
+    "status": "EMPTY",
+    "strictness": "OBSERVED_RECEIPTS"
+  },
+  "stage": 2,
+  "started_at_utc": "2026-10-02T12:22:57.976425+00:00",
+  "starting_commit": "fb78fc7d712dcd285f9e463ec3673fe732cdc0a5",
+  "starting_worktree": "clean",
+  "synthetic_cli": {
+    "empty_require_data_exit": 1,
+    "expected_initial_close": 100,
+    "snapshot_verified": "PASS",
+    "status": "PASS"
+  },
+  "validation_command": [
+    ".venv/bin/python",
+    "scripts/validate_stage2.py",
+    "--data-dir",
+    "/home/sechi/market-data-stage1/data",
+    "--data-dir",
+    "data/stage2_collection",
+    "--calendar",
+    "/home/sechi/market-data-stage1/data/derived/calendar.json",
+    "--smoke-report",
+    "data/stage2-smoke.json",
+    "--db",
+    "data/stage2-validation.sqlite"
+  ],
+  "verdicts": {
+    "actual_import": {
+      "reason": "existing bytes/hash/provenance checks; source failures remain failure receipts",
+      "status": "PASS"
+    },
+    "historical_verified_readiness": {
+      "reason": "current market sample lacks version-bound historical public timestamps; empty result is not data-readiness PASS",
+      "status": "BLOCKED"
+    },
+    "identifiers_and_price_meanings": {
+      "reason": "temporary source labels, vendor session/volume basis unverified; Yahoo split-adjusted, IBM demo as-traded, adjclose close-only",
+      "status": "CONDITIONAL"
+    },
+    "m2_hardware": {
+      "reason": "no actual Apple Silicon M2 access; Linux ARM64 execution is not M2 verification",
+      "status": "BLOCKED"
+    },
+    "observed_after_receipt": {
+      "reason": "eligible actual receipt plus usable_at and completed observation interval; temporary/provider labels explicitly allowed",
+      "status": "PASS"
+    },
+    "stage3_scope": {
+      "reason": "synthetic interface development and licensed limited observed sample processing; strict historical feature/label validation remains blocked",
+      "status": "CONDITIONAL"
+    },
+    "storage_version_query_engine": {
+      "reason": "offline expected-value cases, CLI, integrity, idempotence and frozen replay",
+      "status": "PASS"
+    }
+  }
+}

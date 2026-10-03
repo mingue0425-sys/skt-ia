@@ -7,3 +7,11 @@ reports/execution*.json
 reports/sample_quality.json
 reports/sample_cases.json
 reports/calendar_reference_review.json
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+reports/stage2_private*.json
+tests/generated/
+build/
+dist/

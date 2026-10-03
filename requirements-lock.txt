@@ -8,3 +8,11 @@ tzdata==2026.4
 korean_lunar_calendar==0.4.0
 python-dateutil==2.9.0.post0
 six==1.17.0
+
+# Stage5: installed on Python 3.13.5/Linux ARM64.
+scikit-learn==1.9.1
+scipy==1.18.1
+joblib==1.6.0
+threadpoolctl==3.7.0
+narwhals==2.26.0
+cloudpickle==3.1.2

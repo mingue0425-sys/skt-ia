@@ -1,0 +1,7 @@
+{
+  "purpose": "Small live check of stage2 receipt/processing fields; not a historical universe",
+  "requests": [
+    {"source": "yahoo", "kind": "daily", "symbol": "AAPL", "start": "2024-01-02", "end": "2024-12-31", "smoke": true},
+    {"source": "alpha_vantage", "kind": "daily", "symbol": "IBM", "outputsize": "compact", "auth_mode": "demo", "smoke": true}
+  ]
+}

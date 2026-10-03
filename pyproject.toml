@@ -7,7 +7,7 @@ name = "market-research-stage1"
 version = "0.1.0"
 description = "Small, auditable market-data feasibility collector"
 requires-python = ">=3.11"
-dependencies = ["exchange_calendars>=4.11,<5"]
+dependencies = ["exchange_calendars>=4.11,<5", "scikit-learn>=1.7,<2"]
 
 [project.scripts]
 market-research = "market_research.cli:main"

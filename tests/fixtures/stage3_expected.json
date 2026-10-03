@@ -1,0 +1,26 @@
+{
+  "fixture_kind": "SYNTHETIC_TEST_ONLY_HAND_WRITTEN_ORACLE",
+  "constant_100": {
+    "close_price_change_1": 0.0,
+    "close_price_change_5": 0.0,
+    "close_price_change_20": 0.0,
+    "close_price_change_60": 0.0,
+    "realized_log_price_change_volatility_5": 0.0,
+    "realized_log_price_change_volatility_20": 0.0,
+    "realized_log_price_change_volatility_60": 0.0,
+    "close_to_ma_20": 0.0,
+    "close_to_ma_60": 0.0,
+    "open_gap": 0.0,
+    "intraday_high_low_ratio": 0.020202020202020204,
+    "volume_to_prior20_mean": 1.0,
+    "elapsed_sessions_since_last_observation": 0,
+    "missing_any_numeric_feature": false
+  },
+  "decision_2024_01_02": {
+    "decision_at": "2024-01-02T22:00:00.000000Z",
+    "entry_at": "2024-01-03T14:30:00.000000Z",
+    "exit_dates": {"1": "2024-01-04", "5": "2024-01-10", "20": "2024-02-01"}
+  },
+  "two_for_one_split": {"initial_quantity": 1, "entry_open": 100, "exit_open": 55, "exit_quantity": 2, "price_return": 0.1},
+  "split_and_cash": {"dividend_per_postsplit_share": 1, "cash_entitlement": 2, "total_return_with_receivable": 0.12, "total_return_without_receivable": 0.1}
+}

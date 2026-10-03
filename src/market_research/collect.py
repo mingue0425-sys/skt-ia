@@ -3,6 +3,8 @@ from .http import HTTPClient, utc_now, Response
 from .providers.public import get_provider, ProviderError
 from .storage import Store, sha256, canonical, atomic_write, write_json, code_version
 from urllib.parse import urlsplit, urlunsplit, parse_qs, urlencode
+import uuid
+from .validation.quality import validate_bars
 
 SAFE_FIELDS = {"source", "kind", "symbol", "start", "end", "outputsize", "auth_mode", "document_url"}
 
@@ -77,12 +79,19 @@ def collect_one(store, client, spec, *, project_root, config_hash, refresh=False
               "empty_response": None, "body_empty": not bool(response.body),
               "normalized_path": None, "config_sha256": config_hash,
               "code_sha256": current_code, "collector_version": "0.1.0"}
+    # IDs name receipt EVENTS, not response contents. Reprocessing is not a new HTTP event.
+    if cached:
+        record["origin_receipt_id"] = cached.get("receipt_id", cached.get("origin_receipt_id"))
+    else:
+        record["receipt_id"] = uuid.uuid4().hex
     if record["status"] is None:
         if not response.body.strip():
             record.update(status="empty_response", empty_response=True, row_count=0, document_count=0)
         else:
             try:
                 out = provider.normalize(safe, response.body)
+                if any(i["severity"] == "error" for i in validate_bars(out["bars"])):
+                    raise ProviderError("normalization_validation_failure")
                 count = sum(len(out[k]) for k in ("bars", "actions", "directory"))
                 docs = len(out["documents"])
                 dates = [x["trading_date"] for x in out["bars"]]
@@ -103,6 +112,9 @@ def collect_one(store, client, spec, *, project_root, config_hash, refresh=False
                 record["normalized_sha256"] = sha256((store.root / norm_path).read_bytes())
             except ProviderError as e:
                 record["status"] = e.category
+    if record["status"] == "success":
+        record["processing_completed_at_utc"] = utc_now()
+        record["processing_validation"] = "provider_schema_and_price_structure_v1"
     store.save_record(record)
     return {"request_id": request_id, "status": "reprocessed" if cached and record["status"] == "success" else record["status"],
             "manifest_record": record}
