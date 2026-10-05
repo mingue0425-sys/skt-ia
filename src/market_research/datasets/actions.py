@@ -1,16 +1,19 @@
 """Auditable share/cash ledger for explicitly verified, simple synthetic/vendor actions."""
 from .features import valid_number
+from .contracts import LABEL_VERSION, LABEL_VERSION_ENDPOINT, label_version
+from .label_dependencies import action_classification
 
 
 def holdings_outcome(entry, exit_row, actions, *, coverage, include_receivables, initial_quantity=1, require_cash=True,
-                     allow_assumed_coverage=False):
+                     allow_assumed_coverage=False, label_definition_version=LABEL_VERSION):
+    endpoint_contract = label_version(label_definition_version) == LABEL_VERSION_ENDPOINT
     if not isinstance(include_receivables,bool):
         return {"status":"invalid","reason":"invalid_receivable_policy_boolean_required"}
     accepted = coverage and (coverage.get("status") == "verified_complete" or
         (allow_assumed_coverage and coverage.get("status") == "research_assumed_complete" and coverage.get("research_assumption")))
     if not accepted:
         return {"status":"blocked","reason":"corporate_action_coverage_missing"}
-    if coverage.get("same_day_order") != "split_then_dividend_postsplit":
+    if (not endpoint_contract or require_cash) and coverage.get("same_day_order") != "split_then_dividend_postsplit":
         return {"status":"blocked","reason":"corporate_action_order_unverified"}
     if not coverage["start_date"] <= entry["trading_date"] <= exit_row["trading_date"] <= coverage["end_date"]:
         return {"status":"blocked","reason":"corporate_action_interval_not_covered"}
@@ -22,6 +25,8 @@ def holdings_outcome(entry, exit_row, actions, *, coverage, include_receivables,
     aliases={"split":"split","splits":"split","dividend":"dividend","dividends":"dividend"}
     for action in actions:
         kind=aliases.get(action["event_type"],action["event_type"])
+        if endpoint_contract and not require_cash and action_classification(action, coverage) == "dividend":
+            continue  # No ex-date, cash fields, ledger entry or availability dependency.
         if kind not in ("split","dividend"):
             event=action.get("effective_date") or action.get("ex_date")
             if event is None and action["event_date"]<=hi:
@@ -36,6 +41,8 @@ def holdings_outcome(entry, exit_row, actions, *, coverage, include_receivables,
     for event,_,action in sorted(in_interval,key=lambda a:(a[0],a[1],a[2]["version_id"])):
         used.append(action["version_id"])
         kind=aliases.get(action["event_type"],action["event_type"])
+        if endpoint_contract and action_classification(action, coverage) is None:
+            return {"status":"blocked","reason":"corporate_action_type_unverified_or_unsupported"}
         if kind=="split":
             a,b=action.get("numerator"),action.get("denominator")
             if not all(valid_number(x) and x>0 for x in (a,b)):

@@ -5,7 +5,7 @@ from ..pit import query, create_snapshot, replay_snapshot
 from ..pit.time import timestamp
 from ..storage import canonical, sha256
 from .calendar import SessionCalendar, plus_seconds
-from .contracts import FEATURE_VERSION, LABEL_VERSION, DATASET_VERSION, code_hash
+from .contracts import FEATURE_VERSION, LABEL_VERSION, DATASET_VERSION, code_hash, label_version
 from .evidence import load_assertion, assertion_availability
 from .features import compute_features
 from .labels import compute_labels
@@ -90,6 +90,7 @@ def generate_feature(db, calendar, sample, config):
 
 def generate_labels(db, calendar, sample, config):
     # Only identifiers and schedule enter here: no feature numeric data/result argument.
+    version = label_version(config.get("label_definition_version", LABEL_VERSION))
     plan=calendar.plan(sample["decision_date"])
     evaluation=timestamp(config["label_asof"]); simulation=timestamp(config["simulation_asof"])
     target_dates=[r["trading_date"] for r in plan["exits"].values() if r]
@@ -111,13 +112,13 @@ def generate_labels(db, calendar, sample, config):
                           price_kind=label_config["series"]["price_kind"],coverage=coverage,trading_state=state,policy=config["label_policy"],
                           assumption_rule=config.get("assumption_rule"),include_receivables=config.get("include_dividend_receivables",True),
                           processing_delay_seconds=config.get("label_processing_delay_seconds",0),normal_delay_hours=config.get("normal_label_delay_hours",48),
-                          expected_currency=label_config["series"].get("currency"))
+                          expected_currency=label_config["series"].get("currency"), label_definition_version=version)
     for row in labels:
         row.update(label_snapshot_id=pmeta["snapshot_id"],label_snapshot_sha256=pmeta["content_sha256"],
                    action_snapshot_id=ameta["snapshot_id"],action_snapshot_sha256=ameta["content_sha256"],
                    price_contract=label_config["series"],query_exclusion_counts=prices["exclusion_counts"],
                    latest_access_failures=prices["latest_access_failures"],
-                   action_exclusion_counts=actions["exclusion_counts"],definition_version=LABEL_VERSION,
+                   action_exclusion_counts=actions["exclusion_counts"],definition_version=version,
                    builder_code_sha256=code_hash(),calendar=calendar.metadata,input_domain=domain,
                    assumption_policy_id=config.get("assumption_rule",{}).get("id") if config["label_policy"]=="research_assumed" else None)
     return labels
@@ -136,12 +137,13 @@ def invalid_sample(spec, config, calendar, reason):
     labels=[{"sample_id":sid,"horizon_sessions":h,"intended_entry_at":None,"intended_exit_at":None,"status":"invalid","reason":reason,
         "label_available_at":None,"price_return":None,"up_5":None,"down_5pct_5":None,"cash_total_return":None,
         "cash_total_return_status":"invalid","cash_total_return_reason":reason,"label_snapshot_id":None,"action_snapshot_id":None,
-        "definition_version":LABEL_VERSION,"query_policy":config["label_policy"],"input_domain":config.get("input_domain","market"),
+        "definition_version":label_version(config.get("label_definition_version", LABEL_VERSION)),"query_policy":config["label_policy"],"input_domain":config.get("input_domain","market"),
         "calendar":calendar.metadata,"builder_code_sha256":code_hash(),"price_contract":config.get("label_series",config["series"])} for h in (1,5,20)]
     return feature,labels
 
 
 def build_dataset(db, store, config, *, batch_size=1):
+    version = label_version(config.get("label_definition_version", LABEL_VERSION))
     if not isinstance(batch_size,int) or isinstance(batch_size,bool) or not 1<=batch_size<=256: raise ValueError("invalid_batch_size")
     request_contract(config,"feature_policy"); request_contract(config,"label_policy")
     calendar=SessionCalendar(db,config["calendar_version"],input_domain=config.get("input_domain","market"))
@@ -189,7 +191,7 @@ def build_dataset(db, store, config, *, batch_size=1):
         feature_counts[feature["sample_status"]]+=1
         reasons.update(feature["sample_reasons"])
     metadata={"dataset_definition_version":DATASET_VERSION,"config":config,"code_sha256":code_hash(),"batch_size":batch_size,
-              "feature_definition_version":FEATURE_VERSION,"label_definition_version":LABEL_VERSION,"calendar":calendar.metadata,
+              "feature_definition_version":FEATURE_VERSION,"label_definition_version":version,"calendar":calendar.metadata,
               "feature_status_counts":dict(feature_counts),"label_status_counts":dict(label_counts),"reason_counts":dict(reasons),
               "ready_pair_count":ready_pairs,"learning_ready_pair_count":learning_pairs,
               "input_scope":"explicit collector-test samples; NOT a historical investment universe",

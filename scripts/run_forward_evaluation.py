@@ -23,6 +23,7 @@ from market_research.stage4.metrics import evaluate
 
 PROJECT = Path(__file__).resolve().parents[1]
 CONFIG_SHA256 = '090a1360915249aa3752528526a6f7be5d8ca77dce02a00a0bfe4e9f5861c29d'
+FAILURE_STATUSES = frozenset(('blocked', 'invalid', 'missed'))
 
 
 def read_sealed(path):
@@ -139,9 +140,13 @@ def collect_current(c, root, cal, end, refresh):
                             client=HTTPClient(timeout=20, max_attempts=1))
     by_key = {(r['manifest_record']['request_parameters']['symbol'],
                r['manifest_record']['request_parameters']['kind']): r['manifest_record'] for r in results}
-    failures = {}
+    failures, collection_info = {}, {}
     for s in c['symbols']:
         records = {k: by_key[s, k] for k in ('daily', 'splits', 'dividends', 'identity')}
+        daily_result = next(r for r in results if r['manifest_record'] is records['daily'])
+        collection_info[s] = {
+            'cache_used': daily_result['status'] in ('cached', 'reprocessed'),
+            'received_last_trading_date': (records['daily'].get('actual_data_period') or {}).get('end')}
         bad = [k + ':' + v['status'] for k, v in records.items() if v['status'] not in ('success', 'empty_response')]
         if records['daily']['status'] != 'success' or records['identity']['status'] != 'success' or bad:
             failures[s] = bad or ['DAILY_OR_IDENTITY_EMPTY']; continue
@@ -183,7 +188,7 @@ def collect_current(c, root, cal, end, refresh):
                 'recorded_at_utc': completed, 'processing_completed_at_utc': completed}
             overlay.pop('receipt_id', None)
             Store(root / 'collection').save_record(overlay)
-    return failures
+    return failures, collection_info
 
 
 def update_labels(pit, store, cal, root, c, clock=utc_now):
@@ -279,8 +284,9 @@ def run(c, args):
             closed = [r['trading_date'] for r in cal.rows if timestamp(r['close_utc']) <= started]
             if not closed: raise ValueError('calendar_has_no_closed_session')
             collection_failures = {}
+            collection_info = {}
             if not args.cache_only:
-                collection_failures = collect_current(c, root, cal, closed[-1], args.refresh)
+                collection_failures, collection_info = collect_current(c, root, cal, closed[-1], args.refresh)
             if (root / 'collection' / 'manifest').exists():
                 imported = import_artifacts(pit, root / 'collection', domain='market')
                 if imported['quarantined']:
@@ -327,7 +333,20 @@ def run(c, args):
                                               feature_snapshot_sha256=snapshot['content_sha256'])
                             feature['required_features'] = c['features']
                             failure = input_gate(data['data'], feature, cutoff)
-                            if failure: result.update(status='blocked', reason=failure, query_exclusions=data['exclusion_counts'])
+                            if failure:
+                                result.update(status='blocked', reason=failure, query_exclusions=data['exclusion_counts'])
+                                if failure == 'STALE_OR_MISSING_CURRENT_SESSION':
+                                    deadline = cal.plan(anchor, (5,))['decision_at']
+                                    before_deadline = cutoff <= deadline
+                                    result['data_freshness'] = {
+                                        'required_trading_date': anchor,
+                                        'last_trading_date': feature['last_observation_date'],
+                                        'cache_used': args.cache_only or collection_info.get(symbol, {}).get('cache_used', False),
+                                        'received_last_trading_date': collection_info.get(symbol, {}).get('received_last_trading_date'),
+                                        'deadline_at': deadline,
+                                        'recovery_command': '.venv/bin/python scripts/run_forward_evaluation.py --refresh' if before_deadline else None,
+                                        'recovery_instruction': 'Rerun with --refresh and complete before deadline_at; --cache-only cannot fetch the missing bar.'
+                                            if before_deadline else 'Deadline passed; this decision cannot be recovered by backdating.'}
                             else:
                                 projected = project_features(feature, c['features'])
                                 probabilities = [predict(pipeline, [projected])[0] for pipeline in pipelines]
@@ -382,12 +401,22 @@ def run(c, args):
                       'decision_date': decision_date, 'config_sha256': CONFIG_SHA256,
                       'models_verified': [m['model_id'] for m in c['models']], 'results': outcome,
                       'label_updates': updates, 'collection_failures': collection_failures,
+                      'collection_info': collection_info,
                       'run_status_counts': dict(Counter(r['status'] for r in outcome)),
                       'time_attestation': 'Local timestamps and hashes are reproducibility records, not independent timestamp certification.'}
             report['evaluation'] = summary(pit, store, root, c, now, report)
             seal(root / 'executions' / (sha256(canonical(report)) + '.json'), report)
             write_json(root / 'latest.json', report)
             return report
+
+
+def console_summary(report):
+    output = {k: report[k] for k in ('execution_kind', 'decision_date', 'run_status_counts', 'evaluation')}
+    output['prediction_failures'] = [r for r in report['results'] if r['status'] in FAILURE_STATUSES]
+    output['collection_failures'] = report['collection_failures']
+    output['label_update_status_counts'] = dict(Counter(r['status'] for r in report['label_updates']))
+    output['label_update_failures'] = [r for r in report['label_updates'] if r['status'] in FAILURE_STATUSES]
+    return output
 
 
 def main():
@@ -403,8 +432,8 @@ def main():
     try:
         c = json.loads((PROJECT / args.config).read_text())
         report = run(c, args)
-        print(json.dumps({k:report[k] for k in ('execution_kind','decision_date','run_status_counts','evaluation')}, ensure_ascii=False, indent=2))
-        return 3 if any(r['status'] in ('blocked','missed') for r in report['results']) or report['collection_failures'] else 0
+        print(json.dumps(console_summary(report), ensure_ascii=False, indent=2))
+        return 3 if any(r['status'] in FAILURE_STATUSES for r in report['results'] + report['label_updates']) or report['collection_failures'] else 0
     except (ValueError, OSError) as exc:
         print(json.dumps({'status':'ERROR','reason':str(exc)},ensure_ascii=False)); return 1
 

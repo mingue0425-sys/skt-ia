@@ -55,3 +55,45 @@ training_asof 선택은 frozen dataset의 정답이 ready이고 그때 available
 자동 채우지 않는다. 날짜 추정이나 미검증 현금 의미로 실제 총수익을 확정하지 않는다.
 진입 전 선언된 action도 효력일/배당락일이 없으면 보유 구간 밖임을 입증할 수 없어 차단한다.
 유한 입력에서 수량·현금·투자액·정답 계산이 overflow/underflow되면 invalid로 반환한다.
+
+## 별도 선택 계약 3.1.0
+
+기본 계약은 계속 3.0.1이다. 별도 dataset builder config의
+`label_definition_version="3.1.0"` 또는 계산 함수의 같은 인수로만 선택한다.
+기존 운영 config/전향 실행기의 연결은 바꾸지 않는다. 정답 definition_version과
+config·내용 hash가 구별되며 기존 snapshot을 덮어쓰지 않는다.
+
+가격·현금 수익률 공식, 진입/종료, raw(as_traded) 의미는 같다. 적격성·자료 의존과
+정지 판정 의미가 달라 전체 계약 호환성을 선언하지 않는다.
+가격 계산은 검토로 **일반 현금배당**임이 확인된 버전만 날짜/금액/지급일/현금 순서
+검사 전에 제외한다. 가격 ledger·used_action_version_ids·label_available_at에도 제외한다.
+현금 계산은 기존 배당 의미·통화·지급일·같은 날 순서 검사를 유지한다.
+cash_total_return_status/available_at과 used_cash_action_version_ids를 별도로 기록한다.
+현금 자료 충돌·누락·처리 지연은 가격 정답을 바꾸지 않는다.
+
+기존 hash-bound corporate_action_coverage assertion에 다음 검토 내용을 요구한다.
+근거의 완전성·수신/이용 시각·시리즈·기간 검사는 계속 필요하다.
+
+- `action_classifications`: 정확한 action version ID별 `share_split` 또는
+  `ordinary_cash_dividend`. 일반 split/dividend 필드만으로 자동 분류하지 않는다.
+  특별배당·분사·합병·권리배정·미분류 사건은 일반 배당으로 통과시키지 않는다.
+- `price_action_version_ids`: 보유 구간에 필요한 비현금 사건의 버전 목록.
+  지원하지 않는 유형 또는 필요한 버전 누락은 가격 정답을 차단한다.
+- `cash_action_version_ids`: 필요한 일반 현금배당 버전 목록. 누락은 현금 정답을 차단한다.
+  목록 필드 부재를 빈 목록으로 대체하지 않는다.
+- 선택 `action_effective_dates`: 버전별 검토된 효력/배당락 날짜. 다른 horizon 때문에
+  조회된 충돌/미수신 버전이 구간 밖임을 증명할 때만 사용한다. 선언일로 대신하지 않는다.
+
+기존 security_trading_state assertion의 상장/폐지·verified_through 검사는 유지한다.
+추가 `halt_intervals=[{start_at, resumed_at}]`와 `halt_coverage={start_at, end_at,
+status:"verified_complete", includes_prior_unresolved_halts:true}`가 필요하다.
+coverage는 양 endpoint를 포함하며, 시작 전에 발생한 미해결 정지도 조사한 근거여야 한다.
+timezone을 가진 실제 timestamp를 UTC로 정규화하고 `[start_at,resumed_at)`로 검사한다.
+시작은 포함하고 재개는 구간에서 제외하되 **재개 시각과 목표 시각이 정확히 같으면 별도로
+차단**한다. 재개 시각 누락은 미해결이다. 날짜뿐인 halted_dates/구간, timezone 없는 시각,
+빈 목록만 있고 완전성 근거 없는 상태는 차단한다. 시가 이후 시작한 정지는 앞선 시가를 막지 않는다.
+
+이 판정은 가격 기반 정답 적격성이다. `endpoint_price_evaluation_only=true`,
+`order_execution_verified=false`를 기록하며 공식 시가 경매 유효성이나 체결을 보증하지 않는다.
+운영 자료에 위 verified assertion을 새로 만들지 않았다. 합성 검사만으로 근거를 채우지 않는다.
+고정 artifact는 원래 소스 hash와 3.0.1 target_contract를 요구하므로 그대로 3.1.0에 사용할 수 없다.

@@ -4,7 +4,14 @@ from ..storage import canonical, sha256
 
 FEATURE_VERSION = "3.0.1"
 LABEL_VERSION = "3.0.1"
+LABEL_VERSION_ENDPOINT = "3.1.0"
 DATASET_VERSION = "3.0.1"
+
+
+def label_version(value=LABEL_VERSION):
+    if value not in (LABEL_VERSION, LABEL_VERSION_ENDPOINT):
+        raise ValueError("unsupported_label_definition_version")
+    return value
 
 
 def code_hash():
@@ -28,9 +35,10 @@ def feature_contract():
     }
 
 
-def label_contract():
-    return {
-        "version": LABEL_VERSION, "horizons": [1, 5, 20],
+def label_contract(version=LABEL_VERSION):
+    version = label_version(version)
+    contract = {
+        "version": version, "horizons": [1, 5, 20],
         "decision": "regular close + 60 elapsed minutes", "entry": "next session open e", "exit": "session e+h open",
         "price_return": "exit quantity * exit as-traded open / (initial quantity * entry open) - 1; verified splits only; cash excluded",
         "cash_total_return": "(exit shares * exit open + paid cash + explicitly included receivables) / entry investment - 1",
@@ -43,3 +51,14 @@ def label_contract():
         "available_at": "max(used policy availability, observation completion, coverage/state evidence availability) + explicit processing delay",
         "states": ["ready", "pending", "blocked", "invalid"], "fill_missing_exit": False,
     }
+    if version == LABEL_VERSION_ENDPOINT:
+        contract.update(
+            action_classification="Reviewed coverage.action_classifications binds each generic action version ID to share_split or ordinary_cash_dividend; other/unknown types blocked",
+            same_day_action_order="Required for cash return only; verified splits change quantity, ordinary cash dividends excluded from price dependencies",
+            halt_guard="UTC endpoint instants; [start_at,resumed_at), exact resumption boundary blocked; complete coverage including carry-in halts required",
+            cash_available_at="Separate used cash-action dependencies and processing delay; cannot postpone price_return",
+            cash_coverage="coverage.cash_action_version_ids explicitly enumerates required ordinary cash versions; unavailable versions block cash only",
+            price_action_coverage="coverage.price_action_version_ids explicitly enumerates required non-cash versions; unsupported/unavailable versions block price",
+            execution_claim="Price-based evaluation only; no order fill or official auction validity guarantee",
+        )
+    return contract
